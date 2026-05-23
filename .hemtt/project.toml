@@ -1,0 +1,10 @@
+name = "The Clone Wars- ARMA 3"
+author = "TCW Team"
+prefix = "tcw"
+mainprefix = "x"
+
+[version]
+major = 1
+minor = 0
+patch = 0
+build = 0
