@@ -20,7 +20,6 @@ class CfgVehicles {
         editorCategory = "tcw_kit_boxes"; // category in the browser
         editorSubcategory = "tcw_kit_boxes_medium";
         author = "TCW Team";
-        //init = "diag_log '[TCW] Init firing...'; WBK_GlobalKitBoxRn = TCW_KitBox; diag_log format ['[TCW] WBK_GlobalKitBoxRn set to: %1', WBK_GlobalKitBoxRn]; [] exec 'WBK_KitMenu\WBK_Kit_Camera.sqs'; diag_log '[TCW] Camera exec called'; player switchMove selectRandom ['Acts_AidlPercMstpSloWWrflDnon_warmup_1','Acts_AidlPercMstpSloWWrflDnon_warmup_2','Acts_AidlPercMstpSloWWrflDnon_warmup_3','Acts_AidlPercMstpSloWWrflDnon_warmup_4','Acts_AidlPercMstpSloWWrflDnon_warmup_5']; diag_log '[TCW] switchMove called'; _dirToObj = [player, TCW_KitBox] call BIS_fnc_dirTo; diag_log format ['[TCW] _dirToObj: %1', _dirToObj]; _actDir = _dirToObj - 180; player setDir _actDir; diag_log format ['[TCW] Final dir set to: %1', _actDir];";
     };
 };
 
@@ -74,7 +73,6 @@ class CfgFunctions
         {
             tag = "TCW";  // explicitly set the tag
             class kit_loader { file = "\x\tcw\addons\TCW_Kits\functions\tcw_kitLoader.sqf"; };
-            //class kit_menu   { file = "\x\tcw\addons\TCW_Kits\functions\tcw_openKitMenu.sqf"; };
         };
     };
 };

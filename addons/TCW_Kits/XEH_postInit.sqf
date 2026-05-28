@@ -1,15 +1,9 @@
-/*
-    File: XEH_postInit.sqf
-    Author: WebKnights / AI Collaborator
-    Description: Handles safe initialization of the tcw_kit_crate asset and player UI menus.
-*/
-
-// Step 1: Force execution ONLY on clients with a visual display interface
+// Force execution ONLY on clients with a visual display interface
 if !(hasInterface) exitWith {};
 
 diag_log "[WebKnights] XEH_postInit starting. Registering runtime object hooks...";
 
-// 2. Class Event Handler: Fires the exact frame ANY 'tcw_kit_crate' spawns
+// Class Event Handler: Fires the exact frame ANY 'tcw_kit_crate' spawns
 [
     "tcw_kit_crate",
     "init",
@@ -27,7 +21,7 @@ diag_log "[WebKnights] XEH_postInit starting. Registering runtime object hooks..
 ] call CBA_fnc_addClassEventHandler;
 
 
-// 3. Queue System: Waits smoothly for player rendering, UI Display 46, and the Box asset to exist
+// Queue System: Waits smoothly for player rendering, UI Display 46, and the Box asset to exist
 [
     {
         !isNull player &&
@@ -39,7 +33,7 @@ diag_log "[WebKnights] XEH_postInit starting. Registering runtime object hooks..
     {
         diag_log "[TCW] Player environment and Kit Box validated. Launching menu sequence...";
 
-        // Solidify the global reference variable before firing scripts
+        // Attach to the box
         WBK_GlobalKitBoxRn = TCW_KitBox;
 
         [] spawn TCW_fnc_kit_loader;
