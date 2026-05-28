@@ -28,8 +28,7 @@ class CfgWeapons
 		displayName = "[TCW] Clone Armour";
 		class ItemInfo : UniformItem
 		{
-			uniformModel = "";
-			uniformClass = "IDA_Clone_DC15S";
+			uniformClass = "tcw_clone_uniform";
 			mass = 15;
 		};
 	};
@@ -39,16 +38,29 @@ class CfgVehicles
 {
 	/* <----------- Clone Uniform Appearance Uniform Component -----------> */
 	class IDA_Clone_DC15S;
+	class Hitpoints;
+
 	class tcw_clone_uniform : IDA_Clone_DC15S
 	{
 		author = "TCW Team";
-		displayName = "[TCW] Clone Armour";
+		displayName = "[TCW] Clone Trooper (DC15A)";
+		scope = 2;
 		faction = "tcw_faction";
-		editorSubcategory = "";
+		editorSubcategory = "tcw_Clone_Subfaction";
 		editorPreview = "";
 		uniformclass = "tcw_clone_uniform_item";
-
-		class HitPoints
+		hiddenSelections[] = {"Camo1","Camo2"};
+		hiddenSelectionsTextures[] = {"\Indecisive_Armoury_Units\REPUBLIC\Clone_Uniform\Upper\IDA_BodyUpper_co.paa","\Indecisive_Armoury_Units\REPUBLIC\Clone_Uniform\Lower\IDA_BodyLower_co.paa"};
+		hiddenSelectionsMaterials[] = {"\Indecisive_Armoury_Units\REPUBLIC\Clone_Uniform\Upper\IDA_BodyUpper.rvmat","\Indecisive_Armoury_Units\REPUBLIC\Clone_Uniform\Lower\IDA_BodyLower.rvmat"};
+		linkedItems[] = {"IDA_vest_attachment_base","tcw_p1_helmet_base","tcw_clone_uniform_item","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","TFAR_anprc152"};
+		respawnLinkedItems[] = {"IDA_vest_attachment_base","tcw_p1_helmet_base","tcw_clone_uniform_item","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","TFAR_anprc152"};
+		weapons[] = {"IDA_DC15A","Throw","Put"};
+		respawnWeapons[] = {"IDA_DC15A","Throw","Put"};
+		magazines[] = {"IDA_grenade_Smoke_mag","IDA_grenade_Smoke_mag","IDA_grenade_Detonator_mag","IDA_Blaster_Cell_Power3_60Rnd_Blue"};
+		respawnMagazines[] = {"IDA_grenade_Smoke_mag","IDA_grenade_Smoke_mag","IDA_grenade_Detonator_mag","IDA_Blaster_Cell_Power3_60Rnd_Blue"};
+		items[] = {"ACE_EntrenchingTool","IDA_BactaBandage","IDA_BactaBandage","IDA_BactaBandage","IDA_BactaBandage","IDA_BactaBandage","IDA_BactaBandage","IDA_BactaBandage","IDA_BactaBandage","IDA_BactaBandage","IDA_BactaBandage","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_Splint","ACE_Splint","ACE_PlasmaIV_500","IDA_BattleStim","IDA_BattleStim","IDA_BattleStim","ACE_Spraypaintgreen","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_CableTie","acc_flashlight","Laserbatteries","FirstAidKit"};
+		respawnItems[] = {"ACE_EntrenchingTool","IDA_BactaBandage","IDA_BactaBandage","IDA_BactaBandage","IDA_BactaBandage","IDA_BactaBandage","IDA_BactaBandage","IDA_BactaBandage","IDA_BactaBandage","IDA_BactaBandage","IDA_BactaBandage","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_Splint","ACE_Splint","ACE_PlasmaIV_500","IDA_BattleStim","IDA_BattleStim","IDA_BattleStim","ACE_Spraypaintgreen","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_CableTie","ACE_CableTie","acc_flashlight","Laserbatteries","FirstAidKit"};
+		class HitPoints : HitPoints
         {
             class HitFace
             {
@@ -222,6 +234,15 @@ class CfgVehicles
 		explosionShielding = 0.4;
 		minTotalDamageThreshold = 0.001;
 		impactDamageMultiplier = 0.5;
+	};
+};
+
+/* <----------- Category Settings -----------> */
+class CfgEditorSubcategories
+{
+	class tcw_Clone_Subfaction
+	{
+		displayName = "Clone Troopers";
 	};
 };
 

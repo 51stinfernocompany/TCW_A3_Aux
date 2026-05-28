@@ -66,6 +66,7 @@ class CfgWeapons
 	class tcw_p1_helmet_sergeant : tcw_p1_helmet_base
 	{
 		displayName = "[TCW:A3] Phase 1 Helmet (Sergeant)";
+		hiddenSelections[] = {"Camo1","Visor"};
 		hiddenSelectionsTextures[] = {
 			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_base_co.paa",
 			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_base_co.paa"
@@ -75,6 +76,7 @@ class CfgWeapons
 	class tcw_p1_helmet_lieutenant : tcw_p1_helmet_base
 	{
 		displayName = "[TCW:A3] Phase 1 Helmet (Lieutenant)";
+		hiddenSelections[] = {"Camo1","Visor"};
 		hiddenSelectionsTextures[] = {
 			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_base_co.paa",
 			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_base_co.paa"
@@ -84,6 +86,7 @@ class CfgWeapons
 	class tcw_p1_helmet_captain : tcw_p1_helmet_base
 	{
 		displayName = "[TCW:A3] Phase 1 Helmet (Captain)";
+		hiddenSelections[] = {"Camo1","Visor"};
 		hiddenSelectionsTextures[] = {
 			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_base_co.paa",
 			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_base_co.paa"
@@ -93,6 +96,7 @@ class CfgWeapons
 	class tcw_p1_helmet_commander : tcw_p1_helmet_base
 	{
 		displayName = "[TCW:A3] Phase 1 Helmet (Commander)";
+		hiddenSelections[] = {"Camo1","Visor"};
 		hiddenSelectionsTextures[] = {
 			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_base_co.paa",
 			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_base_co.paa"
