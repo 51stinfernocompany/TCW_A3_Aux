@@ -68,8 +68,8 @@ class CfgWeapons
 		displayName = "[TCW:A3] Phase 1 Helmet (Sergeant)";
 		hiddenSelections[] = {"Camo1","Visor"};
 		hiddenSelectionsTextures[] = {
-			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_base_co.paa",
-			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_base_co.paa"
+			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_sgt_co.paa",
+			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_sgt_co.paa"
 		};
 	};
 
@@ -78,8 +78,8 @@ class CfgWeapons
 		displayName = "[TCW:A3] Phase 1 Helmet (Lieutenant)";
 		hiddenSelections[] = {"Camo1","Visor"};
 		hiddenSelectionsTextures[] = {
-			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_base_co.paa",
-			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_base_co.paa"
+			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_lt_co.paa",
+			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_lt_co.paa"
 		};
 	};
 
@@ -88,8 +88,8 @@ class CfgWeapons
 		displayName = "[TCW:A3] Phase 1 Helmet (Captain)";
 		hiddenSelections[] = {"Camo1","Visor"};
 		hiddenSelectionsTextures[] = {
-			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_base_co.paa",
-			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_base_co.paa"
+			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_cpt_co.paa",
+			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_cpt_co.paa"
 		};
 	};
 
@@ -98,8 +98,8 @@ class CfgWeapons
 		displayName = "[TCW:A3] Phase 1 Helmet (Commander)";
 		hiddenSelections[] = {"Camo1","Visor"};
 		hiddenSelectionsTextures[] = {
-			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_base_co.paa",
-			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_base_co.paa"
+			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_cmdr_co.paa",
+			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_cmdr_co.paa"
 		};
 	};
 
