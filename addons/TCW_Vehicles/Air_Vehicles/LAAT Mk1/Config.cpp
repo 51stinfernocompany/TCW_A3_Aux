@@ -14,8 +14,7 @@ class CfgPatches
         "3AS_LAAT"
         };
         // Just the list of available LAATs
-        units[] = 
-        {
+        units[] = {
             "tcw_laat_mk1_base"
         };
         weapons[] ={};

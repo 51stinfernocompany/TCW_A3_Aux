@@ -8,9 +8,7 @@
         faction="tcw_faction";
         editorCategory="tcw_assets";
         editorSubcategory="tcw_vics";
-        // Model paths for the Z-95
-        hiddenselectionstextures[]= 
-        {
+        hiddenselectionstextures[]= {
             "x\tcw\addons\TCW_Vehicles\Data\Z-95 Head Hunter 3AS\body_co.paa",
             "x\tcw\addons\TCW_Vehicles\Data\Z-95 Head Hunter 3AS\cockpit_co.paa",
             "x\tcw\addons\TCW_Vehicles\Data\Z-95 Head Hunter 3AS\glass_ca.paa"
