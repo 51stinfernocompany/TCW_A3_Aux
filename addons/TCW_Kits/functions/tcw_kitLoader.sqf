@@ -60,7 +60,7 @@ if (player getVariable ['isUnit', false]) then
 ["ic51_dc15a","ic51_dc15s","ic51_dc15a_mag","ic51_dc15s_mag","SEA_Helmet_P1_Base","SEA_Helmet_P1_Helmet_Sergeant","SEA_Helmet_P1_Lieutenant","SEA_Helmet_P1_Captain","SEA_Helmet_P1_Commander","SEA_Uniform_Clean","JLTS_CloneArmor_Sergeant","JLTS_CloneArmor_Lieutenant","JLTS_CloneArmor_Captain","JLTS_CloneArmor_Commander","IDA_Clone_Radiopack_ReconRig"],
 
  "(({_x getVariable 'WBK_Kit_Name' == 'Clone Trooper'} count units group player) == 0)",
- {}
+ {[player, 0] call ace_medical_treatment_fnc_setMedicClass;}
 ] spawn Wbk_AddKit;
 
 
@@ -71,7 +71,7 @@ if (player getVariable ['isUnit', false]) then
 
 ["ic51_dc15a","ic51_dc15s","ic51_dc15a_mag","ic51_dc15s_mag","SEA_Helmet_P1_Base","SEA_Helmet_P1_Helmet_Sergeant","SEA_Helmet_P1_Lieutenant","SEA_Helmet_P1_Captain","SEA_Helmet_P1_Commander","SEA_Uniform_Clean","JLTS_CloneArmor_Sergeant","JLTS_CloneArmor_Lieutenant","JLTS_CloneArmor_Captain","JLTS_CloneArmor_Commander","IDA_Clone_Rucksack","JLTS_Clone_backpack_RTO"],
  "(({_x getVariable 'WBK_Kit_Name' == 'Medic'} count units group player) == 0)",
- {}
+ { [player, 2] call ace_medical_treatment_fnc_setMedicClass; }
 ] spawn Wbk_AddKit;
 
 
@@ -83,7 +83,7 @@ if (player getVariable ['isUnit', false]) then
 ["SEA_Helmet_P1_Base","SEA_Helmet_P1_Helmet_Sergeant","SEA_Helmet_P1_Lieutenant","SEA_Helmet_P1_Captain","SEA_Helmet_P1_Commander","SEA_Uniform_Clean","JLTS_CloneArmor_Sergeant","JLTS_CloneArmor_Lieutenant","JLTS_CloneArmor_Captain","JLTS_CloneArmor_Commander","IDA_Clone_Rucksack","JLTS_Clone_backpack_RTO"],
 
  "(({_x getVariable 'WBK_Kit_Name' == 'Heavy'} count units group player) == 0)",
- {}
+ {[player, 0] call ace_medical_treatment_fnc_setMedicClass;}
 ] spawn Wbk_AddKit;
 
 
@@ -96,7 +96,7 @@ if (player getVariable ['isUnit', false]) then
 ["SEA_Helmet_P1_Base","SEA_Helmet_P1_Helmet_Sergeant","SEA_Helmet_P1_Lieutenant","SEA_Helmet_P1_Captain","SEA_Helmet_P1_Commander","SEA_Uniform_Clean","JLTS_CloneArmor_Sergeant","JLTS_CloneArmor_Lieutenant","JLTS_CloneArmor_Captain","JLTS_CloneArmor_Commander","ic51_clone_backpack_marksmen_t2","JLTS_Clone_backpack_RTO"],
 
  "(({_x getVariable 'WBK_Kit_Name' == 'Marksman'} count units group player) == 0)",
- {}
+ {[player, 0] call ace_medical_treatment_fnc_setMedicClass;}
 ] spawn Wbk_AddKit;
 
 
@@ -108,7 +108,7 @@ if (player getVariable ['isUnit', false]) then
 ["ic51_dc15a","ic51_dc15s","ic51_dc15a_mag","ic51_dc15s_mag","SEA_Helmet_P1_Base","SEA_Helmet_P1_Helmet_Sergeant","SEA_Helmet_P1_Lieutenant","SEA_Helmet_P1_Captain","SEA_Helmet_P1_Commander","SEA_Uniform_Clean","JLTS_CloneArmor_Sergeant","JLTS_CloneArmor_Lieutenant","JLTS_CloneArmor_Captain","JLTS_CloneArmor_Commander","IDA_Clone_Rucksack","JLTS_Clone_backpack_RTO"],
 
  "(({_x getVariable 'WBK_Kit_Name' == 'Anti-Tank'} count units group player) == 0)",
- {}
+ {[player, 0] call ace_medical_treatment_fnc_setMedicClass;}
 ] spawn Wbk_AddKit;
 
 
@@ -120,7 +120,7 @@ if (player getVariable ['isUnit', false]) then
 ["ic51_dc15a","ic51_dc15s","ic51_dc15a_mag","ic51_dc15s_mag","ic51_dc23","ic51_dc23_mag","ic51_dc17","ic51_dc17_mag","ic51_vibroblade","ic51_vibroblade_rotated","SEA_Helmet_P1_Base","SEA_Helmet_P1_Helmet_Sergeant","SEA_Helmet_P1_Lieutenant","SEA_Helmet_P1_Captain","SEA_Helmet_P1_Commander","SEA_Uniform_Clean","JLTS_CloneArmor_Sergeant","JLTS_CloneArmor_Lieutenant","JLTS_CloneArmor_Captain","JLTS_CloneArmor_Commander","IDA_Clone_Rucksack","JLTS_Clone_backpack_RTO"],
 
  "(({_x getVariable 'WBK_Kit_Name' == 'Assault'} count units group player) == 0)",
- {}
+ {[player, 0] call ace_medical_treatment_fnc_setMedicClass;}
 ] spawn Wbk_AddKit;
 
 
@@ -131,5 +131,5 @@ if (player getVariable ['isUnit', false]) then
 
 ["SEA_Helmet_P1_Base","SEA_Helmet_P1_Helmet_Sergeant","SEA_Helmet_P1_Lieutenant","SEA_Helmet_P1_Captain","SEA_Helmet_P1_Commander","SEA_Uniform_Clean","JLTS_CloneArmor_Sergeant","JLTS_CloneArmor_Lieutenant","JLTS_CloneArmor_Captain","JLTS_CloneArmor_Commander","IDA_Clone_Rucksack","JLTS_Clone_backpack_RTO"],
  "(({_x getVariable 'WBK_Kit_Name' == 'Assault'} count units group player) == 0)",
- {}
+ {[player, 0] call ace_medical_treatment_fnc_setMedicClass;}
 ] spawn Wbk_AddKit;
