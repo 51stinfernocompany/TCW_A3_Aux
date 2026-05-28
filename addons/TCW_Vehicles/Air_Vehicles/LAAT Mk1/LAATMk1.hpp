@@ -25,11 +25,11 @@ class tcw_laat_mk1_base: 3AS_LAAT_Mk1
 		};
     hiddenSelectionsTextures[]=
     {
-        "TCW_A3_Aux\addons\TCW_Vehicles\Data\Base Mk1 LAAT\Hull_CO.paa",
-        "TCW_A3_Aux\addons\TCW_Vehicles\Data\Base Mk1 LAAT\Wings_CO.paa",
-        "TCW_A3_Aux\addons\TCW_Vehicles\Data\Base Mk1 LAAT\Weapons_CO.paa",
-        "TCW_A3_Aux\addons\TCW_Vehicles\Data\Base Mk1 LAAT\Weapon_Details_CO.paa",
-        "TCW_A3_Aux\addons\TCW_Vehicles\Data\Base Mk1 LAAT\Interior_CO.paa"
+        "x\tcw\addons\TCW_Vehicles\Data\Base Mk1 LAAT\Hull_CO.paa",
+        "x\tcw\addons\TCW_Vehicles\Data\Base Mk1 LAAT\Wings_CO.paa",
+        "x\tcw\addons\addons\TCW_Vehicles\Data\Base Mk1 LAAT\Weapons_CO.paa",
+        "x\tcw\addons\addons\TCW_Vehicles\Data\Base Mk1 LAAT\Weapon_Details_CO.paa",
+        "x\tcw\addons\addons\TCW_Vehicles\Data\Base Mk1 LAAT\Interior_CO.paa"
     };
   };
 };

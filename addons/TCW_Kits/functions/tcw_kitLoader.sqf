@@ -127,23 +127,9 @@ if (player getVariable ['isUnit', false]) then
 [
  TCW_KitBox,
  "Engineer",
-[["ic51_dc23","","","",["ic51_dc23_mag",6],[],""],[],["ic51_vibroblade","","","",[],[],""],["SEA_Uniform_Clean",[["ACE_elasticBandage",3],["ACE_CableTie",4],["ACE_EntrenchingTool",1],["ItemcTabHCam",1],["ACE_IR_Strobe_Item",1],["ACE_Flashlight_XL50",1],["ACE_Chemlight_HiGreen",10,1],["ACE_Chemlight_HiRed",4,1],["kat_Painkiller",2,4]]],["ic51_vest_plate_assault",[["ic51_ThermalDetonator",8,1],["ic51_SonicDetonator",15,1],["ic51_SmokeWhite",10,1],["ACE_Chemlight_HiRed",1,1],["ic51_penetrator_grenade",1,1],["ic51_dc23_mag",5,6]]],["IDA_Clone_Rucksack",[["ic51_dc23_mag",10,6]]],"SEA_Helmet_P1_Base","",["ic51_clone_binoculars_base","","","",["Laserbatteries",1],[],""],["ItemMap","ItemAndroid","ls_radios_cwp8","ItemCompass","ItemWatch",""]],
+[["ic51_dc15c","","","ic51_reflex3_optic",["ic51_dc15c_mag",40],["ic51_stun_mag_short",10],""],[],["ic51_dc17","","","",["ic51_dc17_mag",50],[],""],["SEA_Uniform_Clean",[["ACE_elasticBandage",10],["ACE_packingBandage",20],["ACE_DefusalKit",1],["ACE_Fortify",1],["ACE_splint",5],["ACE_SpraypaintRed",1],["ACE_tourniquet",5],["kat_Painkiller",2,4]]],["ic51_vest_plate_engineer",[["WBK_HeadLampItem_Double",1],["ace_marker_flags_red",3],["MineDetector",1],["ACE_SpraypaintGreen",1],["JLTS_repairkit_weapon",1],["ic51_SmokeWhite",5,1],["ic51_ThermalDetonator",4,1],["3AS_FusionCutter_Magazine",6,100],["ic51_dc15c_mag",20,40],["ic51_stun_mag_long",3,5]]],[],"SEA_Helmet_P1_Base","3AS_G_Engineer_2_F",["ic51_clone_binoculars_base","","","",["Laserbatteries",1],[],""],["ItemMap","ItemAndroid","ls_radios_cwp8","ItemCompass","ItemWatch",""]],
 
-["ic51_dc15a","ic51_dc15s","ic51_dc15a_mag","ic51_dc15s_mag","ic51_dc23","ic51_dc23_mag","ic51_dc17","ic51_dc17_mag","ic51_vibroblade","ic51_vibroblade_rotated","SEA_Helmet_P1_Base","SEA_Helmet_P1_Helmet_Sergeant","SEA_Helmet_P1_Lieutenant","SEA_Helmet_P1_Captain","SEA_Helmet_P1_Commander","SEA_Uniform_Clean","JLTS_CloneArmor_Sergeant","JLTS_CloneArmor_Lieutenant","JLTS_CloneArmor_Captain","JLTS_CloneArmor_Commander","IDA_Clone_Rucksack","JLTS_Clone_backpack_RTO"],
-
+["SEA_Helmet_P1_Base","SEA_Helmet_P1_Helmet_Sergeant","SEA_Helmet_P1_Lieutenant","SEA_Helmet_P1_Captain","SEA_Helmet_P1_Commander","SEA_Uniform_Clean","JLTS_CloneArmor_Sergeant","JLTS_CloneArmor_Lieutenant","JLTS_CloneArmor_Captain","JLTS_CloneArmor_Commander","IDA_Clone_Rucksack","JLTS_Clone_backpack_RTO"],
  "(({_x getVariable 'WBK_Kit_Name' == 'Assault'} count units group player) == 0)",
  {}
 ] spawn Wbk_AddKit;
-
-
-//Was sent with wrong formatting, fix in morning
-/*[
- this,
- "Engineer",
-[["ic51_dc15c","","","ic51_reflex3_optic",["ic51_dc15c_mag",40],["ic51_stun_mag_short",10],""],[],["ic51_dc17","","","",["ic51_dc17_mag",50],[],""],["SEA_Uniform_Clean",[["ACE_elasticBandage",10],["ACE_packingBandage",20],["ACE_DefusalKit",1],["ACE_Fortify",1],["ACE_splint",5],["ACE_SpraypaintRed",1],["ACE_tourniquet",5],["kat_Painkiller",2,4]]],["ic51_vest_plate_engineer",[["WBK_HeadLampItem_Double",1],["ace_marker_flags_red",3],["MineDetector",1],["ACE_SpraypaintGreen",1],["JLTS_repairkit_weapon",1],["ic51_SmokeWhite",5,1],["ic51_ThermalDetonator",4,1],["3AS_FusionCutter_Magazine",6,100],["ic51_dc15c_mag",20,40],["ic51_stun_mag_long",3,5]]],[],"SEA_Helmet_P1_Base"","3AS_G_Engineer_2_F",["ic51_clone_binoculars_base","","","",["Laserbatteries",1],[],""],["ItemMap","ItemAndroid","ls_radios_cwp8","ItemCompass","ItemWatch",""]],
-
-["SEA_Helmet_P1_Base","SEA_Helmet_P1_Helmet_Sergeant","SEA_Helmet_P1_Lieutenant","SEA_Helmet_P1_Captain","SEA_Helmet_P1_Commander","SEA_Uniform_Clean","JLTS_CloneArmor_Sergeant","JLTS_CloneArmor_Lieutenant","JLTS_CloneArmor_Captain","JLTS_CloneArmor_Commander","IDA_Clone_Rucksack","JLTS_Clone_backpack_RTO"],
-
- "(({_x getVariable 'WBK_Kit_Name' == 'Engineer'} count units group player) == 0)",
- {}
-] spawn Wbk_AddKit; */

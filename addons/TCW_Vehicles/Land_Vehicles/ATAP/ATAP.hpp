@@ -11,19 +11,16 @@ class CfgVehicles
     faction="tcw_faction";
     editorCategory="tcw_assets";
     editorSubcategory="tcw_vics";
-        // Model paths for the ATAP
-    model = "3AS\3AS_ATAP\model\3AS_ATAP.p3d";
     hiddenSelections[]=
 		{
         "camo1",
         "camo2",
         "camo3"
 		};
-    hiddenselectionstextures[]= 
-        {
-        "tcw\addons\TCW_Vehicles\Data\AT-AP\Hull_CO.paa",
-        "tcw\addons\TCW_Vehicles\Data\AT-AP\weapons and decals_CO.paa",
-        "tcw\addons\TCW_Vehicles\Data\AT-AP\legs_CO.paa"
+    hiddenselectionstextures[]= {
+        "x\tcw\addons\TCW_Vehicles\Data\AT-AP\Hull_CO.paa",
+        "x\tcw\addons\TCW_Vehicles\Data\AT-AP\weapons and decals_CO.paa",
+        "x\tcw\addons\TCW_Vehicles\Data\AT-AP\legs_CO.paa"
         };
         // Self explanatory, but if you want to implement a new ATAP, just copy this line of code unless you really want to alter textures
         maxSpeed = 15;       // km/h limit

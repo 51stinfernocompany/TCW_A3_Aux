@@ -11,8 +11,6 @@
     faction="tcw_faction";
     editorCategory="tcw_assets";
     editorSubcategory="tcw_vics";
-        // Model paths for the ATTE
-    model = "3AS\3AS_ATTE\model\3AS_ATTE.p3d";
     hiddenSelections[]=
 		{
         "camo1",
@@ -22,14 +20,13 @@
         "camo5",
         "camo11"
 		};
-    hiddenselectionstextures[]= 
-        {
-        "tcw\addons\TCW_Vehicles\Data\ATTE\3AS_ATTE_Shell_TCW_co.paa",
-        "tcw\addons\TCW_Vehicles\Data\ATTE\3AS_ATTE_Cockpit_co.paa",
-        "tcw\addons\TCW_Vehicles\Data\ATTE\3AS_ATTE_Detail_co.paa",
-        "tcw\addons\TCW_Vehicles\Data\ATTE\3AS_ATTE_Legs_co.paa",
-        "3as\3AS_ATTE\data\Textures\3AS_ATTE_Glass_ca.paa",
-        "tcw\addons\TCW_Vehicles\Data\ATTE\3AS_ATTE_Armor_co.paa"
+    hiddenselectionstextures[]= {
+        "x\tcw\addons\TCW_Vehicles\Data\ATTE\3AS_ATTE_Shell_TCW_co.paa",
+        "x\tcw\addons\TCW_Vehicles\Data\ATTE\3AS_ATTE_Cockpit_co.paa",
+        "x\tcw\addons\TCW_Vehicles\Data\ATTE\3AS_ATTE_Detail_co.paa",
+        "x\tcw\addons\TCW_Vehicles\Data\ATTE\3AS_ATTE_Legs_co.paa",
+        "x\3as\3AS_ATTE\data\Textures\3AS_ATTE_Glass_ca.paa",
+        "x\tcw\addons\TCW_Vehicles\Data\ATTE\3AS_ATTE_Armor_co.paa"
         };
         // Self explanatory, but if you want to implement a new ATTE, just copy this line of code unless you really want to alter textures
         maxSpeed = 9;       // km/h limit

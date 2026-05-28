@@ -8,9 +8,7 @@
         faction="tcw_faction";
         editorCategory="tcw_assets";
         editorSubcategory="tcw_vics";
-        // Model paths for the Y-Wing
-        hiddenselectionstextures[]= 
-        {
+        hiddenselectionstextures[]= {
             "tcw\addons\TCW_Vehicles\Data\Y-Wing\Chasis_CO.paa",
             "tcw\addons\TCW_Vehicles\Data\Y-Wing\Detail_CO.paa",
             "tcw\addons\TCW_Vehicles\Data\Y-Wing\Interior_CO.paa"
