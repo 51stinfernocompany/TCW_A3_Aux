@@ -151,7 +151,7 @@ class tcw_ven_body1_1 : ls_staticShipPart_venator_body1_1 {
       displayName = "[TCW] Venator Body 1";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenSelectionsTextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\body1_co.paa"};
+      hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\body1_co.paa"};
 };
 class ls_staticShipPart_venator_body1_2;
 class tcw_ven_body1_2 : ls_staticShipPart_venator_body1_2 {
@@ -161,7 +161,7 @@ class tcw_ven_body1_2 : ls_staticShipPart_venator_body1_2 {
       displayName = "[TCW] Venator Body 2";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenSelectionsTextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\body1_co.paa"};
+      hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\body1_co.paa"};
 };
 class ls_staticShipPart_venator_body2_1;
 class tcw_ven_body2_1 : ls_staticShipPart_venator_body2_1 {
@@ -171,7 +171,7 @@ class tcw_ven_body2_1 : ls_staticShipPart_venator_body2_1 {
       displayName = "[TCW] Venator Body 3";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenSelectionsTextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\body2_co.paa"};
+      hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\body2_co.paa"};
 };
 class ls_staticShipPart_venator_body2_2;
 class tcw_ven_body2_2 : ls_staticShipPart_venator_body2_2 {
@@ -181,7 +181,7 @@ class tcw_ven_body2_2 : ls_staticShipPart_venator_body2_2 {
       displayName = "[TCW] Venator Body 4";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenSelectionsTextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\body2_co.paa"};
+      hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\body2_co.paa"};
 };
 class ls_staticShipPart_venator_body2_3;
 class tcw_ven_body2_3 : ls_staticShipPart_venator_body2_3 {
@@ -191,7 +191,7 @@ class tcw_ven_body2_3 : ls_staticShipPart_venator_body2_3 {
       displayName = "[TCW] Venator Body 5";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenSelectionsTextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\body2_co.paa"};
+      hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\body2_co.paa"};
 };
 class ls_staticShipPart_venator_body3;
 class tcw_ven_body3 : ls_staticShipPart_venator_body3 {
@@ -201,7 +201,7 @@ class tcw_ven_body3 : ls_staticShipPart_venator_body3 {
       displayName = "[TCW] Venator Body 6";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenSelectionsTextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\body3_co.paa"};
+      hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\body3_co.paa"};
 };
 class ls_staticShipPart_venator_body4;
 class tcw_ven_body4 : ls_staticShipPart_venator_body4 {
@@ -211,7 +211,7 @@ class tcw_ven_body4 : ls_staticShipPart_venator_body4 {
       displayName = "[TCW] Venator Body 7";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenSelectionsTextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\body4_co.paa"};
+      hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\body4_co.paa"};
 };
 class ls_staticShipPart_venator_body5;
 class tcw_ven_body5 : ls_staticShipPart_venator_body5 {
@@ -221,7 +221,7 @@ class tcw_ven_body5 : ls_staticShipPart_venator_body5 {
       displayName = "[TCW] Venator Body 8";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenSelectionsTextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\body5_co.paa"};
+      hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\body5_co.paa"};
 };
 class ls_staticShipPart_venator_body6;
 class tcw_ven_body6 : ls_staticShipPart_venator_body6 {
@@ -231,7 +231,7 @@ class tcw_ven_body6 : ls_staticShipPart_venator_body6 {
       displayName = "[TCW] Venator Body 9";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenSelectionsTextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\body6_co.paa"};
+      hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\body6_co.paa"};
 };
 class ls_staticShipPart_venator_body7;
 class tcw_ven_body7 : ls_staticShipPart_venator_body7 {
@@ -241,7 +241,7 @@ class tcw_ven_body7 : ls_staticShipPart_venator_body7 {
       displayName = "[TCW] Venator Body 10";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenSelectionsTextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\body7_co.paa"};
+      hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\body7_co.paa"};
 };
 class ls_staticShipPart_venator_body8;
 class tcw_ven_body8 : ls_staticShipPart_venator_body8 {
@@ -251,7 +251,7 @@ class tcw_ven_body8 : ls_staticShipPart_venator_body8 {
       displayName = "[TCW] Venator Body 11";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenSelectionsTextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\body8_co.paa"};
+      hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\body8_co.paa"};
 };
 class ls_staticShipPart_venator_body9;
 class tcw_ven_body9 : ls_staticShipPart_venator_body9 {
@@ -261,7 +261,7 @@ class tcw_ven_body9 : ls_staticShipPart_venator_body9 {
       displayName = "[TCW] Venator Body 12";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenSelectionsTextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\body9_co.paa"};
+      hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\body9_co.paa"};
 };
 class ls_staticShipPart_venator_body10;
 class tcw_ven_body10 : ls_staticShipPart_venator_body10 {
@@ -271,7 +271,7 @@ class tcw_ven_body10 : ls_staticShipPart_venator_body10 {
       displayName = "[TCW] Venator Body 13";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenSelectionsTextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\body10_co.paa"};
+      hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\body10_co.paa"};
 };
 class ls_staticShipPart_venator_engine;
 class tcw_ven_engine : ls_staticShipPart_venator_engine {
@@ -281,7 +281,7 @@ class tcw_ven_engine : ls_staticShipPart_venator_engine {
       displayName = "[TCW] Venator Engine";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenSelectionsTextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\engine_co.paa"};
+      hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\engine_co.paa"};
 };
 class ls_staticShipPart_venator_bridge;
 class tcw_ven_bridge : ls_staticShipPart_venator_bridge {
@@ -291,7 +291,7 @@ class tcw_ven_bridge : ls_staticShipPart_venator_bridge {
       displayName = "[TCW] Venator Bridge";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenSelectionsTextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\bridge_co.paa"};
+      hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\bridge_co.paa"};
 };
 class ls_staticShipPart_venator_door;
 class tcw_ven_door : ls_staticShipPart_venator_door {
@@ -301,7 +301,7 @@ class tcw_ven_door : ls_staticShipPart_venator_door {
       displayName = "[TCW] Venator Door Closed";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenselectionstextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\door_co.paa",""};
+      hiddenselectionstextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\door_co.paa",""};
 };
 class ls_staticShipPart_venator_doorOpen;
 class tcw_ven_door2 : ls_staticShipPart_venator_doorOpen {
@@ -311,7 +311,7 @@ class tcw_ven_door2 : ls_staticShipPart_venator_doorOpen {
       displayName = "[TCW] Venator Door Open";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenselectionstextures[] = {"","tcw\addons\TCW_Vehicles\Venator\Venator\door_co.paa"};
+      hiddenselectionstextures[] = {"","x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\door_co.paa"};
 };
 class ls_staticShipPart_venator_interior1;
 class tcw_ven_int1 : ls_staticShipPart_venator_interior1 {
@@ -321,7 +321,7 @@ class tcw_ven_int1 : ls_staticShipPart_venator_interior1 {
       displayName = "[TCW] Interior 1";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenselectionstextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\interior1_co.paa"};
+      hiddenselectionstextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\interior1_co.paa"};
 };
 class ls_staticShipPart_venator_interior2;
 class tcw_ven_int2 : ls_staticShipPart_venator_interior2 {
@@ -331,7 +331,7 @@ class tcw_ven_int2 : ls_staticShipPart_venator_interior2 {
       displayName = "[TCW] Interior 2";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenselectionstextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\interior2_co.paa"};
+      hiddenselectionstextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\interior2_co.paa"};
 };
 class ls_staticShipPart_venator_interior3;
 class tcw_ven_int3 : ls_staticShipPart_venator_interior3 {
@@ -341,7 +341,7 @@ class tcw_ven_int3 : ls_staticShipPart_venator_interior3 {
       displayName = "[TCW] Interior 3";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenselectionstextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\interior3_co.paa"};
+      hiddenselectionstextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\interior3_co.paa"};
 };
 class ls_staticShipPart_venator_interior4;
 class tcw_ven_int4 : ls_staticShipPart_venator_interior4 {
@@ -351,7 +351,7 @@ class tcw_ven_int4 : ls_staticShipPart_venator_interior4 {
       displayName = "[TCW] Interior 4";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenselectionstextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\interior4_co.paa"};
+      hiddenselectionstextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\interior4_co.paa"};
 };
 class ls_staticShipPart_venator_interior5;
 class tcw_ven_int5 : ls_staticShipPart_venator_interior5 {
@@ -361,7 +361,7 @@ class tcw_ven_int5 : ls_staticShipPart_venator_interior5 {
       displayName = "[TCW] Interior 5";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenselectionstextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\interior5_co.paa"};
+      hiddenselectionstextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\interior5_co.paa"};
 };
 class ls_staticShipPart_venator_interior6;
 class tcw_ven_int6 : ls_staticShipPart_venator_interior6 {
@@ -371,7 +371,7 @@ class tcw_ven_int6 : ls_staticShipPart_venator_interior6 {
       displayName = "[TCW] Interior 6";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenselectionstextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\interior6_co.paa"};
+      hiddenselectionstextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\interior6_co.paa"};
 };
 class ls_staticShipPart_venator_interior7;
 class tcw_ven_int7 : ls_staticShipPart_venator_interior7 {
@@ -381,7 +381,7 @@ class tcw_ven_int7 : ls_staticShipPart_venator_interior7 {
       displayName = "[TCW] Interior 7";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenselectionstextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\interior7_co.paa"};
+      hiddenselectionstextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\interior7_co.paa"};
 };
 class ls_staticShipPart_venator_interior8;
 class tcw_ven_int8 : ls_staticShipPart_venator_interior8 {
@@ -391,5 +391,5 @@ class tcw_ven_int8 : ls_staticShipPart_venator_interior8 {
       displayName = "[TCW] Interior 8";
       editorCategory = "tcw_assets";
       editorSubcategory = "tcw_ships";
-      hiddenselectionstextures[] = {"tcw\addons\TCW_Vehicles\Venator\Venator\interior8_co.paa"};
+      hiddenselectionstextures[] = {"x\tcw\addons\TCW_Vehicles\Venator\Data\Venator_Base\interior8_co.paa"};
 };
