@@ -4,7 +4,7 @@ class CfgPatches {
         name = "tcw_kits";
         requiredVersion = 2.20;
         requiredAddons[] = { "cba_main", "JLTS_weapons_crates", "WBK_KitArsenal"};
-        units[] = { "tcw_kit_crate" };
+        units[] = { "tcw_kit_crate", "tcw_kit_crate_cadet" };
         weapons[] = {};
     };
 };
@@ -21,6 +21,11 @@ class CfgVehicles {
         editorSubcategory = "tcw_kit_boxes_medium";
         author = "TCW Team";
     };
+
+    class tcw_kit_crate_cadet : tcw_kit_crate
+    {
+        displayName = "[TCW] Kit Box (Cadet)";
+    };
 };
 
 /* <------------- Set the first placed Kit Box to be our object -----------------> */
@@ -31,6 +36,13 @@ class Extended_Init_EventHandlers
         class TCW_InitializeKitBox
         {
             init = "private _crate = _this select 0; _crate setVehicleVarName ""TCW_KitBox""; TCW_KitBox = _crate; missionNamespace setVariable [""TCW_KitBox"", _crate, true]; diag_log ""[TCW] Extended_Init fired on tcw_kit_crate"";";
+        };
+    };
+    class tcw_kit_crate_cadet
+    {
+        class TCW_InitializeKitBoxCadet
+        {
+            init = "private _crate = _this select 0; _crate setVehicleVarName ""TCW_KitBoxCadet""; TCW_KitBoxCadet = _crate; missionNamespace setVariable [""TCW_KitBoxCadet"", _crate, true]; diag_log ""[TCW] Extended_Init fired on tcw_kit_crate_cadet"";";
         };
     };
 };
@@ -73,6 +85,7 @@ class CfgFunctions
         {
             tag = "TCW";  // explicitly set the tag
             class kit_loader { file = "\x\tcw\addons\TCW_Kits\functions\tcw_kitLoader.sqf"; };
+            class kit_loader_cadet { file = "\x\tcw\addons\TCW_Kits\functions\tcw_kitLoaderCadet.sqf"; };
         };
     };
 };
