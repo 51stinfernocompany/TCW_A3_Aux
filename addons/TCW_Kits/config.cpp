@@ -9,7 +9,7 @@ class CfgPatches {
     };
 };
 
-/* <------------- Create Kit Box(s?) -----------------> */
+/* <------------- Create Kit Boxs -----------------> */
 class CfgVehicles {
     class JLTS_Ammobox_weapons_special_GAR;
     class tcw_kit_crate : JLTS_Ammobox_weapons_special_GAR {
@@ -28,7 +28,7 @@ class CfgVehicles {
     };
 };
 
-/* <------------- Set the first placed Kit Box to be our object -----------------> */
+/* <------------- Prime the Kit Box Objects -----------------> */
 class Extended_Init_EventHandlers
 {
     class tcw_kit_crate

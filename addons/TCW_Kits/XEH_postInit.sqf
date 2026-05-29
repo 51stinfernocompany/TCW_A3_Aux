@@ -1,7 +1,7 @@
 // Force execution ONLY on clients with a visual display interface
 if !(hasInterface) exitWith {};
 
-diag_log "[WebKnights] XEH_postInit starting. Registering runtime object hooks...";
+diag_log "[TCW] XEH_postInit starting. Registering runtime object hooks...";
 
 // ============================================================
 //  CRATE REGISTRY
@@ -34,7 +34,7 @@ missionNamespace setVariable ["TCW_CrateRegistry", _crateRegistry];
             params ["_crate", "_varName", "_vehicleVar"];
             _crate setVehicleVarName _vehicleVar;
             missionNamespace setVariable [_varName, _crate, true];
-            diag_log format ["[WebKnights] SUCCESS: Class Hook caught %1. Bound to '%2'.", typeOf _crate, _varName];
+            diag_log format ["[TCW] SUCCESS: Class Hook caught %1. Bound to '%2'.", typeOf _crate, _varName];
         },
         [_varName, _vehicleVar]
     ] call CBA_fnc_addClassEventHandler;

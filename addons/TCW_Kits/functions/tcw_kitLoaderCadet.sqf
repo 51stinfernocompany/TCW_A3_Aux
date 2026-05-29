@@ -1,0 +1,1 @@
+// script to load basic kits but with cadet helmets, replace TCW helmet with a cadet version.
