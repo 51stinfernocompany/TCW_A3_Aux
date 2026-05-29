@@ -1,4 +1,5 @@
-#include "BaseControls.hpp"
+#include "..\BaseControls.hpp"
+
 class CfgPatches
 {
     class tcw_weapons_heavy
