@@ -23,7 +23,7 @@ class CfgPatches
             "tcw_SmokeShellRed",
             "tcw_SmokeShellOrange",
             "tcw_SmokeShellWhite",
-            "tcw_weaponshield_ammo",
+            //"tcw_weaponshield_ammo",
         };
         magazines[] =
         {
@@ -36,7 +36,7 @@ class CfgPatches
             "tcw_SmokeRed",
             "tcw_SmokeWhite",
             "tcw_SmokeYellow",
-            "tcw_weaponshield",
+            //"tcw_weaponshield",
             "tcw_emp_grenade",
             "tcw_penetrator_grenade",
         };

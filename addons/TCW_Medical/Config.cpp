@@ -8,6 +8,7 @@ class CfgWeapons {
     class ACE_surgicalKit;
     class TCW_stitchKit : ACE_surgicalKit {
         displayName = "[TCW] Stitch Kit";
+        picture="x\tcw\addons\TCW_Medical\ui\Medikit_ca.paa";
     };
  
     class ACE_epinephrine;

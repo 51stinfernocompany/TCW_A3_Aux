@@ -1,7 +1,7 @@
 class CfgPatches {
     class tcw_weapons {
         author = "TCW Team";
-        name = "tcw_armory";
+        name = "tcw_weapons";
         requiredVersion = 2.20;
         requiredAddons[]=
         {

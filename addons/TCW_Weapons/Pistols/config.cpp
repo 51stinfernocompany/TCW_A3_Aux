@@ -17,12 +17,12 @@ class CfgPatches
         {
             "tcw_dc15sa_mag",
             "tcw_dc17_mag",
-            "tcw_dc21_mag"
         };
         weapons[] =
         {
             "tcw_dc15sa",
             "tcw_dc17",
+            "tcw_vibroblade"
         };
     };
 };
@@ -74,14 +74,6 @@ class CfgMagazines {
         scope = 2;
     };
 
-    //DC-21
-    class tcw_dc21_mag : IDA_Blaster_Cell_Power4_10Rnd_Blue {
-        author = "TCW Team";
-        BaseWeapon = "tcw_dc21_mag";
-        displayName = "[TCW] DC-21 Mag";
-        count = 50;
-        scope = 2;
-    };
 };
 
 class CfgWeapons {
@@ -109,6 +101,15 @@ class CfgWeapons {
             "ACE_40mm_Flare_red",
             "OPTRE_signalSmokeP",
             };
+        scope = 2;
+    };
+
+    // Vibroblade
+    class IDA_VibroKnife;
+    class tcw_vibroblade : IDA_VibroKnife {
+        author = "TCW Team";
+        BaseWeapon = "tcw_vibroblade";
+        displayName = "[TCW] Vibroblade";
         scope = 2;
     };
 };
