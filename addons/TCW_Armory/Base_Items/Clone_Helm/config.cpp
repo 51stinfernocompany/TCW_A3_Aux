@@ -1,9 +1,9 @@
 class CfgPatches
 {
-	class TCW_Base_Helm
+	class tcw_base_helm
 	{
 		author = "TCW Team";
-		filename = "TCW_Armory.pbo";
+		filename = "tcw_armory.pbo";
 		requiredaddons[] = {
 			"A3_Data_F_Decade_Loadorder",
 			"SEA_JLTS_ExtendedArsenal",
@@ -65,6 +65,11 @@ class CfgWeapons
 				};
 			};
 		};
+		class xtdgearinfo
+		{
+			model = "tcw_phase1_helmets_rank";
+			camo = "ct";
+		};
 	};
 
 	class tcw_p1_helmet_sergeant : tcw_p1_helmet_base
@@ -74,6 +79,11 @@ class CfgWeapons
 		hiddenSelectionsTextures[] = {
 			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_sgt_co.paa",
 			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_sgt_co.paa"
+		};
+		class xtdgearinfo
+		{
+			model = "tcw_phase1_helmets_rank";
+			camo = "sgt";
 		};
 	};
 
@@ -85,6 +95,11 @@ class CfgWeapons
 			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_lt_co.paa",
 			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_lt_co.paa"
 		};
+		class xtdgearinfo
+		{
+			model = "tcw_phase1_helmets_rank";
+			camo = "lt";
+		};
 	};
 
 	class tcw_p1_helmet_captain : tcw_p1_helmet_base
@@ -94,6 +109,11 @@ class CfgWeapons
 		hiddenSelectionsTextures[] = {
 			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_cpt_co.paa",
 			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_cpt_co.paa"
+		};
+		class xtdgearinfo
+		{
+			model = "tcw_phase1_helmets_rank";
+			camo = "cpt";
 		};
 	};
 
@@ -105,6 +125,49 @@ class CfgWeapons
 			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_cmdr_co.paa",
 			"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_helmet_cmdr_co.paa"
 		};
+		class xtdgearinfo
+		{
+			model = "tcw_phase1_helmets_rank";
+			camo = "cmdr";
+		};
 	};
+};
 
+
+class xtdgearmodels
+{
+	class cfgweapons
+	{
+		class tcw_phase1_helmets_rank
+		{
+			label = "[TCW] Phase 1 Helmets (Ranks)";
+			author = "TCW Team";
+			options[] = {"camo"};
+			class camo
+			{
+				changeingame = 0;
+				values[] = {"ct","sgt","lt","cpt","cmdr"};
+				class ct
+				{
+					label = "Trooper";
+				};
+				class sgt
+				{
+					label = "Sergeant";
+				};
+				class lt
+				{
+					label = "Lieutenant";
+				};
+				class cpt
+				{
+					label = "Captain";
+				};
+				class cmdr
+				{
+					label = "Commander";
+				};
+			};
+		};
+	};
 };
