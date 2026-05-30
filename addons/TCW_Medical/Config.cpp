@@ -11,7 +11,6 @@ class CfgWeapons {
     class ACE_elasticBandage;
     class TCW_bactaSpray : ACE_elasticBandage {
         displayName = "[TCW] Bacta Spray";
-        picture = "x\tcw\addons\TCW_Medical\ui\Bacta_Spray_ca.paa";
     };
 
     class ACE_surgicalKit;
@@ -64,13 +63,25 @@ class CfgWeapons {
     };
 };
 
-class ACE_Medical_Treatment_Actions {
-    class BasicBandage {
-        items[] = { "ACE_fieldDressing", "ACE_packingBandage", "ACE_elasticBandage", "ACE_quikclot", "TCW_bactaSpray" };
+class ACE_Medical_Treatment
+{
+	class Bandaging
+	{
+        class ACE_elasticBandage;
+	    class TCW_bactaSpray: ACE_elasticBandage
+	    {
+	    	displayName = "Bacta Spray";
+	    };
     };
+};
 
-    class ElasticBandage {
-        items[] = { "ACE_elasticBandage", "TCW_bactaSpray" };
+class ACE_Medical_Treatment_Actions {
+    
+    class ElasticBandage;
+    class TCW_BactaSpray_Action : ElasticBandage {
+    displayName = "Apply Bacta Spray";
+    displayNameProgress = "Applying Bacta Spray...";
+    items[] = { "ACE_elasticBandage", "TCW_bactaSpray" };
     };
 
     class SurgicalKit;
