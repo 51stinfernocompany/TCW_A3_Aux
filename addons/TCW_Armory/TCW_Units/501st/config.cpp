@@ -1,82 +1,205 @@
-/*
 class CfgPatches 
 {
-	class TCW_Units_501st
+	class tcw_units_501st
 	{
+		author = "TCW Team";
+		filename = "tcw_armory.pbo";
 		units[] = 
 		{
-			""
+			"tcw_unit_501st_base",
+			"tcw_unit_501st_alt"
 		};
 		weapons[] = 
 		{
-			""
+			"tcw_p1_helmet_501st_base",
+			"tcw_p1_helmet_501st_medic",
+			"tcw_p1_helmet_501st_alt",
+			"tcw_p1_helmet_501st_alt_medic",
+			"tcw_uniform_501st_base",
+			"tcw_uniform_501st_alt"
 		};
-		requiredVersion = 0.100000;
+		requiredVersion = 2.20;
 		requiredAddons[] = {};
 	};
 };
 
 class CfgWeapons
 {
-	class TCW_Base_Helmet_SEA_P1;
-	class TCW_Units_501st_Helmet_P1: TCW_Base_Helmet_SEA_P1	
+//Helmet
+	class tcw_p1_helmet_base;
+	class tcw_p1_helmet_501st_base : tcw_p1_helmet_base	
 	{
 		scope = 2;
-		displayName = "[TCW:A3] 501st P1 Helmet";
-		author = "Balance + Ithias";
-		hiddenSelectionsTextures[] = 
+		displayName = "[TCW] 501st P1 Helmet";
+		author = "TCW Team";
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\501st\Tex\p1_helmet_501st_base_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\501st\Tex\p1_helmet_501st_base_co.paa"};
+		class xtdgearinfo
 		{
-			"\TCW_A3_Aux\TCW_Units\501st\Tex\TCW_Units_501st_Helmet_P1.paa",	// Helmet
-			"\JLTS_AE\Data\BaseTextures\P1\P1_Helmet_CO.paa",	// Visor
+			model = "tcw_unit_helmets_501st";
+			camo = "ct";
 		};
 	};
-	class SEA_Uniform_Clean;
-	class TCW_Base_Uniform_SEA: SEA_Uniform_Clean
-	{
-		class ItemInfo;
-	};
-	class TCW_Units_501st_Uniform_SEA: TCW_Base_Uniform_SEA
+
+	class tcw_p1_helmet_501st_medic : tcw_p1_helmet_base	
 	{
 		scope = 2;
-		displayName = "[TCW:A3] 501st Uniform";
-		author = "Balance + Ithias";
-		class ItemInfo: ItemInfo 
+		displayName = "[TCW] 501st Medic P1 Helmet";
+		author = "TCW Team";
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\501st\Tex\p1_helmet_501st_medic_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\501st\Tex\p1_helmet_501st_medic_co.paa"};
+		class xtdgearinfo
 		{
-			uniformClass = "TCW_Units_501st_Uniform_SEA_Veh";
+			model = "tcw_unit_helmets_501st";
+			camo = "medic";
 		};
 	};
-	class TCW_Units_501st_Uniform_SEA_Alt: TCW_Base_Uniform_SEA
+
+	class tcw_p1_helmet_501st_alt : tcw_p1_helmet_base	
 	{
 		scope = 2;
-		displayName = "[TCW:A3] 501st Uniform (ALT)";
-		author = "Balance + Ithias";
-		class ItemInfo: ItemInfo 
+		displayName = "[TCW] 501st Alternate P1 Helmet";
+		author = "TCW Team";
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\501st\Tex\p1_helmet_501st_alt_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\501st\Tex\p1_helmet_501st_alt_co.paa"};
+		class xtdgearinfo
 		{
-			uniformClass = "TCW_Units_501st_Uniform_SEA_Veh_ALT";
+			model = "tcw_unit_helmets_501st";
+			camo = "alt";
+		};
+	};
+
+	class tcw_p1_helmet_501st_alt_medic : tcw_p1_helmet_base	
+	{
+		scope = 2;
+		displayName = "[TCW] 501st Alternate Medic P1 Helmet";
+		author = "TCW Team";
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\501st\Tex\p1_helmet_501st_medic_alt_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\501st\Tex\p1_helmet_501st_medic_alt_co.paa"};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_helmets_501st";
+			camo = "alt_medic";
+		};
+	};
+
+
+//Uniform
+	class tcw_clone_uniform;
+	class ItemInfo;
+	class UniformItem;
+	class tcw_uniform_501st_base : tcw_clone_uniform
+	{
+		scope = 2;
+		displayName = "[TCW] 501st Uniform";
+		author = "TCW Team";
+		class ItemInfo: UniformItem 
+		{
+			uniformModel="\Indecisive_Armoury_units\REPUBLIC\Clone_Uniform\IDA_Clone_Uniform.p3d";
+			uniformClass="tcw_unit_501st_base";
+			uniformType="Neopren";
+			containerClass="Supply50";
+			mass=15;
+		};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_uniforms_501st";
+			camo = "ct";
+		};
+	};
+
+	class tcw_uniform_501st_alt : tcw_clone_uniform
+	{
+		scope = 2;
+		displayName = "[TCW] 501st Uniform (ALT)";
+		author = "TCW Team";
+		class ItemInfo: UniformItem 
+		{
+			uniformModel="\Indecisive_Armoury_units\REPUBLIC\Clone_Uniform\IDA_Clone_Uniform.p3d";
+			uniformClass="tcw_unit_501st_alt";
+			uniformType="Neopren";
+			containerClass="Supply50";
+			mass=15;
+		};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_uniforms_501st";
+			camo = "alt";
 		};
 	};
 };
 
 class CfgVehicles
 {
-	class TCW_Base_Uniform_SEA_Veh;
-	class TCW_Units_501st_Uniform_SEA_Veh: TCW_Base_Uniform_SEA_Veh
+	class tcw_clone_unit;
+	class tcw_unit_501st_base : tcw_clone_unit
 	{
-		uniformClass = "TCW_Units_501st_Uniform_SEA";
+		uniformClass = "tcw_uniform_501st_base";
 		hiddenSelectionsTextures[] = 
 		{
-			"\MRC\JLTS\characters\CloneLegions\data\Clone_501stTrooper_armor1_co.paa",
-			"\MRC\JLTS\characters\CloneLegions\data\Clone_501stTrooper_armor2_co.paa",
+			"x\tcw\addons\TCW_Armory\TCW_Units\501st\Tex\uniform_clone_upper_501st_base_co.paa",
+			"x\tcw\addons\TCW_Armory\TCW_Units\501st\Tex\uniform_clone_lower_501st_base_co.paa",
 		};
 	};
-	class TCW_Units_501st_Uniform_SEA_Veh_ALT: TCW_Base_Uniform_SEA_Veh
+	class tcw_unit_501st_alt : tcw_clone_unit
 	{
-		uniformClass = "TCW_Units_501st_Uniform_SEA_Alt";
+		uniformClass = "tcw_uniform_501st_alt";
 		hiddenSelectionsTextures[] = 
 		{
-			"\TCW_A3_Aux\TCW_Units\501st\Tex\TCW_Units_501st_Uniform_Alt_Upper.paa",	// Top
-			"\TCW_A3_Aux\TCW_Units\501st\Tex\TCW_Units_501st_Uniform_Alt_Lower.paa",	// Bottom
+			"x\tcw\addons\TCW_Armory\TCW_Units\501st\Tex\uniform_clone_upper_501st_alt_co.paa",	// Top
+			"x\tcw\addons\TCW_Armory\TCW_Units\501st\Tex\uniform_clone_lower_501st_alt_co.paa",	// Bottom
 		};
 	};
 };
-*/
+
+
+
+class xtdgearmodels
+{
+	class cfgweapons
+	{
+		class tcw_unit_helmets_501st
+		{
+			label = "[TCW] 501st Helmets";
+			author = "TCW Team";
+			options[] = {"camo"};
+			class camo
+			{
+				changeingame = 0;
+				values[] = {"ct","medic","alt","alt_medic"};
+				class ct
+				{
+					label = "Standard";
+				};
+				class medic
+				{
+					label = "Medic";
+				};
+				class alt
+				{
+					label = "Alternate";
+				};
+				class alt_medic
+				{
+					label = "Alt Medic";
+				};
+			};
+		};
+
+		class tcw_unit_uniforms_501st
+		{
+			label = "[TCW] 501st Uniforms";
+			author = "TCW Team";
+			options[] = {"camo"};
+			class camo
+			{
+				changeingame = 0;
+				values[] = {"ct","alt"};
+				class ct
+				{
+					label = "Standard";
+				};
+				class alt
+				{
+					label = "Alternate";
+				};
+			};
+		};
+	};
+};
