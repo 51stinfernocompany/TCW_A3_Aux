@@ -84,11 +84,13 @@ if (!(_rank in _rankOrder)) then {
     private _allRankGear = [];
     { { _allRankGear pushBackUnique _x; } forEach _x; } forEach _rankGearMap;
     {
-        { _x pushBackUnique _y; } forEach _allRankGear;  // _x is the kit array, _y is each gear item
+        private _kit = _x;
+        { _kit pushBackUnique _x; } forEach _allRankGear;
     } forEach _allAltGear;
 } else {
     {
-        { _x pushBackUnique _y; } forEach _rankGear;
+        private _kit = _x;
+        { _kit pushBackUnique _x; } forEach _rankGear;
     } forEach _allAltGear;
 };
 
