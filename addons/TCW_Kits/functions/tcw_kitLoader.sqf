@@ -2,19 +2,25 @@ if (isNil "TCW_KitBox") exitWith {
     diag_log "[Kits] ERROR: kitBox not found!";
 };
 
-/* <------------- Update When Backend is Ready ------------->*/
+/* <------------- Squad XML Data Collection and Validation ------------->*/
 private _params = squadParams player;
-private _dummyUnitID = "256838"; //Make a variable like this for each whitelisted unit in TCW
+private _41EC = "41st"; //Make a variable like this for each whitelisted unit in TCW
 private _clanID = ""; //The player's clan ID
 private _clanRemark = "";
+private _rank = "CT";
+private _progression = "0";
+
 
 {
     diag_log format ["[Param Check] param %1: '%2'", _forEachIndex, _x];
 } forEach _params;
 
-if (count _params > 0 && {!isNil {_params select 1}}) then {
+if (count _params > 0 && {!isNil {_params select 1 select 5}}) then {
     _clanRemark = _params select 1 select 5;
     diag_log format ["[RemarkCheck] _clanRemark: '%1'", _clanRemark];
+    private _remarkArray = _clanRemark splitString ",";
+    _rank = _remarkArray select 0;
+    _progression = _remarkArray select 1;
 };
 
 if (count _params > 0 && {!isNil {_params select 3}}) then {
@@ -22,12 +28,46 @@ if (count _params > 0 && {!isNil {_params select 3}}) then {
     diag_log format ["[UnitCheck] _clanID: '%1'", _clanID];
 };
 
-player setVariable ["isUnit",(_clanID == _dummyUnitID)]; //Set the trigger variable for each whitelisted unit
+player setVariable ["isUnit",(_clanID == _41EC)]; //Set the trigger variable for each whitelisted unit
 //private _isUnit2 = (_clanID == _dummyUnitID);
 
 if (_clanID == "") then {
     diag_log "[UnitCheck] Player has no linked squad.";
 };
+
+// Build alt gear array conditionally
+private _rankGear = [];
+
+// Add rank gear conditionally
+switch (_rank) do {
+    case "CS": {
+        _rankGear pushBackUnique "tcw_p1_helmet_sergeant";
+        _rankGear pushBackUnique "tcw_clone_uniform_item_sergeant";
+    };
+    case "CL": {
+        _rankGear pushBackUnique "tcw_p1_helmet_sergeant";
+        _rankGear pushBackUnique "tcw_clone_uniform_item_sergeant";
+        _rankGear pushBackUnique "tcw_p1_helmet_lieutenant";
+        _rankGear pushBackUnique "tcw_clone_uniform_item_lieutenant";
+    };
+    case "CC": {
+        _rankGear pushBackUnique "tcw_p1_helmet_sergeant";
+        _rankGear pushBackUnique "tcw_clone_uniform_item_sergeant";
+        _rankGear pushBackUnique "tcw_p1_helmet_lieutenant";
+        _rankGear pushBackUnique "tcw_clone_uniform_item_lieutenant";
+        _rankGear pushBackUnique "tcw_p1_helmet_captain";
+        _rankGear pushBackUnique "tcw_clone_uniform_item_captain";
+    };
+    case "N/A": {
+        _rankGear pushBackUnique "tcw_p1_helmet_sergeant";
+        _rankGear pushBackUnique "tcw_clone_uniform_item_sergeant";
+    };
+};
+
+private _altGearTrooper = ["tcw_dc15a","tcw_dc15s","tcw_dc15a_mag","tcw_dc15s_mag","tcw_p1_helmet_base","tcw_clone_uniform_item","IDA_Clone_Radiopack_ReconRig"];
+
+// Append rank gear
+{ _altGearTrooper pushBackUnique _x; } forEach _rankGear;
 
 // Debug / Testing, remove after full implementation
 /*[
@@ -51,13 +91,27 @@ if (player getVariable ['isUnit', false]) then
     ] spawn Wbk_AddKit;
 };*/
 
+// Dummy Test Kit squad XML unlocking rank armor
+[
+ TCW_KitBox, // Variable name of our specific Kit Box, do not change for TCW
+ "Clone Trooper", // Name of the Kit
+[["tcw_dc15a","","","",["tcw_dc15a_mag",30],[],""],[],["tcw_dc17","","","",["tcw_dc17_mag",50],[],""],["tcw_clone_uniform_item",[["ACE_EntrenchingTool",1],["ACE_SpraypaintGreen",1],["ACE_CableTie",4],["ACE_EarPlugs",1],["ItemcTabHCam",1],["ACE_IR_Strobe_Item",1],["ACE_packingBandage",20],["ACE_elasticBandage",10],["tcw_SmokeWhite",1,1]]],["tcw_vest_plate_base",[["acc_flashlight",1],["ACE_Flashlight_XL50",1],["WBK_HeadLampItem_Narrow",1],["ACE_packingBandage",10],["ACE_tourniquet",4],["ACE_MapTools",1],["tcw_SmokeWhite",3,1],["tcw_SonicDetonator",2,1],["tcw_ThermalDetonator",3,1],["tcw_dc17_mag",3,50],["ACE_painkillers",1,10],["tcw_dc15a_mag",15,30],["ACE_Chemlight_HiBlue",5,1],["ACE_Chemlight_HiGreen",5,1],["ACE_Chemlight_HiRed",5,1],["Laserbatteries",1,1]]],[],"tcw_p1_helmet_base","",["IDA_Electrobinoculars_Rep","","","",["Laserbatteries",1],[],""],["ItemMap","ItemGPS","ls_radios_cwp8","ItemCompass","ItemWatch",""]], //Main Gear in kit
+
+_altGearTrooper, //Alt Gear
+
+ "(({_x getVariable 'WBK_Kit_Name' == 'Clone Trooper'} count units group player) == 0)", //Statement must eval to true to be selectable, if not true the kit will be grayed out and unselectable
+ { player setVariable ["ace_medical_medicClass", 0, true]; player setVariable ["ace_isEngineer", 0, true];} //Additional code to run
+] spawn Wbk_AddKit;
+
+
+
 /* <------------- Fake Kits, Update with proper gear ------------->*/
 [
  TCW_KitBox, // Variable name of our specific Kit Box, do not change for TCW
  "Clone Trooper", // Name of the Kit
 [["tcw_dc15a","","","",["tcw_dc15a_mag",30],[],""],[],["tcw_dc17","","","",["tcw_dc17_mag",50],[],""],["tcw_clone_uniform_item",[["ACE_EntrenchingTool",1],["ACE_SpraypaintGreen",1],["ACE_CableTie",4],["ACE_EarPlugs",1],["ItemcTabHCam",1],["ACE_IR_Strobe_Item",1],["ACE_packingBandage",20],["ACE_elasticBandage",10],["tcw_SmokeWhite",1,1]]],["tcw_vest_plate_base",[["acc_flashlight",1],["ACE_Flashlight_XL50",1],["WBK_HeadLampItem_Narrow",1],["ACE_packingBandage",10],["ACE_tourniquet",4],["ACE_MapTools",1],["tcw_SmokeWhite",3,1],["tcw_SonicDetonator",2,1],["tcw_ThermalDetonator",3,1],["tcw_dc17_mag",3,50],["ACE_painkillers",1,10],["tcw_dc15a_mag",15,30],["ACE_Chemlight_HiBlue",5,1],["ACE_Chemlight_HiGreen",5,1],["ACE_Chemlight_HiRed",5,1],["Laserbatteries",1,1]]],[],"tcw_p1_helmet_base","",["IDA_Electrobinoculars_Rep","","","",["Laserbatteries",1],[],""],["ItemMap","ItemGPS","ls_radios_cwp8","ItemCompass","ItemWatch",""]], //Main Gear in kit
 
-["tcw_dc15a","tcw_dc15s","tcw_dc15a_mag","tcw_dc15s_mag","tcw_p1_helmet_base","tcw_p1_helmet_sergeant","tcw_p1_helmet_lieutenant","tcw_p1_helmet_captain","tcw_p1_helmet_commander","tcw_clone_uniform_item","tcw_clone_uniform_item_sergeant","tcw_clone_uniform_item_lieutenant","tcw_clone_uniform_item_captain","tcw_clone_uniform_item_commander","IDA_Clone_Radiopack_ReconRig"], //Alt Gear
+_altGearTrooper, //Alt Gear
 
  "(({_x getVariable 'WBK_Kit_Name' == 'Clone Trooper'} count units group player) == 0)", //Statement must eval to true to be selectable, if not true the kit will be grayed out and unselectable
  { player setVariable ["ace_medical_medicClass", 0, true]; player setVariable ["ace_isEngineer", 0, true];} //Additional code to run
