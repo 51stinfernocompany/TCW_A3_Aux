@@ -10,9 +10,9 @@ diag_log "[TCW] XEH_postInit starting. Registering runtime object hooks...";
 // ============================================================
 private _crateRegistry = [
     ["tcw_kit_crate",          "TCW_KitBox",         "TCW_KitBox"],
-    ["tcw_kit_crate_cadet",  "TCW_KitCadet",  "TCW_KitBoxCadet"]
+    ["tcw_kit_crate_cadet",  "TCW_KitBoxCadet",  "TCW_KitBoxCadet"]
     // Add more crate types here as needed:
-    // ["tcw_kit_crate_medic", "TCW_KitBoxMedic", "TCW_KitBoxMedic"], // for example
+    // ["tcw_kit_crate_commando", "TCW_KitBoxCommando", "TCW_KitBoxCommando"], // for example
 ];
 
 // Store registry in missionNamespace BEFORE the queue condition runs
@@ -63,13 +63,17 @@ missionNamespace setVariable ["TCW_CrateRegistry", _crateRegistry];
         private _activeCrate = objNull;
         private _activeVar   = "";
 
-        // Find the first bound crate in the registry
+        // Find the first bound crate that matches its expected classname
         {
             if (_activeVar == "") then {
-                private _varName = _x select 1;
+                private _varName   = _x select 1;
+                private _classname = _x select 0;
                 if !(isNil _varName) then {
-                    _activeCrate = missionNamespace getVariable [_varName, objNull];
-                    _activeVar   = _varName;
+                    private _obj = missionNamespace getVariable [_varName, objNull];
+                    if (!isNull _obj && {typeOf _obj == _classname}) then {
+                        _activeCrate = _obj;
+                        _activeVar   = _varName;
+                    };
                 };
             };
         } forEach _registry;
@@ -82,14 +86,16 @@ missionNamespace setVariable ["TCW_CrateRegistry", _crateRegistry];
 
         WBK_GlobalKitBoxRn = _activeCrate;
 
+
         // Call the correct loaders based on which crate is present
-        if !(isNil "TCW_KitBox") then {
+       switch (_activeVar) do {
+        case "TCW_KitBox": {
             [] spawn TCW_fnc_kit_loader;
         };
-
-        if !(isNil "TCW_KitBoxCadet") then {
-            [] spawn TCW_fnc_kit_loader_cadet;
+        case "TCW_KitBoxCadet": {
+         [] spawn TCW_fnc_kit_loader_cadet;
         };
+};
 
         [_activeCrate] exec "WBK_KitMenu\WBK_Kit_Camera.sqs";
 
