@@ -42,54 +42,61 @@ if (_clanID == "") then {
 private _rankGear = [];
 
 // Add rank gear conditionally
-switch (_rank) do {
-    case "CS": {
-        _rankGear pushBackUnique "tcw_p1_helmet_sergeant";
-        _rankGear pushBackUnique "tcw_clone_uniform_item_sergeant";
-    };
-    case "CL": {
-        _rankGear pushBackUnique "tcw_p1_helmet_sergeant";
-        _rankGear pushBackUnique "tcw_clone_uniform_item_sergeant";
-        _rankGear pushBackUnique "tcw_p1_helmet_lieutenant";
-        _rankGear pushBackUnique "tcw_clone_uniform_item_lieutenant";
-    };
-    case "CPT": {
-        _rankGear pushBackUnique "tcw_p1_helmet_sergeant";
-        _rankGear pushBackUnique "tcw_clone_uniform_item_sergeant";
-        _rankGear pushBackUnique "tcw_p1_helmet_lieutenant";
-        _rankGear pushBackUnique "tcw_clone_uniform_item_lieutenant";
-        _rankGear pushBackUnique "tcw_p1_helmet_captain";
-        _rankGear pushBackUnique "tcw_clone_uniform_item_captain";
-    };
-    case "CC": {
-        _rankGear pushBackUnique "tcw_p1_helmet_sergeant";
-        _rankGear pushBackUnique "tcw_clone_uniform_item_sergeant";
-        _rankGear pushBackUnique "tcw_p1_helmet_lieutenant";
-        _rankGear pushBackUnique "tcw_clone_uniform_item_lieutenant";
-        _rankGear pushBackUnique "tcw_p1_helmet_captain";
-        _rankGear pushBackUnique "tcw_clone_uniform_item_captain";
-        _rankGear pushBackUnique "tcw_p1_helmet_commander";
-        _rankGear pushBackUnique "tcw_clone_uniform_item_commander";
+private _rankOrder = ["CS", "CL", "CPT", "CC"];
+private _rankGearMap = [
+    ["tcw_p1_helmet_sergeant",  "tcw_clone_uniform_item_sergeant"],
+    ["tcw_p1_helmet_lieutenant","tcw_clone_uniform_item_lieutenant"],
+    ["tcw_p1_helmet_captain",   "tcw_clone_uniform_item_captain"],
+    ["tcw_p1_helmet_commander", "tcw_clone_uniform_item_commander"]
+];
+
+private _rankIndex = _rankOrder find _rank;
+
+if (_rankIndex >= 0) then {
+    for "_i" from 0 to _rankIndex do {
+        { _rankGear pushBackUnique _x; } forEach (_rankGearMap select _i);
     };
 };
 
 /* <------------- Alt Gear Arrays ------------->*/
 private _altGearTrooper = ["tcw_dc15a","tcw_dc15s","tcw_dc15a_mag","tcw_dc15s_mag","tcw_p1_helmet_base","tcw_clone_uniform_item","IDA_Clone_Radiopack_ReconRig"];
-private _altGearMedic = ["tcw_dc15a","tcw_dc15s","tcw_dc15a_mag","tcw_dc15s_mag","tcw_p1_helmet_base","tcw_p1_helmet_sergeant","tcw_p1_helmet_lieutenant","tcw_p1_helmet_captain","tcw_p1_helmet_commander","tcw_clone_uniform_item","tcw_clone_uniform_item_sergeant","tcw_clone_uniform_item_lieutenant","tcw_clone_uniform_item_captain","tcw_clone_uniform_item_commander","IDA_Clone_Rucksack","IDA_Clone_Radiopack"];
-private _altGearHeavy = ["tcw_p1_helmet_base","tcw_p1_helmet_sergeant","tcw_p1_helmet_lieutenant","tcw_p1_helmet_captain","tcw_p1_helmet_commander","tcw_clone_uniform_item","tcw_clone_uniform_item_sergeant","tcw_clone_uniform_item_lieutenant","tcw_clone_uniform_item_captain","tcw_clone_uniform_item_commander","IDA_Clone_Rucksack","IDA_Clone_Radiopack"];
-private _altGearMarksman = ["tcw_p1_helmet_base","tcw_p1_helmet_sergeant","tcw_p1_helmet_lieutenant","tcw_p1_helmet_captain","tcw_p1_helmet_commander","tcw_clone_uniform_item","tcw_clone_uniform_item_sergeant","tcw_clone_uniform_item_lieutenant","tcw_clone_uniform_item_captain","tcw_clone_uniform_item_commander","IDA_Clone_ReconRig","IDA_Clone_Radiopack"];
-private _altGearAT = ["tcw_dc15a","tcw_dc15s","tcw_dc15a_mag","tcw_dc15s_mag","tcw_p1_helmet_base","tcw_p1_helmet_sergeant","tcw_p1_helmet_lieutenant","tcw_p1_helmet_captain","tcw_p1_helmet_commander","tcw_clone_uniform_item","tcw_clone_uniform_item_sergeant","tcw_clone_uniform_item_lieutenant","tcw_clone_uniform_item_captain","tcw_clone_uniform_item_commander","IDA_Clone_Rucksack","IDA_Clone_Radiopack"];
-private _altGearAssault = ["tcw_dc15a","tcw_dc15s","tcw_dc15a_mag","tcw_dc15s_mag","IDA_DC23","IDA_Blaster_Cell_Scatter_6Rnd_Blue","IDA_Clone_Knife","tcw_p1_helmet_base","tcw_p1_helmet_sergeant","tcw_p1_helmet_lieutenant","tcw_p1_helmet_captain","tcw_p1_helmet_commander","tcw_clone_uniform_item","tcw_clone_uniform_item_sergeant","tcw_clone_uniform_item_lieutenant","tcw_clone_uniform_item_captain","tcw_clone_uniform_item_commander","IDA_Clone_Rucksack","IDA_Clone_Radiopack"];
-private _altGearEngineer = ["tcw_p1_helmet_base","tcw_p1_helmet_sergeant","tcw_p1_helmet_lieutenant","tcw_p1_helmet_captain","tcw_p1_helmet_commander","tcw_clone_uniform_item","tcw_clone_uniform_item_sergeant","tcw_clone_uniform_item_lieutenant","tcw_clone_uniform_item_captain","tcw_clone_uniform_item_commander","IDA_Clone_Rucksack","IDA_Clone_ReconRig", "JLTS_Clone_backpack_RTO","IDA_Clone_Radiopack"];
+private _altGearMedic = ["tcw_dc15a","tcw_dc15s","tcw_dc15a_mag","tcw_dc15s_mag","tcw_p1_helmet_base","tcw_clone_uniform_item","IDA_Clone_Rucksack","IDA_Clone_Radiopack"];
+private _altGearHeavy = ["tcw_p1_helmet_base","tcw_clone_uniform_item","IDA_Clone_Rucksack","IDA_Clone_Radiopack"];
+private _altGearMarksman = ["tcw_p1_helmet_base","tcw_clone_uniform_item","IDA_Clone_ReconRig","IDA_Clone_Radiopack"];
+private _altGearAT = ["tcw_dc15a","tcw_dc15s","tcw_dc15a_mag","tcw_dc15s_mag","tcw_p1_helmet_base","tcw_clone_uniform_item","IDA_Clone_Rucksack","IDA_Clone_Radiopack"];
+private _altGearAssault = ["tcw_dc15a","tcw_dc15s","tcw_dc15a_mag","tcw_dc15s_mag","IDA_DC23","IDA_Blaster_Cell_Scatter_6Rnd_Blue","IDA_Clone_Knife","tcw_p1_helmet_base","tcw_clone_uniform_item","IDA_Clone_Rucksack","IDA_Clone_Radiopack"];
+private _altGearEngineer = ["tcw_p1_helmet_base","tcw_clone_uniform_item","IDA_Clone_Rucksack","IDA_Clone_ReconRig", "JLTS_Clone_backpack_RTO","IDA_Clone_Radiopack"];
 
 /* <------------- Append rank gear to the Alt Gear Arrays ------------->*/
-{ _altGearTrooper pushBackUnique _x; } forEach _rankGear;
-{ _altGearMedic pushBackUnique _x; } forEach _rankGear;
-{ _altGearHeavy pushBackUnique _x; } forEach _rankGear;
-{ _altGearMarksman pushBackUnique _x; } forEach _rankGear;
-{ _altGearAT pushBackUnique _x; } forEach _rankGear;
-{ _altGearAssault pushBackUnique _x; } forEach _rankGear;
-{ _altGearEngineer pushBackUnique _x; } forEach _rankGear;
+private _allAltGear = [
+    _altGearTrooper,
+    _altGearMedic,
+    _altGearHeavy,
+    _altGearMarksman,
+    _altGearAT,
+    _altGearAssault,
+    _altGearEngineer
+];
+
+//Possibly Temporary catch for non-standard or missing ranks at launch. Enables all rank gear if no rank found.
+if (!(_rank in _rankOrder)) then {
+    diag_log format ["[TCW] WARNING: Rank '%1' not recognised, adding all rank gear as fallback.", _rank];
+    private _allRankGear = [];
+    { { _allRankGear pushBackUnique _x; } forEach _x; } forEach _rankGearMap;
+    {
+        { _x pushBackUnique _y; } forEach _allRankGear;  // _x is the kit array, _y is each gear item
+    } forEach _allAltGear;
+} else {
+    {
+        { _x pushBackUnique _y; } forEach _rankGear;
+    } forEach _allAltGear;
+};
+
+// Code for after removal the backend data collection is fully finished
+/*{
+    private _kit = _x;
+    { _kit pushBackUnique _x; } forEach _rankGear;
+} forEach _allAltGear;*/
 
 /* <------------- The Basic Kits ------------->*/
 // Trooper
