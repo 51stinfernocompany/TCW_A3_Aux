@@ -11,6 +11,7 @@ class CfgWeapons {
     class ACE_elasticBandage;
     class TCW_bactaSpray : ACE_elasticBandage {
         displayName = "[TCW] Bacta Spray";
+        picture = "x\tcw\addons\TCW_Medical\ui\Bacta_Spray_ca.paa";
     };
 
     class ACE_surgicalKit;
