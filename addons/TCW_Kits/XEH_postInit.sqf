@@ -1,47 +1,98 @@
 // Force execution ONLY on clients with a visual display interface
 if !(hasInterface) exitWith {};
 
-diag_log "[WebKnights] XEH_postInit starting. Registering runtime object hooks...";
+diag_log "[TCW] XEH_postInit starting. Registering runtime object hooks...";
 
-// Class Event Handler: Fires the exact frame ANY 'tcw_kit_crate' spawns
+// ============================================================
+//  CRATE REGISTRY
+//  To add a new crate type, add a new entry to this array:
+//  [classname, global variable name, vehicle var name]
+// ============================================================
+private _crateRegistry = [
+    ["tcw_kit_crate",          "TCW_KitBox",         "TCW_KitBox"],
+    ["tcw_kit_crate_cadet",  "TCW_KitCadet",  "TCW_KitBoxCadet"]
+    // Add more crate types here as needed:
+    // ["tcw_kit_crate_medic", "TCW_KitBoxMedic", "TCW_KitBoxMedic"], // for example
+];
+
+// Store registry in missionNamespace BEFORE the queue condition runs
+missionNamespace setVariable ["TCW_CrateRegistry", _crateRegistry];
+
+// ============================================================
+//  AUTO-REGISTER CLASS EVENT HANDLERS
+//  Iterates the registry and registers an init EH for each
+// ============================================================
+{
+    private _classname  = _x select 0;
+    private _varName    = _x select 1;
+    private _vehicleVar = _x select 2;
+
+    [
+        _classname,
+        "init",
+        {
+            params ["_crate", "_varName", "_vehicleVar"];
+            _crate setVehicleVarName _vehicleVar;
+            missionNamespace setVariable [_varName, _crate, true];
+            diag_log format ["[TCW] SUCCESS: Class Hook caught %1. Bound to '%2'.", typeOf _crate, _varName];
+        },
+        [_varName, _vehicleVar]
+    ] call CBA_fnc_addClassEventHandler;
+
+} forEach _crateRegistry;
+
+// ============================================================
+//  QUEUE SYSTEM
+//  Waits until any registered crate variable is bound,
+//  then launches the kit menu with whichever crate is present
+// ============================================================
 [
-    "tcw_kit_crate",
-    "init",
-    {
-        params ["_crate"];
-
-        // Force bind identity variables inside the engine's physics/network tables
-        _crate setVehicleVarName "TCW_KitBox";
-        TCW_KitBox = _crate;
-        missionNamespace setVariable ["TCW_KitBox", _crate, true];
-        missionNamespace setVariable ["WBK_GlobalKitBoxRn", _crate, true];
-
-        diag_log "[WebKnights] SUCCESS: Class Hook caught tcw_kit_crate. Global variables bound.";
-    }
-] call CBA_fnc_addClassEventHandler;
-
-
-// Queue System: Waits smoothly for player rendering, UI Display 46, and the Box asset to exist
-[
+    // CONDITION: player ready + at least one registered crate is bound
     {
         !isNull player &&
         time > 0 &&
         local player &&
         !isNull (findDisplay 46) &&
-        !isNil "TCW_KitBox"
+        ({!(isNil (_x select 1))} count (missionNamespace getVariable ["TCW_CrateRegistry", []])) > 0
     },
+    // STATEMENT: fires when condition is true
     {
-        diag_log "[TCW] Player environment and Kit Box validated. Launching menu sequence...";
+        diag_log "[TCW] Player environment validated. Searching for active crate...";
 
-        // Attach to the box
-        WBK_GlobalKitBoxRn = TCW_KitBox;
+        private _registry    = missionNamespace getVariable ["TCW_CrateRegistry", []];
+        private _activeCrate = objNull;
+        private _activeVar   = "";
 
-        [] spawn TCW_fnc_kit_loader;
+        // Find the first bound crate in the registry
+        {
+            if (_activeVar == "") then {
+                private _varName = _x select 1;
+                if !(isNil _varName) then {
+                    _activeCrate = missionNamespace getVariable [_varName, objNull];
+                    _activeVar   = _varName;
+                };
+            };
+        } forEach _registry;
 
-        // Pass the actual crate object reference directly into the camera script execution parameter array
-        [TCW_KitBox] exec "WBK_KitMenu\WBK_Kit_Camera.sqs";
+        if (isNull _activeCrate) exitWith {
+            diag_log "[TCW] CRITICAL ERROR: Crate variable bound but object is null.";
+        };
 
-        // Play cosmetic immersive unit animations
+        diag_log format ["[TCW] Active crate found: %1 via '%2'. Launching menu...", typeOf _activeCrate, _activeVar];
+
+        WBK_GlobalKitBoxRn = _activeCrate;
+
+        // Call the correct loaders based on which crate is present
+        if !(isNil "TCW_KitBox") then {
+            [] spawn TCW_fnc_kit_loader;
+        };
+
+        if !(isNil "TCW_KitBoxCadet") then {
+            [] spawn TCW_fnc_kit_loader_cadet;
+        };
+
+        [_activeCrate] exec "WBK_KitMenu\WBK_Kit_Camera.sqs";
+
         player switchMove selectRandom [
             "Acts_AidlPercMstpSloWWrflDnon_warmup_1",
             "Acts_AidlPercMstpSloWWrflDnon_warmup_2",
@@ -50,15 +101,11 @@ diag_log "[WebKnights] XEH_postInit starting. Registering runtime object hooks..
             "Acts_AidlPercMstpSloWWrflDnon_warmup_5"
         ];
 
-        // Turn player smoothly 180 degrees away from the box positioning orientation
-        private _dirToObj = [player, TCW_KitBox] call BIS_fnc_dirTo;
-        player setDir (_dirToObj - 180);
-
-        diag_log "[TCW] Kit system execution triggered successfully with kit loaders initialized.";
+        diag_log "[TCW] Kit system execution triggered successfully.";
     },
     [],
     60,
     {
-        diag_log "[TCW] CRITICAL TIMEOUT ERROR: Initialization stopped. Player environment or 'tcw_kit_crate' missing from map.";
+        diag_log "[TCW] CRITICAL TIMEOUT ERROR: Player environment or kit crate missing from map.";
     }
 ] call CBA_fnc_waitUntilAndExecute;
