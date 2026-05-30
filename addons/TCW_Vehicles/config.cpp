@@ -1,23 +1,41 @@
-#include "CfgEditorSubcategories.hpp"
-#include "CfgEditorCategories.hpp"
-#include "CfgFactionClasses.hpp"
-class CfgPatches
-    {
-    class tcw_aux_zeus
-    {
-        author=" TCW Aux Team";
+class CfgPatches {
+    class tcw_vehicles {
+        author = "TCW Team";
+        name = "tcw_vehicles";
+        requiredVersion = 2.20;
         requiredAddons[]=
         {
-            "A3_Data_F_Decade_Loadorder",
-            "ls_armor_bluefor",
-            "SWLB_CEE",
-            "SWLB_clones",
-            "lsd_vehicles_heli",
-            "ls_equipment_bluefor",
-            "ls_props_staticships"
+            "A3_Data_F_Decade_Loadorder", "cba_main"
         };
-        requiredVersion=1;
         units[]={};
         weapons[]={};
+    };
+};
+
+class CfgEditorSubcategories
+{
+    class tcw_air_assault
+    {
+        displayName="Air Assault";
+    };
+    class tcw_air_transport
+    {
+        displayName="Air Transport";
+    };
+    class tcw_air_logistics
+    {
+        displayName="Air Logistics";
+    };
+    class tcw_ground_assault
+    {
+        displayName="Ground Assault";
+    };
+    class tcw_ground_transport
+    {
+        displayName="Ground Transport";
+    };
+    class tcw_ground_logistics
+    {
+        displayName="Ground Logistics";
     };
 };
