@@ -4,13 +4,21 @@ class CfgPatches
 	{
 		units[] =
 		{
-			"tcw_clone_uniform", "tcw_clone_uniform_sergeant", "tcw_clone_uniform_lieutenant", "tcw_clone_uniform_captain", "tcw_clone_uniform_commander",
+			"tcw_clone_uniform", 
+			"tcw_clone_uniform_sergeant", 
+			"tcw_clone_uniform_lieutenant", 
+			"tcw_clone_uniform_captain", 
+			"tcw_clone_uniform_commander",
 		};
 		weapons[] =
 		{
-			"tcw_clone_uniform_item", "tcw_clone_uniform_item_sergeant", "tcw_clone_uniform_item_lieutenant", "tcw_clone_uniform_item_captain", "tcw_clone_uniform_item_commander",
+			"tcw_clone_uniform_item", 
+			"tcw_clone_uniform_item_sergeant", 
+			"tcw_clone_uniform_item_lieutenant",
+			"tcw_clone_uniform_item_captain", 
+			"tcw_clone_uniform_item_commander",
 		};
-		requiredVersion = 0.100000;
+		requiredVersion = 2.20;
 		requiredAddons[] = { "Indecisive_Armoury_units", };
 	};
 };
@@ -28,7 +36,10 @@ class CfgWeapons
 		displayName = "[TCW] Clone Armour";
 		class ItemInfo : UniformItem
 		{
+			uniformModel="\Indecisive_Armoury_units\REPUBLIC\Clone_Uniform\IDA_Clone_Uniform.p3d";
 			uniformClass = "tcw_clone_uniform";
+			uniformType="Neopren";
+			containerClass="Supply50";
 			mass = 15;
 		};
 	};
@@ -38,7 +49,10 @@ class CfgWeapons
 		displayName = "[TCW] Clone Armour (Sergeant)";
 		class ItemInfo : UniformItem
 		{
+			uniformModel="\Indecisive_Armoury_units\REPUBLIC\Clone_Uniform\IDA_Clone_Uniform.p3d";
 			uniformClass = "tcw_clone_uniform_sergeant";
+			uniformType="Neopren";
+			containerClass="Supply50";
 			mass = 15;
 		};
 	};
@@ -48,7 +62,10 @@ class CfgWeapons
 		displayName = "[TCW] Clone Armour (Lieutenant)";
 		class ItemInfo : UniformItem
 		{
+			uniformModel="\Indecisive_Armoury_units\REPUBLIC\Clone_Uniform\IDA_Clone_Uniform.p3d";
 			uniformClass = "tcw_clone_uniform_lieutenant";
+			uniformType="Neopren";
+			containerClass="Supply50";
 			mass = 15;
 		};
 	};
@@ -58,7 +75,10 @@ class CfgWeapons
 		displayName = "[TCW] Clone Armour (Captain)";
 		class ItemInfo : UniformItem
 		{
+			uniformModel="\Indecisive_Armoury_units\REPUBLIC\Clone_Uniform\IDA_Clone_Uniform.p3d";
 			uniformClass = "tcw_clone_uniform_captain";
+			uniformType="Neopren";
+			containerClass="Supply50";
 			mass = 15;
 		};
 	};
@@ -68,7 +88,10 @@ class CfgWeapons
 		displayName = "[TCW] Clone Armour (Commander)";
 		class ItemInfo : UniformItem
 		{
+			uniformModel="\Indecisive_Armoury_units\REPUBLIC\Clone_Uniform\IDA_Clone_Uniform.p3d";
 			uniformClass = "tcw_clone_uniform_commander";
+			uniformType="Neopren";
+			containerClass="Supply50";
 			mass = 15;
 		};
 	};

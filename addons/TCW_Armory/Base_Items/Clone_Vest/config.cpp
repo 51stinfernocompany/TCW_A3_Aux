@@ -4,13 +4,13 @@ class CfgPatches
 	{
 		units[] =
 		{
-			"",
+		
 		};
 		weapons[] =
 		{
 			"tcw_vest_plate_base",
 		};
-		requiredVersion = 0.100000;
+		requiredVersion = 2.20;
 		requiredAddons[] = { "Indecisive_Armoury_units", };
 	};
 };
