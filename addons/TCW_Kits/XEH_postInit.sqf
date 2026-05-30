@@ -93,7 +93,7 @@ missionNamespace setVariable ["TCW_CrateRegistry", _crateRegistry];
             [] spawn TCW_fnc_kit_loader;
         };
         case "TCW_KitBoxCadet": {
-         [] spawn TCW_fnc_kit_loader_cadet;
+            [] spawn TCW_fnc_kit_loader_cadet;
         };
 };
 
