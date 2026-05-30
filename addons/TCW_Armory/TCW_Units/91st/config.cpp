@@ -1,75 +1,303 @@
-/*
 class CfgPatches 
 {
-	class TCW_Units_91st
+	class tcw_units_91st
 	{
+		author = "TCW Team";
+		filename = "tcw_armory.pbo";
 		units[] = 
 		{
-			""
+			"tcw_unit_91st_base",
+			"tcw_unit_91st_cpl",
+			"tcw_unit_91st_sgt",
+			"tcw_unit_91st_blackout",
+			"tcw_backpack_91st"
 		};
 		weapons[] = 
 		{
-			""
+			"tcw_p1_helmet_91st_base",
+			"tcw_p1_helmet_91st_medic",
+			"tcw_p1_helmet_91st_cpl",
+			"tcw_p1_helmet_91st_sgt",
+			"tcw_p1_helmet_91st_blackout",
+			"tcw_uniform_91st_base",
+			"tcw_uniform_91st_cpl",
+			"tcw_uniform_91st_sgt",
+			"tcw_uniform_91st_blackout"
 		};
-		requiredVersion = 0.100000;
+		requiredVersion = 2.20;
 		requiredAddons[] = {};
 	};
 };
 
 class CfgWeapons
 {
-	class TCW_Base_Helmet_SEA_P1;
-	class TCW_Units_91st_Helmet_P1: TCW_Base_Helmet_SEA_P1	
+//Helmet
+	class tcw_p1_helmet_base;
+	class tcw_p1_helmet_91st_base : tcw_p1_helmet_base	
 	{
 		scope = 2;
-		displayName = "[TCW:A3] 91st P1 Helmet";
-		author = "Balance + Ithias";
-		hiddenSelectionsTextures[] = 
+		displayName = "[TCW] 91st P1 Helmet";
+		author = "TCW Team";
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\p1_helmet_91st_base_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\p1_helmet_91st_base_co.paa"};
+		class xtdgearinfo
 		{
-			"\TCW_A3_Aux\TCW_Units\91st\Tex\TCW_Units_91st_Helmet_P1.paa",	// Helmet
-			"\JLTS_AE\Data\BaseTextures\P1\P1_Helmet_CO.paa",	// Visor
+			model = "tcw_unit_helmets_91st";
+			camo = "ct";
 		};
 	};
-	class TCW_Base_Helmet_IDA_BARC;
-	class TCW_Units_91st_Helmet_BARC: TCW_Base_Helmet_IDA_BARC
+
+	class tcw_p1_helmet_91st_medic : tcw_p1_helmet_base	
 	{
 		scope = 2;
-		displayName = "[TCW:A3] 91st BARC Helmet";
-		author = "Balance + Ithias";
-		hiddenSelectionsTextures[] = 
+		displayName = "[TCW] 91st Medic P1 Helmet";
+		author = "TCW Team";
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\p1_helmet_91st_medic_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\p1_helmet_91st_medic_co.paa"};
+		class xtdgearinfo
 		{
-			"\TCW_A3_Aux\TCW_Units\91st\Tex\TCW_Units_91st_Helmet_BARC.paa",	// Helmet
-			"\Indecisive_Armoury_units\REPUBLIC\Clone_BARC_Helmet\IDA_BARC_Helmet_co.paa",	// Visor
+			model = "tcw_unit_helmets_91st";
+			camo = "medic";
 		};
 	};
-	class SEA_Uniform_Clean;
-	class TCW_Base_Uniform_SEA: SEA_Uniform_Clean
-	{
-		class ItemInfo;
-	};
-	class TCW_Units_91st_Uniform_SEA: TCW_Base_Uniform_SEA
+
+	class tcw_p1_helmet_91st_cpl : tcw_p1_helmet_base	
 	{
 		scope = 2;
-		displayName = "[TCW:A3] 91st Uniform";
-		author = "Balance + Ithias";
-		class ItemInfo: ItemInfo 
+		displayName = "[TCW] 91st Corporal P1 Helmet";
+		author = "TCW Team";
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\p1_helmet_91st_cpl_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\p1_helmet_91st_cpl_co.paa"};
+		class xtdgearinfo
 		{
-			uniformClass = "TCW_Units_91st_Uniform_SEA_Veh";
+			model = "tcw_unit_helmets_91st";
+			camo = "cpl";
+		};
+	};
+
+	class tcw_p1_helmet_91st_sgt : tcw_p1_helmet_base	
+	{
+		scope = 2;
+		displayName = "[TCW] 91st Sergeant P1 Helmet";
+		author = "TCW Team";
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\p1_helmet_91st_sgt_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\p1_helmet_91st_sgt_co.paa"};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_helmets_91st";
+			camo = "sgt";
+		};
+	};
+
+	class tcw_p1_helmet_91st_blackout : tcw_p1_helmet_base	
+	{
+		scope = 2;
+		displayName = "[TCW] 91st 'Blackout' P1 Helmet";
+		author = "TCW Team";
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\p1_helmet_91st_blackout_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\p1_helmet_91st_blackout_co.paa"};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_helmets_91st";
+			camo = "blackout";
+		};
+	};
+
+
+//Uniform
+	class tcw_clone_uniform;
+	class ItemInfo;
+	class UniformItem;
+	class tcw_uniform_91st_base : tcw_clone_uniform
+	{
+		scope = 2;
+		displayName = "[TCW] 91st Uniform";
+		author = "TCW Team";
+		class ItemInfo: UniformItem 
+		{
+			uniformModel="\Indecisive_Armoury_units\REPUBLIC\Clone_Uniform\IDA_Clone_Uniform.p3d";
+			uniformClass="tcw_unit_91st_base";
+			uniformType="Neopren";
+			containerClass="Supply50";
+			mass=15;
+		};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_uniforms_91st";
+			camo = "ct";
+		};
+	};
+
+	class tcw_uniform_91st_cpl : tcw_clone_uniform
+	{
+		scope = 2;
+		displayName = "[TCW] 91st Corporal Uniform";
+		author = "TCW Team";
+		class ItemInfo: UniformItem 
+		{
+			uniformModel="\Indecisive_Armoury_units\REPUBLIC\Clone_Uniform\IDA_Clone_Uniform.p3d";
+			uniformClass="tcw_unit_91st_cpl";
+			uniformType="Neopren";
+			containerClass="Supply50";
+			mass=15;
+		};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_uniforms_91st";
+			camo = "cpl";
+		};
+	};
+
+	class tcw_uniform_91st_sgt : tcw_clone_uniform
+	{
+		scope = 2;
+		displayName = "[TCW] 91st Sergeant Uniform";
+		author = "TCW Team";
+		class ItemInfo: UniformItem 
+		{
+			uniformModel="\Indecisive_Armoury_units\REPUBLIC\Clone_Uniform\IDA_Clone_Uniform.p3d";
+			uniformClass="tcw_unit_91st_sgt";
+			uniformType="Neopren";
+			containerClass="Supply50";
+			mass=15;
+		};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_uniforms_91st";
+			camo = "sgt";
+		};
+	};
+
+	class tcw_uniform_91st_blackout : tcw_clone_uniform
+	{
+		scope = 2;
+		displayName = "[TCW] 91st 'Blackout' Uniform";
+		author = "TCW Team";
+		class ItemInfo: UniformItem 
+		{
+			uniformModel="\Indecisive_Armoury_units\REPUBLIC\Clone_Uniform\IDA_Clone_Uniform.p3d";
+			uniformClass="tcw_unit_91st_blackout";
+			uniformType="Neopren";
+			containerClass="Supply50";
+			mass=15;
+		};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_uniforms_91st";
+			camo = "blackout";
 		};
 	};
 };
 
 class CfgVehicles
 {
-	class TCW_Base_Uniform_SEA_Veh;
-	class TCW_Units_91st_Uniform_SEA_Veh: TCW_Base_Uniform_SEA_Veh
+	class tcw_clone_unit;
+	class tcw_unit_91st_base : tcw_clone_unit
 	{
-		uniformClass = "TCW_Units_91st_Uniform_SEA";
+		uniformClass = "tcw_uniform_91st_base";
 		hiddenSelectionsTextures[] = 
 		{
-			"\MRC\JLTS\characters\CloneLegions\data\Clone_91stTrooper_armor1_co.paa",
-			"\MRC\JLTS\characters\CloneLegions\data\Clone_91stTrooper_armor2_co.paa",
+			"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\uniform_clone_upper_91st_base_co.paa",
+			"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\uniform_clone_lower_91st_base_co.paa",
+		};
+	};
+	class tcw_unit_91st_cpl : tcw_clone_unit
+	{
+		uniformClass = "tcw_uniform_91st_cpl";
+		hiddenSelectionsTextures[] = 
+		{
+			"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\uniform_clone_upper_91st_cpl_co.paa",	// Top
+			"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\uniform_clone_lower_91st_cpl_co.paa",	// Bottom
+		};
+	};
+	class tcw_unit_91st_sgt : tcw_clone_unit
+	{
+		uniformClass = "tcw_uniform_91st_sgt";
+		hiddenSelectionsTextures[] = 
+		{
+			"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\uniform_clone_upper_91st_sgt_co.paa",	// Top
+			"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\uniform_clone_lower_91st_sgt_co.paa",	// Bottom
+		};
+	};
+	class tcw_unit_91st_blackout : tcw_clone_unit
+	{
+		uniformClass = "tcw_uniform_91st_blackout";
+		hiddenSelectionsTextures[] = 
+		{
+			"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\uniform_clone_upper_91st_blackout_co.paa",	// Top
+			"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\uniform_clone_lower_91st_base_co.paa",	// Bottom
+		};
+	};
+	class tcw_clone_backpack;
+	class tcw_backpack_91st : tcw_clone_backpack
+	{
+		scope = 2;
+		displayName = "[TCW] 91st Backpack";
+		author = "TCW Team";
+		hiddenSelections[] = {"Rucksack","Grenade","Cloth"};
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\backpack_91st_co.paa","\Indecisive_Armoury_Units\REPUBLIC\Backpacks\IDA_Clone_Rucksack\IDA_Clone_Rucksack_Grenade_co.paa","\Indecisive_Armoury_Units\REPUBLIC\Backpacks\IDA_Clone_Rucksack\IDA_Clone_Rucksack_Cloth_co.paa"};	
+	};
+};
+
+
+
+class xtdgearmodels
+{
+	class cfgweapons
+	{
+		class tcw_unit_helmets_91st
+		{
+			label = "[TCW] 91st Helmets";
+			author = "TCW Team";
+			options[] = {"camo"};
+			class camo
+			{
+				changeingame = 0;
+				values[] = {"ct","medic","cpl","sgt","blackout"};
+				class ct
+				{
+					label = "Standard";
+				};
+				class medic
+				{
+					label = "Medic";
+				};
+				class cpl
+				{
+					label = "Corporal";
+				};
+				class sgt
+				{
+					label = "Sergeant";
+				};
+				class blackout
+				{
+					label = "'Blackout'";
+				};
+			};
+		};
+
+		class tcw_unit_uniforms_91st
+		{
+			label = "[TCW] 91st Uniforms";
+			author = "TCW Team";
+			options[] = {"camo"};
+			class camo
+			{
+				changeingame = 0;
+				values[] = {"ct","cpl","sgt","blackout"};
+				class ct
+				{
+					label = "Standard";
+				};
+				class cpl
+				{
+					label = "Corporal";
+				};
+				class sgt
+				{
+					label = "Sergeant";
+				};
+				class blackout
+				{
+					label = "'Blackout'";
+				};
+			};
 		};
 	};
 };
-*/
