@@ -26,20 +26,28 @@ class CfgPatches
             "tcw_dc15s_mag_red",
             "tcw_dc15a_mag",
             "tcw_dc15a_mag_red",
+            "tcw_stun_mag_long",
             "tcw_HE_LauncherGrenade",
             "tcw_Smoke_LauncherGrenade",
             "tcw_SmokeRed_LauncherGrenade",
             "tcw_SmokeGreen_LauncherGrenade",
             "tcw_SmokeBlue_LauncherGrenade",
-            "tcw_SmokePurple_LauncherGrenade"
+            "tcw_SmokePurple_LauncherGrenade",
+            "tcw_dc15c_mag",
+            "tcw_westar_mag"
         };
         weapons[] =
         {
-            "tcw_DC17M",
+            "tcw_DC17m",
             "tcw_dc15s",
             "tcw_dc15s_ugl",
+            "tcw_dc15s_shield",
             "tcw_dc15a",
-            "tcw_dc15a_ugl"
+            "tcw_dc15a_ugl",
+            "tcw_stun_muzzle",
+            "tcw_dc15c",
+            "tcw_westar",
+            "tcw_westar_ugl"
         };
     };
 };
@@ -97,6 +105,7 @@ class CfgAmmo {
         fuseDistance = 12;
     };
 };
+
 class CfgMagazines {
     // DC15A
     class IDA_Blaster_Cell_Power3_40Rnd_Blue;
@@ -146,7 +155,43 @@ class CfgMagazines {
         author = "TCW Team";
         BaseWeapon = "tcw_dc17m_AT_mag";
         ammo = "tcw_at_shell_dc17M";
-        displayName = "[TCW] T-31 Deuterium-Core Anti-Armor Detonator";
+        displayName = "[TCW] T-31 Anti-Armor Detonator";
+        scope = 2;
+    };
+
+    //DC-15C
+    class 3AS_40Rnd_EC40_Mag;
+    class tcw_dc15c_mag : 3AS_40Rnd_EC40_Mag
+    {
+        author = "TCW Team";
+        BaseWeapon = "tcw_dc15c_mag";
+        displayName = "[TCW] DC-15C Energy Cell";
+        displayNameShort = "DC-15C Energy Cell";
+        descriptionShort = "40 round capacity.";
+        ammo = "tcw_blasterbolt_dc15a";
+        scope = 2;
+    };
+
+    //Westar
+    class tcw_westar_mag : IDA_Blaster_Cell_Power3_40Rnd_Blue {
+        author = "TCW Team";
+        BaseWeapon = "tcw_westar_mag";
+        displayName = "[TCW] Westar M5 Energy Cell";
+        displayNameShort = "Westar Energy Cell";
+        descriptionShort = "40 round capacity.";
+
+        ammo = "tcw_blasterbolt_dc15a";
+        count = 40;
+        scope = 2;
+    };
+
+    // Stun Rounds
+    class JLTS_stun_mag_long;
+    class tcw_stun_mag_long : JLTS_stun_mag_long {
+        author = "TCW Team";
+        BaseWeapon = "tcw_stun_mag_long";
+        displayName = "[TCW] Stun Mag Long";
+        displayNameShort = "Stun Mag Long";
         scope = 2;
     };
 
@@ -199,6 +244,10 @@ class CfgMagazines {
 };
 
 class CfgWeapons {
+    class JLTS_stun_muzzle;
+    class tcw_stun_muzzle: JLTS_stun_muzzle {
+        magazines[] = {"tcw_stun_mag_long"};
+    };
     class EGLM;
     // DC-15S UGL
     class IDA_DC15S_UGL;
@@ -244,13 +293,16 @@ class CfgWeapons {
         BaseWeapon = "tcw_dc15a";
         displayName = "[TCW] DC-15A";
         magazines[] = {"tcw_dc15a_mag"};
-        muzzles[] = {"this"};
+        muzzles[] = {"this","Stun"};
         scope = 2;
         class FullAuto : FullAuto {
             reloadTime = 0.1999995;
         };
         class Single : Single {
             reloadTime = 0.102;
+        };
+        class Stun : tcw_stun_muzzle {
+            displayName = "[TCW] Stun";
         };
     };
 
@@ -302,6 +354,80 @@ class CfgWeapons {
         JLTS_shieldedWeapon = "tcw_dc15s_shield";
         scope = 2;
     };
+    class JLTS_DC15S_shield;
+    class tcw_dc15s_shield: JLTS_DC15S_shield{
+        author = "TCW Team";
+        BaseWeapon = "tcw_dc15s";
+        displayName = "[TCW] DC-15S (Shielded)";
+        magazines[] = {"tcw_dc15s_mag"};
+        muzzles[] = {"this","Stun"};
+        JLTS_isShielded = 1;
+        JLTS_baseWeapon = "tcw_dc15s";
+        class Stun : tcw_stun_muzzle{
+            displayName="[TCW] Stun";
+        };
+    };
+
+    // DC-15C
+    class 3AS_DC15C_F;
+    class tcw_dc15c : 3AS_DC15C_F
+    {
+        author = "TCW Team";
+        BaseWeapon = "tcw_dc15c";
+        displayName = "[TCW] DC-15C";
+        magazines[] = {"tcw_dc15c_mag"};
+        magazineWell[] = {};
+        muzzles[] = {"this"};
+        modes[] = {"FullAuto","Single"};
+        scope = 2;
+        class FullAuto : FullAuto {
+            reloadTime = 0.1;
+        };
+        class Single : Single {
+            reloadTime = 0.1;
+        };
+    };
+
+    //Westar
+    class 3AS_WestarM5_F;
+    class tcw_westar: 3AS_WestarM5_F{
+        author = "TCW Team";
+        BaseWeapon = "tcw_westar";
+        displayName = "[TCW] Westar M5";
+        magazines[] = {"tcw_westar_mag"};
+        muzzles[] = {"this","Stun"};
+        scope = 2;
+        class Stun : tcw_stun_muzzle{
+            displayName="[TCW] Stun";
+        };
+    };
+    class 3AS_WestarM5_GL;
+    class tcw_westar_ugl: 3AS_WestarM5_GL{
+        author = "TCW Team";
+        BaseWeapon = "tcw_westar_ugl";
+        displayName = "[TCW] Westar M5 (UGL)";
+        magazines[] = {"tcw_westar_mag"};
+        muzzles[] = {"this","EGLM"};
+        scope = 2;
+        class EGLM : EGLM {
+            displayName="[TCW] UGL";
+            descriptionShort="Grenade Launcher";
+            magazines[] =
+            {
+                "tcw_HE_LauncherGrenade",
+                "tcw_Smoke_LauncherGrenade",
+                "tcw_SmokeRed_LauncherGrenade",
+                "tcw_SmokeGreen_LauncherGrenade",
+                "tcw_SmokeBlue_LauncherGrenade",
+                "tcw_SmokePurple_LauncherGrenade",
+                "ACE_40mm_Flare_Red",
+                "ACE_40mm_Flare_White",
+                "ACE_HuntIR_M203"
+            };
+            magazineWell[] = {};
+        };
+    };
+
 
     // DC17M
     class IDA_DC17M;

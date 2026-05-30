@@ -18,18 +18,20 @@ class CfgPatches
         {
             "tcw_dc15x_ammo",
             "tcw_dc15x_ammo_red",
-            "tcw_blasterbolt_Amp"
+            "tcw_valken38_ammo"
         };
         magazines[] =
         {
             "tcw_dc15x_magazine",
             "tcw_dc15x_magazine_red",
-            "tcw_773FP_magazine"
+            "tcw_773FP_magazine",
+            "tcw_valken38_magazine",
         };
         weapons[] =
         {
             "tcw_DC15X",
-            "tcw_773Firepuncher"
+            "tcw_773firepuncher",
+            "tcw_valken38x",
         };
     };
 };
@@ -37,7 +39,7 @@ class CfgPatches
 class CfgAmmo {
     // DC-15x, Firepuncher 773FP
     class IDA_Blasterbolt_Power2_Blue;
-    class IDA_Blasterbolt_Power5_Blue;
+    class IDA_Blasterbolt_Power4_Blue;
     class tcw_blasterbolt_dc15x : IDA_Blasterbolt_Power2_Blue {
         author = "TCW Team";
         JLTS_isEMPAmmo = 0;
@@ -53,7 +55,7 @@ class CfgAmmo {
     };
 
     // Valken-38x
-    class tcw_valken38_ammo : IDA_Blasterbolt_Power5_Blue {
+    class tcw_valken38_ammo : IDA_Blasterbolt_Power4_Blue {
         author = "TCW Team";
         JLTS_isEMPAmmo = 0;
         hit = 15;
@@ -61,6 +63,18 @@ class CfgAmmo {
 };
 
 class CfgMagazines {
+    // Valken-38x
+    class 3AS_10Rnd_EC80_Mag;
+    class tcw_valken38x_mag : 3AS_10Rnd_EC80_Mag 
+    {
+        author = "TCW Team";
+        BaseWeapon = "tcw_valken38x_mag";
+        displayName = "[TCW] Valken 20Rnd Energy Cell";
+        initSpeed=900;
+        count = 20;
+        ammo = "tcw_valken38_ammo";
+        scope = 2;
+    };
 
     // Firepuncher 773FP
     class IDA_Blaster_Cell_Power3_60Rnd_Blue;
@@ -118,36 +132,6 @@ class CfgWeapons {
             dispersion = 0;
             recoilProne = "recoil_single_prone_ebr";
         };
-        class WeaponSlotsInfo: WeaponSlotsInfo{
-            class MuzzleSlot: MuzzleSlot
-            {
-                compatibleItems[] = {
-                };
-            };
-            class CowsSlot: CowsSlot 
-            {
-                compatibleItems[] = {
-                    "tcw_dc15le_optic",
-                    "tcw_dc15x_optic", 
-                    "tcw_e30b_optic",
-                    "tcw_e30c_optic",
-                    "tcw_valken_optic",
-                    "tcw_westar_optic",
-                };
-            };
-            class PointerSlot: PointerSlot 
-            {
-                compatibleItems[] = {
-                    
-                };
-            };
-            class UnderBarrelSlot: UnderBarrelSlot 
-            {
-                compatibleItems[] = {
-                    "tcw_bipod"
-                };
-            };
-        };
     };
 
 
@@ -177,36 +161,16 @@ class CfgWeapons {
         class Single: Single {
             dispersion = 0;
         };
+    };
 
-        class WeaponSlotsInfo: WeaponSlotsInfo{
-            class MuzzleSlot: MuzzleSlot
-            {
-                compatibleItems[] = {
-                };
-            };
-            class CowsSlot: CowsSlot 
-            {
-                compatibleItems[] = {
-                    "tcw_dc15le_optic",
-                    "tcw_dc15x_optic", 
-                    "tcw_e30b_optic",
-                    "tcw_e30c_optic",
-                    "tcw_valken_optic",
-                    "tcw_westar_optic",
-                };
-            };
-            class PointerSlot: PointerSlot 
-            {
-                compatibleItems[] = {
-                    
-                };
-            };
-            class UnderBarrelSlot: UnderBarrelSlot 
-            {
-                compatibleItems[] = {
-                    "tcw_bipod"
-                };
-            };
-        };
+    // Valken-38x
+    class 3AS_Valken38X_F;
+    class tcw_valken38x : 3AS_Valken38X_F {
+        author = "TCW Team";
+        BaseWeapon = "tcw_valken38x";
+        displayName = "[TCW] Valken-38X";
+        magazines[] = {"tcw_valken38x_mag"};
+        magazineWell[] = {};
+        scope = 2;
     };
 };
