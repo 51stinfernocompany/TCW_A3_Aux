@@ -7,7 +7,8 @@ class CfgPatches
 		units[] = 
 		{
 			"tcw_unit_501st_base",
-			"tcw_unit_501st_alt"
+			"tcw_unit_501st_alt",
+			"tcw_backpack_501st"
 		};
 		weapons[] = 
 		{
@@ -146,6 +147,14 @@ class CfgVehicles
 			"x\tcw\addons\TCW_Armory\TCW_Units\501st\Tex\uniform_clone_lower_501st_alt_co.paa",	// Bottom
 		};
 	};
+	class tcw_clone_backpack;
+	class tcw_backpack_501st : tcw_clone_backpack
+	{
+		scope = 2;
+		displayName = "[TCW] 501st Backpack";
+		author = "TCW Team";
+		hiddenSelections[] = {"Rucksack","Grenade","Cloth"};
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\501st\Tex\backpack_501st_co.paa","\Indecisive_Armoury_Units\REPUBLIC\Backpacks\IDA_Clone_Rucksack\IDA_Clone_Rucksack_Grenade_co.paa","\Indecisive_Armoury_Units\REPUBLIC\Backpacks\IDA_Clone_Rucksack\IDA_Clone_Rucksack_Cloth_co.paa"};	};
 };
 
 
