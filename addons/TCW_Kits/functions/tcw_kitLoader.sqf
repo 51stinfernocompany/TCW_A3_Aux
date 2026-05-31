@@ -80,17 +80,14 @@ private _allAltGear = [
 
 //Possibly Temporary catch for non-standard or missing ranks at launch. Enables all rank gear if no rank found.
 if (!(_rank in _rankOrder)) then {
-    diag_log format ["[TCW] WARNING: Rank '%1' not recognised, adding all rank gear as fallback.", _rank];
     private _allRankGear = [];
-    { { _allRankGear pushBackUnique _x; } forEach _x; } forEach _rankGearMap;
+    {
+        private _rankEntry = _x;
+        { _allRankGear pushBackUnique _x; } forEach _rankEntry;
+    } forEach _rankGearMap;
     {
         private _kit = _x;
         { _kit pushBackUnique _x; } forEach _allRankGear;
-    } forEach _allAltGear;
-} else {
-    {
-        private _kit = _x;
-        { _kit pushBackUnique _x; } forEach _rankGear;
     } forEach _allAltGear;
 };
 

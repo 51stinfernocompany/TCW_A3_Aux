@@ -31,7 +31,9 @@ missionNamespace setVariable ["TCW_CrateRegistry", _crateRegistry];
         _classname,
         "init",
         {
-            params ["_crate", "_varName", "_vehicleVar"];
+            params ["_crate", "_args"];
+            private _varName    = _args select 0;
+            private _vehicleVar = _args select 1;
             _crate setVehicleVarName _vehicleVar;
             missionNamespace setVariable [_varName, _crate, true];
             diag_log format ["[TCW] SUCCESS: Class Hook caught %1. Bound to '%2'.", typeOf _crate, _varName];
