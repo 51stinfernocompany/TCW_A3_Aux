@@ -59,13 +59,13 @@ if (_rankIndex >= 0) then {
 };
 
 /* <------------- Alt Gear Arrays ------------->*/
-private _altGearTrooper = ["tcw_dc15a","tcw_dc15s","tcw_dc15a_mag","tcw_dc15s_mag","tcw_p1_helmet_base","tcw_clone_uniform","tcw_clone_backpack"];
-private _altGearMedic = ["tcw_dc15a","tcw_dc15s","tcw_dc15a_mag","tcw_dc15s_mag","tcw_p1_helmet_base","tcw_clone_uniform","tcw_clone_backpack"];
-private _altGearHeavy = ["tcw_p1_helmet_base","tcw_clone_uniform","tcw_clone_backpack","tcw_z6_mag"];
-private _altGearMarksman = ["tcw_p1_helmet_base","tcw_clone_uniform","tcw_clone_backpack","tcw_dc15x_magazine"];
-private _altGearAT = ["tcw_dc15a","tcw_dc15s","tcw_dc15a_mag","tcw_dc15s_mag","tcw_p1_helmet_base","tcw_clone_uniform","tcw_clone_backpack"];
-private _altGearAssault = ["tcw_dc23","tcw_dc23_mag","tcw_p1_helmet_base","tcw_clone_uniform","tcw_clone_backpack"];
-private _altGearEngineer = ["tcw_dc15a","tcw_dc15s","tcw_dc15a_mag","tcw_dc15s_mag","tcw_p1_helmet_base","tcw_clone_uniform","tcw_clone_backpack"];
+private _altGearTrooper = ["tcw_dc15a","tcw_dc15s","tcw_dc15a_mag","tcw_dc15s_mag","tcw_p1_helmet_base","tcw_clone_uniform","tcw_clone_backpack","ACE_elasticBandage","tcw_SmokeWhite","ACE_tourniquet","ACE_plasmaIV_250","ACE_packingBandage"];
+private _altGearMedic = ["tcw_dc15a","tcw_dc15s","tcw_dc15a_mag","tcw_dc15s_mag","tcw_p1_helmet_base","tcw_clone_uniform","tcw_clone_backpack","ACE_elasticBandage","tcw_SmokeWhite","ACE_tourniquet","ACE_plasmaIV_250","ACE_packingBandage"];
+private _altGearHeavy = ["tcw_p1_helmet_base","tcw_clone_uniform","tcw_clone_backpack","tcw_z6_mag","ACE_elasticBandage","tcw_SmokeWhite","ACE_tourniquet","ACE_plasmaIV_250","ACE_packingBandage"];
+private _altGearMarksman = ["tcw_p1_helmet_base","tcw_clone_uniform","tcw_clone_backpack","tcw_dc15x_magazine","ACE_elasticBandage","tcw_SmokeWhite","ACE_tourniquet","ACE_plasmaIV","ACE_plasmaIV_500","ACE_plasmaIV_250","ACE_packingBandage"];
+private _altGearAT = ["tcw_dc15a","tcw_dc15s","tcw_dc15a_mag","tcw_dc15s_mag","tcw_p1_helmet_base","tcw_clone_uniform","tcw_clone_backpack","ACE_elasticBandage","tcw_SmokeWhite","ACE_tourniquet","ACE_plasmaIV_250","ACE_packingBandage"];
+private _altGearAssault = ["tcw_dc23","tcw_dc23_mag","tcw_p1_helmet_base","tcw_clone_uniform","tcw_clone_backpack","ACE_elasticBandage","tcw_SmokeWhite","ACE_tourniquet","ACE_plasmaIV_250","ACE_packingBandage"];
+private _altGearEngineer = ["tcw_dc15a","tcw_dc15s","tcw_dc15a_mag","tcw_dc15s_mag","tcw_p1_helmet_base","tcw_clone_uniform","tcw_clone_backpack","ACE_elasticBandage","tcw_SmokeWhite","ACE_tourniquet","ACE_plasmaIV_250","ACE_packingBandage"];
 
 /* <------------- Append rank gear to the Alt Gear Arrays ------------->*/
 private _allAltGear = [
