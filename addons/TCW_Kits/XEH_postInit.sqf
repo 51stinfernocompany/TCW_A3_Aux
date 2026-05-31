@@ -97,7 +97,7 @@ missionNamespace setVariable ["TCW_CrateRegistry", _crateRegistry];
         };
 };
 
-        [_activeCrate] execVM "WBK_KitMenu\WBK_Kit_Camera.sqs";
+        [_activeCrate] exec "WBK_KitMenu\WBK_Kit_Camera.sqs";
 
         player switchMove selectRandom [
             "Acts_AidlPercMstpSloWWrflDnon_warmup_1",
