@@ -19,14 +19,15 @@ private _validUnits = [
     "501st",  // Blue Berries
     "91st",   // 91st Recon
     "CG",     // Coruscant Guard
-    "Razor" // Razor
+    "Razor", // Razor
+    "UA" //Unaffiliated
 ];
 
 
 /* <------------- Squad XML Data Collection and Validation ------------->*/
 private _params = squadParams player;
 private _clanID = ""; //The player's clan ID
-private _clanRemark = "";
+private _clanRemark = ""; //The total data stored in the remark field
 private _rank = "CT"; //Default Rank
 private _progression = "0"; //Default Prog
 private _unitMatch = false; // Validated Unit? default is false
@@ -41,15 +42,16 @@ if (count _params > 0 && {!isNil {_params select 1 select 5}}) then {
     _clanRemark = _params select 1 select 5;
     diag_log format ["[RemarkCheck] _clanRemark: '%1'", _clanRemark];
     private _remarkArray = _clanRemark splitString ",";
-    _rank = _remarkArray select 0;
-    _progression = _remarkArray select 1;
+    _clanID = _remarkArray select 0; //Get Unit
+    _rank = _remarkArray select 1; //Get Rank
+    _progression = _remarkArray select 2; //Get Progression Level
 };
 
-// Store Unit Nick and output the data to log for debug
+/*// Store Unit Nick and output the data to log for debug
 if (count _params > 0 && {!isNil {_params select 0 select 0}}) then {
     _clanID = _params select 0 select 0;
     diag_log format ["[UnitCheck] _clanID: '%1'", _clanID];
-};
+};*/
 
 if (_clanID in _validUnits) then {
     diag_log format ["[UnitCheck] '%1' is a recognised unit.", _clanID];
@@ -121,9 +123,9 @@ if (!(_rank in _rankOrder)) then {
 // Only dispatch a unit loader if the clanID matches a known unit
 if (_clanID in _validUnits) then {
     private _unitLoaders = [
-        ["41st",  "unit functions\kitLoader41st.sqf"],
-        ["501st", "unit functions\kitLoader501st.sqf"],
-        ["212th", "unit functions\kitLoader212th.sqf"]
+        ["41st",  "x\tcw\addons\TCW_Kits\functions\unit functions\kitLoader41st.sqf"],
+        ["501st", "\kitLoader501st.sqf"],
+        ["212th", "\kitLoader212th.sqf"]
     ];
     {
         //Break the loop if the clan ID is matched.
