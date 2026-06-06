@@ -154,7 +154,8 @@ class CfgVehicles
 		displayName = "[TCW] 501st Backpack";
 		author = "TCW Team";
 		hiddenSelections[] = {"Rucksack","Grenade","Cloth"};
-		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\501st\Tex\backpack_501st_co.paa","\Indecisive_Armoury_Units\REPUBLIC\Backpacks\IDA_Clone_Rucksack\IDA_Clone_Rucksack_Grenade_co.paa","\Indecisive_Armoury_Units\REPUBLIC\Backpacks\IDA_Clone_Rucksack\IDA_Clone_Rucksack_Cloth_co.paa"};	};
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\501st\Tex\backpack_501st_co.paa","\Indecisive_Armoury_Units\REPUBLIC\Backpacks\IDA_Clone_Rucksack\IDA_Clone_Rucksack_Grenade_co.paa","\Indecisive_Armoury_Units\REPUBLIC\Backpacks\IDA_Clone_Rucksack\IDA_Clone_Rucksack_Cloth_co.paa"};
+	};
 };
 
 
