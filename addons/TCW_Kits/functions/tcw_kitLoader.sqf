@@ -120,12 +120,14 @@ if (!(_rank in _rankOrder)) then {
     } forEach _allAltGear;
 };
 
+private _ldrRanks = ["CP","CS","CL","CPT","CC"];
+
 // Only dispatch a unit loader if the clanID matches a known unit
 if (_clanID in _validUnits) then {
     private _unitLoaders = [
         ["41st",  "x\tcw\addons\TCW_Kits\functions\unit functions\kitLoader41st.sqf"],
-        ["501st", "\kitLoader501st.sqf"],
-        ["212th", "\kitLoader212th.sqf"]
+        ["501st", "x\tcw\addons\TCW_Kits\functions\unit functions\kitLoader501st.sqf"],
+        ["212th", "x\tcw\addons\TCW_Kits\functions\unit functions\kitLoader212th.sqf"]
     ];
     {
         //Break the loop if the clan ID is matched.
@@ -155,7 +157,7 @@ if (_clanID in _validUnits) then {
     [["tcw_dc15a","","","",["tcw_dc15a_mag",30],[],""],[],["tcw_dc17","","","",["tcw_dc17_mag",50],[],""],["tcw_clone_uniform",[["ACE_EntrenchingTool",1],["ACE_SpraypaintGreen",1],["ACE_CableTie",4],["ACE_EarPlugs",1],["ItemcTabHCam",1],["ACE_IR_Strobe_Item",1],["ACE_elasticBandage",30],["tcw_SmokeWhite",1,1]]],["tcw_vest_plate_base",[["acc_flashlight",1],["ACE_Flashlight_XL50",1],["WBK_HeadLampItem_Narrow",1],["ACE_MapTools",1],["ACE_tourniquet",4],["ACE_morphine",1],["ACE_epinephrine",1],["ACE_plasmaIV_250",2],["ACE_splint",4],["tcw_SmokeWhite",3,1],["tcw_SonicDetonator",2,1],["tcw_ThermalDetonator",3,1],["tcw_dc17_mag",3,50],["ACE_painkillers",1,10],["tcw_dc15a_mag",14,30],["ACE_Chemlight_HiBlue",5,1],["ACE_Chemlight_HiGreen",5,1],["ACE_Chemlight_HiRed",5,1],["Laserbatteries",1,1],["tcw_stun_mag_long",3,5]]],[],"tcw_p1_helmet_base","",["IDA_Electrobinoculars_Rep","","","",["Laserbatteries",1],[],""],["ItemMap","ItemGPS","ls_radios_cwp8","ItemCompass","ItemWatch",""]], //Main Gear in kit
     _altGearTrooper, //Alt Gear
     "true", //Statement must eval to true to be selectable, if not true the kit will be grayed out and unselectable
-    { player setVariable ["ace_medical_medicClass", 0, true]; player setVariable ["ace_isEngineer", 0, true];} //Additional code to run
+    { player setVariable ["ace_medical_medicClass", 0, true]; player setVariable ["ace_isEngineer", 0, true]; if (_rank in _ldrRanks) then { player setVariable ["ace_medical_medicClass", 1, true]; }; } //Additional code to run
 ] spawn Wbk_AddKit;
 
 // Medic
@@ -165,7 +167,7 @@ if (_clanID in _validUnits) then {
     [["tcw_dc15a","","","",["tcw_dc15a_mag",30],[],""],[],["tcw_dc17","","","",["tcw_dc17_mag",50],[],""],["tcw_clone_uniform",[["ACE_EntrenchingTool",1],["ACE_CableTie",4],["ACE_EarPlugs",1],["WBK_HeadLampItem_Narrow",1],["ACE_IR_Strobe_Item",1],["ACE_MapTools",1],["ACE_Flashlight_XL50",1],["ACE_plasmaIV",3]]],["tcw_vest_plate_base",[["ItemcTabHCam",1],["ACE_plasmaIV",5],["ACE_surgicalKit",1],["ACE_splint",8],["ACE_tourniquet",8],["ACE_elasticBandage",35],["ACE_epinephrine",1],["tcw_SmokeWhite",8,1],["tcw_dc15a_mag",10,30],["Laserbatteries",1,1],["tcw_dc17_mag",2,50],["tcw_SmokePurple",2,1],["tcw_stun_mag_long",2,5]]],["tcw_clone_backpack",[["ACE_elasticBandage",25],["ACE_plasmaIV_500",8],["ACE_plasmaIV_250",4],["ACE_morphine",10],["ACE_epinephrine",10],["tcw_dc17_mag",4,50],["3AS_SmokePurple",5,1],["3AS_ThermalDetonator",2,1]]],"tcw_p1_helmet_base","",["IDA_Electrobinoculars_Rep","","","",["Laserbatteries",1],[],""],["ItemMap","ItemGPS","ls_radios_cwp8","ItemCompass","ItemWatch",""]],
     _altGearMedic,
     "true",
-    { player setVariable ["ace_medical_medicClass", 2, true]; player setVariable ["ace_isEngineer", 0, true]; }
+    { player setVariable ["ace_medical_medicClass", 1, true]; player setVariable ["ace_isEngineer", 0, true]; }
 ] spawn Wbk_AddKit;
 
 // Heavy

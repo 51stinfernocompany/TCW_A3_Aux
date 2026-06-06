@@ -1,4 +1,4 @@
-params [
+/*params [
     "_altGearTrooper",
     "_altGearMedic",
     "_altGearHeavy",
@@ -14,23 +14,24 @@ diag_log "[TCW] 41st unit loader executing...";
 // ============================================================
 //  APPEND 41st-SPECIFIC ALT GEAR
 // ============================================================
-_altGearTrooper append ["tcw_p1_helmet_501st_base","tcw_p1_helmet_501st_alt","tcw_uniform_501st_base","tcw_uniform_501st_alt"]; //Strip out 501st gear before pushing to main
+_altGearTrooper append [""]; //Strip out 501st gear before pushing to main
 
-_altGearMedic append ["tcw_p1_helmet_501st_medic","tcw_p1_helmet_501st_alt_medic","tcw_uniform_501st_base","tcw_uniform_501st_alt"];
+_altGearMedic append [""];
 
-_altGearHeavy append ["tcw_p1_helmet_501st_base","tcw_p1_helmet_501st_alt","tcw_uniform_501st_base","tcw_uniform_501st_alt"];
+_altGearHeavy append [""];
 
-_altGearMarksman append ["tcw_p1_helmet_501st_base","tcw_p1_helmet_501st_alt","tcw_uniform_501st_base","tcw_uniform_501st_alt"];
+_altGearMarksman append [""];
 
-_altGearAT append ["tcw_p1_helmet_501st_base","tcw_p1_helmet_501st_alt","tcw_uniform_501st_base","tcw_uniform_501st_alt"];
+_altGearAT append [""];
 
-_altGearAssault append ["tcw_p1_helmet_501st_base","tcw_p1_helmet_501st_alt","tcw_uniform_501st_base","tcw_uniform_501st_alt"];
+_altGearAssault append [""];
 
-_altGearEngineer append ["tcw_p1_helmet_501st_base","tcw_p1_helmet_501st_alt","tcw_uniform_501st_base","tcw_uniform_501st_alt"];
+_altGearEngineer append [""];
 
 // ============================================================
 //  41st-SPECIFIC KITS
 // ============================================================
 
 
-diag_log "[TCW] 501st unit loader complete.";
+diag_log "[TCW] 41st unit loader complete.";
+*/
