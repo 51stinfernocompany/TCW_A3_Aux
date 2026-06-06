@@ -35,7 +35,7 @@ class CfgWeapons
 		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\p1_helmet_104th_base_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\p1_helmet_104th_base_co.paa"};
 		class xtdgearinfo
 		{
-			model = "tcw_unit_helmets_115th";
+			model = "tcw_unit_helmets_104th";
 			camo = "ct";
 		};
 	};
