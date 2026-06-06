@@ -210,7 +210,7 @@ class CfgVehicles
 		uniformClass = "tcw_uniform_115th_cpl";
 		hiddenSelectionsTextures[] = 
 		{
-			"x\tcw\addons\TCW_Armory\TCW_Units\115th\Tex\uniform_clone_upper_115th_sgt_CO.paa",
+			"x\tcw\addons\TCW_Armory\TCW_Units\115th\Tex\uniform_clone_upper_115th_sgt_CO.paa","x\tcw\addons\TCW_Armory\TCW_Units\115th\Tex\uniform_clone_lower_115th_sgt_CO.paa"
 		};
 	};
 
@@ -219,7 +219,7 @@ class CfgVehicles
 		uniformClass = "tcw_uniform_115th_lt";
 		hiddenSelectionsTextures[] = 
 		{
-			"x\tcw\addons\TCW_Armory\TCW_Units\115th\Tex\uniform_clone_upper_115th_lt_CO.paa",
+			"x\tcw\addons\TCW_Armory\TCW_Units\115th\Tex\uniform_clone_upper_115th_lt_CO.paa","x\tcw\addons\TCW_Armory\TCW_Units\115th\Tex\uniform_clone_lower_115th_lt_CO.paa"
 		};
 	};
 
