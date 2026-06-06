@@ -407,9 +407,10 @@ class CfgWeapons {
         BaseWeapon = "tcw_westar_ugl";
         displayName = "[TCW] Westar M5 (UGL)";
         magazines[] = {"tcw_westar_mag"};
-        muzzles[] = {"this","EGLM"};
+        muzzles[] = {"this","EGLM_Westar"};
         scope = 2;
-        class EGLM : EGLM {
+        class 3AS_WestarM5_GL_F;
+        class EGLM_Westar : 3AS_WestarM5_GL_F {
             displayName="[TCW] UGL";
             descriptionShort="Grenade Launcher";
             magazines[] =

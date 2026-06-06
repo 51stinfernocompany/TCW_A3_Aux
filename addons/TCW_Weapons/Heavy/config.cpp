@@ -93,6 +93,7 @@ class CfgWeapons {
         displayName = "[TCW] DC-15LE";
         magazines[] = {"tcw_dc15le_mag"};
         modes[] = {"FullAuto"};
+        muzzles[] = {"this"};
         scope = 2;
         class FullAuto : FullAuto 
         {

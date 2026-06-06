@@ -1,63 +1,144 @@
-/*
 class CfgPatches 
 {
-	class TCW_Units_41st
+	class tcw_units_41st
 	{
+		author = "TCW Team";
+		filename = "tcw_armory.pbo";
 		units[] = 
 		{
-			""
+			"tcw_unit_41st_base",
+			"tcw_backpack_41st"
 		};
 		weapons[] = 
 		{
-			""
+			"tcw_p1_helmet_41st_base",
+			"tcw_p1_helmet_41st_medic",
+			"tcw_uniform_41st_base",
 		};
-		requiredVersion = 0.100000;
+		requiredVersion = 2.20;
 		requiredAddons[] = {};
 	};
 };
 
 class CfgWeapons
 {
-	class TCW_Base_Helmet_SEA_P1;
-	class TCW_Units_41st_Helmet_P1: TCW_Base_Helmet_SEA_P1	
+//Helmet
+	class tcw_p1_helmet_base;
+	class tcw_p1_helmet_41st_base : tcw_p1_helmet_base	
 	{
 		scope = 2;
-		displayName = "[TCW:A3] 41st P1 Helmet";
-		author = "Balance + Ithias";
-		hiddenSelectionsTextures[] = 
+		displayName = "[TCW] 41st P1 Helmet";
+		author = "TCW Team";
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\p1_helmet_41st_base_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\p1_helmet_41st_base_co.paa"};
+		class xtdgearinfo
 		{
-			"\TCW_A3_Aux\TCW_Units\41st\Tex\TCW_Units_41st_Helmet_P1.paa",	// Helmet
-			"\JLTS_AE\Data\BaseTextures\P1\P1_Helmet_CO.paa",	// Visor
+			model = "tcw_unit_helmets_41st";
+			camo = "ct";
 		};
 	};
-	class SEA_Uniform_Clean;
-	class TCW_Base_Uniform_SEA: SEA_Uniform_Clean
-	{
-		class ItemInfo;
-	};
-	class TCW_Units_41st_Uniform_SEA: TCW_Base_Uniform_SEA
+
+	class tcw_p1_helmet_41st_medic : tcw_p1_helmet_base	
 	{
 		scope = 2;
-		displayName = "[TCW:A3] 41st Uniform";
-		author = "Balance + Ithias";
-		class ItemInfo: ItemInfo 
+		displayName = "[TCW] 41st Medic P1 Helmet";
+		author = "TCW Team";
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\p1_helmet_41st_medic_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\p1_helmet_41st_medic_co.paa"};
+		class xtdgearinfo
 		{
-			uniformClass = "TCW_Units_41st_Uniform_SEA_Veh";
+			model = "tcw_unit_helmets_41st";
+			camo = "medic";
+		};
+	};
+
+
+//Uniform
+	class tcw_clone_uniform;
+	class ItemInfo;
+	class UniformItem;
+	class tcw_uniform_41st_base : tcw_clone_uniform
+	{
+		scope = 2;
+		displayName = "[TCW] 41st Uniform";
+		author = "TCW Team";
+		class ItemInfo: UniformItem 
+		{
+			uniformModel="\Indecisive_Armoury_units\REPUBLIC\Clone_Uniform\IDA_Clone_Uniform.p3d";
+			uniformClass="tcw_unit_41st_base";
+			uniformType="Neopren";
+			containerClass="Supply50";
+			mass=15;
+		};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_uniforms_41st";
+			camo = "ct";
 		};
 	};
 };
 
 class CfgVehicles
 {
-	class TCW_Base_Uniform_SEA_Veh;
-	class TCW_Units_41st_Uniform_SEA_Veh: TCW_Base_Uniform_SEA_Veh			// Currently grey version of 41st, could change to camo if needed
+	class tcw_clone_unit;
+	class tcw_unit_41st_base : tcw_clone_unit
 	{
-		uniformClass = "TCW_Units_41st_Uniform_SEA";
+		uniformClass = "tcw_uniform_41st_base";
 		hiddenSelectionsTextures[] = 
 		{
-			"\MRC\JLTS\characters\CloneLegions\data\Clone_41stTrooper_armor1_co.paa",
-			"\MRC\JLTS\characters\CloneLegions\data\Clone_41stTrooper_armor2_co.paa"
+			"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\uniform_clone_upper_41st_base_co.paa",
+			"\Indecisive_Armoury_Units\REPUBLIC\Clone_Uniform\Lower\IDA_BodyLower_co.paa",
+		};
+	};
+	class tcw_clone_backpack;
+	class tcw_backpack_41st : tcw_clone_backpack
+	{
+		scope = 2;
+		displayName = "[TCW] 41st Backpack";
+		author = "TCW Team";
+		hiddenSelections[] = {"Rucksack","Grenade","Cloth"};
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\backpack_41st_co.paa","\Indecisive_Armoury_Units\REPUBLIC\Backpacks\IDA_Clone_Rucksack\IDA_Clone_Rucksack_Grenade_co.paa","\Indecisive_Armoury_Units\REPUBLIC\Backpacks\IDA_Clone_Rucksack\IDA_Clone_Rucksack_Cloth_co.paa"};	
+	};
+};
+
+
+
+class xtdgearmodels
+{
+	class cfgweapons
+	{
+		class tcw_unit_helmets_41st
+		{
+			label = "[TCW] 41st Helmets";
+			author = "TCW Team";
+			options[] = {"camo"};
+			class camo
+			{
+				changeingame = 0;
+				values[] = {"ct","medic"};
+				class ct
+				{
+					label = "Standard";
+				};
+				class medic
+				{
+					label = "Medic";
+				};
+			};
+		};
+
+		class tcw_unit_uniforms_41st
+		{
+			label = "[TCW] 41st Uniforms";
+			author = "TCW Team";
+			options[] = {"camo"};
+			class camo
+			{
+				changeingame = 0;
+				values[] = {"ct"};
+				class ct
+				{
+					label = "Standard";
+				};
+			};
 		};
 	};
 };
-*/
