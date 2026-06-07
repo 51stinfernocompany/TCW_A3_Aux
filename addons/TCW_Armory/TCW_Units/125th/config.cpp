@@ -14,7 +14,7 @@ class CfgPatches
 		weapons[] = 
 		{
 			"tcw_p1_helmet_125th_base",
-			//"tcw_p1_helmet_125th_medic",
+			"tcw_p1_helmet_125th_medic",
 			"tcw_p1_helmet_125th_co",
             "tcw_p1_helmet_125th_eod",
 			"tcw_uniform_125th_base",
@@ -43,7 +43,7 @@ class CfgWeapons
 		};
 	};
 
-	/*class tcw_p1_helmet_125th_medic : tcw_p1_helmet_base	
+	class tcw_p1_helmet_125th_medic : tcw_p1_helmet_base	
 	{
 		scope = 2;
 		displayName = "[TCW] 125th Medic P1 Helmet";
@@ -54,7 +54,7 @@ class CfgWeapons
 			model = "tcw_unit_helmets_125th";
 			camo = "medic";
 		};
-	};*/
+	};
 
 	class tcw_p1_helmet_125th_co : tcw_p1_helmet_base	
 	{
@@ -203,15 +203,15 @@ class xtdgearmodels
 			class camo
 			{
 				changeingame = 0;
-				values[] = {"ct"/*"medic"*/,"co","eod"};
+				values[] = {"ct""medic","co","eod"};
 				class ct
 				{
 					label = "Standard";
 				};
-				/*class medic
+				class medic
 				{
 					label = "Medic";
-				};*/
+				};
 				class co
 				{
 					label = "CO";

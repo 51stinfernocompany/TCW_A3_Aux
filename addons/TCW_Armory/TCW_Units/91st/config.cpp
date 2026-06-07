@@ -7,6 +7,7 @@ class CfgPatches
 		units[] = 
 		{
 			"tcw_unit_91st_base",
+			"tcw_unit_91st_medic",
 			"tcw_unit_91st_cpl",
 			"tcw_unit_91st_sgt",
 			"tcw_unit_91st_blackout",
@@ -20,6 +21,7 @@ class CfgPatches
 			"tcw_p1_helmet_91st_sgt",
 			"tcw_p1_helmet_91st_blackout",
 			"tcw_uniform_91st_base",
+			"tcw_uniform_91st_medic",
 			"tcw_uniform_91st_cpl",
 			"tcw_uniform_91st_sgt",
 			"tcw_uniform_91st_blackout"
@@ -123,6 +125,26 @@ class CfgWeapons
 		};
 	};
 
+	class tcw_uniform_91st_medic : tcw_clone_uniform
+	{
+		scope = 2;
+		displayName = "[TCW] 91st Medic Uniform";
+		author = "TCW Team";
+		class ItemInfo: UniformItem 
+		{
+			uniformModel="\Indecisive_Armoury_units\REPUBLIC\Clone_Uniform\IDA_Clone_Uniform.p3d";
+			uniformClass="tcw_unit_91st_medic";
+			uniformType="Neopren";
+			containerClass="Supply50";
+			mass=15;
+		};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_uniforms_91st";
+			camo = "medic";
+		};
+	};
+
 	class tcw_uniform_91st_cpl : tcw_clone_uniform
 	{
 		scope = 2;
@@ -196,6 +218,15 @@ class CfgVehicles
 			"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\uniform_clone_lower_91st_base_co.paa",
 		};
 	};
+	class tcw_unit_91st_medic : tcw_clone_unit
+	{
+		uniformClass = "tcw_uniform_91st_medic";
+		hiddenSelectionsTextures[] = 
+		{
+			"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\uniform_clone_upper_91st_medic_co.paa",
+			"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\uniform_clone_lower_91st_medic_co.paa",
+		};
+	};
 	class tcw_unit_91st_cpl : tcw_clone_unit
 	{
 		uniformClass = "tcw_uniform_91st_cpl";
@@ -220,7 +251,7 @@ class CfgVehicles
 		hiddenSelectionsTextures[] = 
 		{
 			"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\uniform_clone_upper_91st_blackout_co.paa",	// Top
-			"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\uniform_clone_lower_91st_base_co.paa",	// Bottom
+			"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\uniform_clone_lower_91st_blackout_co.paa",	// Bottom
 		};
 	};
 	class tcw_clone_backpack;
@@ -280,10 +311,14 @@ class xtdgearmodels
 			class camo
 			{
 				changeingame = 0;
-				values[] = {"ct","cpl","sgt","blackout"};
+				values[] = {"ct","medic","cpl","sgt","blackout"};
 				class ct
 				{
 					label = "Standard";
+				};
+				class medic
+				{
+					label = "Medic";
 				};
 				class cpl
 				{
