@@ -12,7 +12,7 @@ class CfgPatches
 		weapons[] = 
 		{
 			"tcw_p1_helmet_133rd_base",
-			//"tcw_p1_helmet_133rd_medic",
+			"tcw_p1_helmet_133rd_medic",
 			"tcw_uniform_133rd_base",
 		};
 		requiredVersion = 2.20;
@@ -37,7 +37,7 @@ class CfgWeapons
 		};
 	};
 
-	/*class tcw_p1_helmet_133rd_medic : tcw_p1_helmet_base	
+	class tcw_p1_helmet_133rd_medic : tcw_p1_helmet_base	
 	{
 		scope = 2;
 		displayName = "[TCW] 133rd Medic P1 Helmet";
@@ -48,7 +48,7 @@ class CfgWeapons
 			model = "tcw_unit_helmets_133rd";
 			camo = "medic";
 		};
-	};*/
+	};
 
 //Uniform
 	class tcw_clone_uniform;
@@ -114,15 +114,15 @@ class xtdgearmodels
 			class camo
 			{
 				changeingame = 0;
-				values[] = {"ct",/*"medic"*/};
+				values[] = {"ct","medic"};
 				class ct
 				{
 					label = "Standard";
 				};
-				/*class medic
+				class medic
 				{
 					label = "Medic";
-				};*/
+				};
 			};
 		};
 
