@@ -192,7 +192,7 @@ class CfgVehicles
 		uniformClass = "tcw_uniform_104th_base";
 		hiddenSelectionsTextures[] = 
 		{
-			"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_upper_104th_base_co.paa",
+			"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_upper_104th_base_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_lower_104th_base_co.paa",
 		};
 	};
 /*
