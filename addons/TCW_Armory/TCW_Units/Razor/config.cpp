@@ -12,7 +12,7 @@ class CfgPatches
 		weapons[] = 
 		{
 			"tcw_p1_helmet_razor_base",
-			//"tcw_p1_helmet_razor_medic",
+			"tcw_p1_helmet_razor_medic",
 			"tcw_uniform_razor_base",
 		};
 		requiredVersion = 2.20;
@@ -37,7 +37,7 @@ class CfgWeapons
 		};
 	};
 
-	/*class tcw_p1_helmet_razor_medic : tcw_p1_helmet_base	
+	class tcw_p1_helmet_razor_medic : tcw_p1_helmet_base	
 	{
 		scope = 2;
 		displayName = "[TCW] Razor Squadron Medic P1 Helmet";
@@ -48,7 +48,7 @@ class CfgWeapons
 			model = "tcw_unit_helmets_razor";
 			camo = "medic";
 		};
-	};*/
+	};
 
 //Uniform
 	class tcw_clone_uniform;
@@ -114,15 +114,15 @@ class xtdgearmodels
 			class camo
 			{
 				changeingame = 0;
-				values[] = {"ct",/*"medic"*/};
+				values[] = {"ct","medic"};
 				class ct
 				{
 					label = "Standard";
 				};
-				/*class medic
+				class medic
 				{
 					label = "Medic";
-				};*/
+				};
 			};
 		};
 

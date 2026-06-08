@@ -13,7 +13,7 @@ class CfgPatches
 		weapons[] = 
 		{
 			"tcw_p1_helmet_44th_base",
-			//"tcw_p1_helmet_44th_medic",
+			"tcw_p1_helmet_44th_medic",
 			"tcw_p1_helmet_44th_sharp",
 			"tcw_uniform_44th_base",
 			"tcw_uniform_44th_sharp"
@@ -40,7 +40,7 @@ class CfgWeapons
 		};
 	};
 
-	/*class tcw_p1_helmet_44th_medic : tcw_p1_helmet_base	
+	class tcw_p1_helmet_44th_medic : tcw_p1_helmet_base	
 	{
 		scope = 2;
 		displayName = "[TCW] 44th Medic P1 Helmet";
@@ -51,7 +51,7 @@ class CfgWeapons
 			model = "tcw_unit_helmets_44th";
 			camo = "medic";
 		};
-	};*/
+	};
 
 	class tcw_p1_helmet_44th_sharp : tcw_p1_helmet_base	
 	{
@@ -157,10 +157,14 @@ class xtdgearmodels
             class camo
             {
                 changeingame = 0;
-                values[] = {"ct","sharp"};
+                values[] = {"ct","medic","sharp"};
                 class ct
                 {
                     label = "Standard";
+                };
+				class medic
+                {
+                    label = "Medic";
                 };
                 class sharp
                 {

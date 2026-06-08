@@ -12,7 +12,7 @@ class CfgPatches
 		weapons[] = 
 		{
 			"tcw_p1_helmet_21st_base",
-			//"tcw_p1_helmet_21st_medic",
+			"tcw_p1_helmet_21st_medic",
 			"tcw_uniform_21st_base",
 		};
 		requiredVersion = 2.20;
@@ -37,7 +37,7 @@ class CfgWeapons
 		};
 	};
 
-	/*class tcw_p1_helmet_21st_medic : tcw_p1_helmet_base	
+	class tcw_p1_helmet_21st_medic : tcw_p1_helmet_base	
 	{
 		scope = 2;
 		displayName = "[TCW] 21st Medic P1 Helmet";
@@ -48,7 +48,7 @@ class CfgWeapons
 			model = "tcw_unit_helmets_21st";
 			camo = "medic";
 		};
-	};*/
+	};
 
 
 //Uniform
@@ -113,15 +113,15 @@ class xtdgearmodels
 			class camo
 			{
 				changeingame = 0;
-				values[] = {"ct",/*"medic"*/};
+				values[] = {"ct","medic"};
 				class ct
 				{
 					label = "Standard";
 				};
-				/*class medic
+				class medic
 				{
 					label = "Medic";
-				};*/
+				};
 			};
 		};
 

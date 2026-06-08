@@ -28,6 +28,9 @@ class CfgPatches
             // Ground Assault
             "tcw_atte",
             "tcw_saber_tx",
+            "tcw_saber_tx_recon",
+            "tcw_saber_tx_super",
+            "tcw_saber_tx_gl",
             "tcw_utat",
             // Ground Transport
             "tcw_itt",
@@ -73,7 +76,40 @@ class CfgVehicles {
     class 3AS_Saber_M1;
     class tcw_saber_tx: 3AS_Saber_M1
     {
-        displayName="[TCW] Saber TX-130";
+        displayName="[TCW] TX-130 Saber Tank";
+        faction = "tcw_blufor";
+        editorSubcategory = "tcw_ground_assault";
+        crew = "tcw_clone_unit";
+        author = "TCW Team";
+    };
+
+//TX Recon
+    class 3AS_Saber_M1Recon;
+    class tcw_saber_tx_recon: 3AS_Saber_M1Recon
+    {
+        displayName="[TCW] TX-130 Saber Tank (Recon)";
+        faction = "tcw_blufor";
+        editorSubcategory = "tcw_ground_assault";
+        crew = "tcw_clone_unit";
+        author = "TCW Team";
+    };
+
+//TX Super
+    class 3AS_Saber_Super;
+    class tcw_saber_tx_super: 3AS_Saber_Super
+    {
+        displayName="[TCW] TX-130 Saber Tank (Super)";
+        faction = "tcw_blufor";
+        editorSubcategory = "tcw_ground_assault";
+        crew = "tcw_clone_unit";
+        author = "TCW Team";
+    };
+
+//TX GL
+    class 3AS_Saber_M1G;
+    class tcw_saber_tx_gl: 3AS_Saber_M1G
+    {
+        displayName="[TCW] TX-130 Saber Tank (GL)";
         faction = "tcw_blufor";
         editorSubcategory = "tcw_ground_assault";
         crew = "tcw_clone_unit";
@@ -120,17 +156,7 @@ class CfgVehicles {
         faction = "tcw_blufor";
         editorSubcategory = "tcw_ground_transport";
         crew = "tcw_clone_unit";
-        author = "TCW Team";
-        class VehicleTransport
-        {
-            class Cargo
-            {
-                parachuteClass            = "B_Parachute_02_F";
-                parachuteHeightLimit    = 40;                
-                canBeTransported        = 1;                
-                dimensions[]            = { "ftr_muzzle", "btl_muzzle" };
-            };
-        };
+        author = "TCW Team";    
     };
 
     // BARC
@@ -151,18 +177,8 @@ class CfgVehicles {
         displayName="[TCW] Juggernaut";
         faction = "tcw_blufor";
         editorSubcategory = "tcw_ground_transport";
-        crew = "tcw_clone_unit_base";
+        crew = "tcw_clone_unit";
         author = "TCW Team";
-        class VehicleTransport
-        {
-            class Cargo
-            {
-                parachuteClass            = "B_Parachute_02_F";
-                parachuteHeightLimit    = 40;                
-                canBeTransported        = 1;                
-                dimensions[]            = { "ftr_muzzle", "btl_muzzle" };
-            };
-        };
     };
 
     // AT-AP
