@@ -1,3 +1,8 @@
+diag_log format ["[Kits] TCW_KitBox isNil=%1 isNull=%2 typeOf=%3",
+    isNil "TCW_KitBox",
+    isNull (missionNamespace getVariable ["TCW_KitBox", objNull]),
+    typeOf (missionNamespace getVariable ["TCW_KitBox", objNull])];
+
 if (isNil "TCW_KitBox") exitWith {
     diag_log "[Kits] ERROR: kitBox not found!";
 };
@@ -42,9 +47,13 @@ if (count _params > 0 && {!isNil {_params select 1 select 5}}) then {
     _clanRemark = _params select 1 select 5;
     diag_log format ["[RemarkCheck] _clanRemark: '%1'", _clanRemark];
     private _remarkArray = _clanRemark splitString ",";
-    _clanID = _remarkArray select 0; //Get Unit
-    _rank = _remarkArray select 1; //Get Rank
-    _progression = _remarkArray select 2; //Get Progression Level
+    if (count _remarkArray >= 3) then {
+        _clanID = _remarkArray select 0;
+        _rank   = _remarkArray select 1;
+        _progression = _remarkArray select 2;
+    } else {
+        diag_log format ["[TCW] WARNING: Remark '%1' has insufficient fields, using defaults.", _clanRemark];
+    };
 };
 
 /*// Store Unit Nick and output the data to log for debug

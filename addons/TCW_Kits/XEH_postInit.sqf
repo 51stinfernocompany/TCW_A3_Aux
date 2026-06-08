@@ -18,6 +18,24 @@ private _crateRegistry = [
 // Store registry in missionNamespace BEFORE the queue condition runs
 missionNamespace setVariable ["TCW_CrateRegistry", _crateRegistry];
 
+//Propagation Debug
+/*[] spawn {
+    for "_i" from 1 to 12 do {
+        sleep 5;
+        private _registry = missionNamespace getVariable ["TCW_CrateRegistry", []];
+        diag_log format ["[TCW DEBUG] t=%1 playerNull=%2 timeOk=%3 local=%4 display=%5 regSize=%6",
+            time, isNull player, time > 0, local player, !isNull (findDisplay 46), count _registry];
+        {
+            private _varName   = _x select 1;
+            private _classname = _x select 0;
+            private _varNil    = isNil _varName;
+            private _obj       = if (!_varNil) then { missionNamespace getVariable [_varName, objNull] } else { objNull };
+            diag_log format ["[TCW DEBUG] var=%1 isNil=%2 isNull=%3 typeOf='%4' expected='%5'",
+                _varName, _varNil, isNull _obj, typeOf _obj, _classname];
+        } forEach _registry;
+    };
+};*/
+
 // ============================================================
 //  QUEUE SYSTEM
 //  Waits until a registered crate variable is bound AND the
@@ -30,13 +48,12 @@ missionNamespace setVariable ["TCW_CrateRegistry", _crateRegistry];
         if !(!isNull player && time > 0 && local player && !isNull (findDisplay 46)) exitWith { false };
         private _found = false;
         {
-            private _varName   = _x select 1;
             private _classname = _x select 0;
-            if !(isNil _varName) then {
-                private _obj = missionNamespace getVariable [_varName, objNull];
-                if (!isNull _obj && { typeOf _obj == _classname }) then {
-                    _found = true;
-                };
+            private _varName   = _x select 1;
+            private _obj = (allMissionObjects _classname) param [0, objNull];
+            if (!isNull _obj) then {
+                missionNamespace setVariable [_varName, _obj];
+                _found = true;
             };
         } forEach (missionNamespace getVariable ["TCW_CrateRegistry", []]);
         _found
