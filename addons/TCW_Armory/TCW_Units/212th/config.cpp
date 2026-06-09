@@ -88,7 +88,7 @@ class CfgWeapons
 	class tcw_p1_helmet_212th_grif : tcw_p1_helmet_base	
 	{
 		scope = 2;
-		displayName = "[TCW] 212th Sergeant P1 Helmet";
+		displayName = "[TCW] 212th Grif P1 Helmet";
 		author = "TCW Team";
 		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\212th\Tex\p1_helmet_212th_grif_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\212th\Tex\p1_helmet_212th_grif_co.paa"};
 		class xtdgearinfo
@@ -166,7 +166,7 @@ class CfgWeapons
 	class tcw_uniform_212th_grif : tcw_clone_uniform
 	{
 		scope = 2;
-		displayName = "[TCW] 212th Sergeant Uniform";
+		displayName = "[TCW] 212th Grif Uniform";
 		author = "TCW Team";
 		class ItemInfo: UniformItem 
 		{
@@ -220,8 +220,8 @@ class CfgVehicles
 		uniformClass = "tcw_uniform_212th_grif";
 		hiddenSelectionsTextures[] = 
 		{
-			"x\tcw\addons\TCW_Armory\TCW_Units\212th\Tex\uniform_clone_upper_212th_sgt_co.paa",
-			"x\tcw\addons\TCW_Armory\TCW_Units\212th\Tex\uniform_clone_lower_212th_sgt_co.paa",
+			"x\tcw\addons\TCW_Armory\TCW_Units\212th\Tex\uniform_clone_upper_212th_grif_co.paa",
+			"x\tcw\addons\TCW_Armory\TCW_Units\212th\Tex\uniform_clone_lower_212th_grif_co.paa",
 		};
 	};
 	class tcw_clone_backpack;

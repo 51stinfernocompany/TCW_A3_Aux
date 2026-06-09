@@ -203,7 +203,7 @@ class xtdgearmodels
 			class camo
 			{
 				changeingame = 0;
-				values[] = {"ct""medic","co","eod"};
+				values[] = {"ct","medic","co","eod"};
 				class ct
 				{
 					label = "Standard";
