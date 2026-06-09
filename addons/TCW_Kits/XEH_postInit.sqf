@@ -9,53 +9,54 @@ diag_log "[TCW] XEH_postInit starting. Registering runtime object hooks...";
 //  [classname, global variable name, vehicle var name]
 // ============================================================
 private _crateRegistry = [
-    ["tcw_kit_crate",          "TCW_KitBox",         "TCW_KitBox"],
-    ["tcw_kit_crate_cadet",  "TCW_KitBoxCadet",  "TCW_KitBoxCadet"]
+    ["tcw_kit_crate",        "TCW_KitBox",        "TCW_KitBox"],
+    ["tcw_kit_crate_cadet",  "TCW_KitBoxCadet",   "TCW_KitBoxCadet"]
     // Add more crate types here as needed:
-    // ["tcw_kit_crate_commando", "TCW_KitBoxCommando", "TCW_KitBoxCommando"], // for example
+    // ["tcw_kit_crate_commando", "TCW_KitBoxCommando", "TCW_KitBoxCommando"],
 ];
 
 // Store registry in missionNamespace BEFORE the queue condition runs
 missionNamespace setVariable ["TCW_CrateRegistry", _crateRegistry];
 
-// ============================================================
-//  AUTO-REGISTER CLASS EVENT HANDLERS
-//  Iterates the registry and registers an init EH for each
-// ============================================================
-{
-    private _classname  = _x select 0;
-    private _varName    = _x select 1;
-    private _vehicleVar = _x select 2;
-
-    [
-        _classname,
-        "init",
+//Propagation Debug
+/*[] spawn {
+    for "_i" from 1 to 12 do {
+        sleep 5;
+        private _registry = missionNamespace getVariable ["TCW_CrateRegistry", []];
+        diag_log format ["[TCW DEBUG] t=%1 playerNull=%2 timeOk=%3 local=%4 display=%5 regSize=%6",
+            time, isNull player, time > 0, local player, !isNull (findDisplay 46), count _registry];
         {
-            params ["_crate", "_args"];
-            private _varName    = _args select 0;
-            private _vehicleVar = _args select 1;
-            _crate setVehicleVarName _vehicleVar;
-            missionNamespace setVariable [_varName, _crate, true];
-            diag_log format ["[TCW] SUCCESS: Class Hook caught %1. Bound to '%2'.", typeOf _crate, _varName];
-        },
-        [_varName, _vehicleVar]
-    ] call CBA_fnc_addClassEventHandler;
-
-} forEach _crateRegistry;
+            private _varName   = _x select 1;
+            private _classname = _x select 0;
+            private _varNil    = isNil _varName;
+            private _obj       = if (!_varNil) then { missionNamespace getVariable [_varName, objNull] } else { objNull };
+            diag_log format ["[TCW DEBUG] var=%1 isNil=%2 isNull=%3 typeOf='%4' expected='%5'",
+                _varName, _varNil, isNull _obj, typeOf _obj, _classname];
+        } forEach _registry;
+    };
+};*/
 
 // ============================================================
 //  QUEUE SYSTEM
-//  Waits until any registered crate variable is bound,
-//  then launches the kit menu with whichever crate is present
+//  Waits until a registered crate variable is bound AND the
+//  object is confirmed valid on this client, then launches
+//  the kit menu with whichever crate is present
 // ============================================================
 [
-    // CONDITION: player ready + at least one registered crate is bound
+    // CONDITION: player ready + at least one registered crate object is valid on this client
     {
-        !isNull player &&
-        time > 0 &&
-        local player &&
-        !isNull (findDisplay 46) &&
-        ({!(isNil (_x select 1))} count (missionNamespace getVariable ["TCW_CrateRegistry", []])) > 0
+        if !(!isNull player && time > 0 && local player && !isNull (findDisplay 46)) exitWith { false };
+        private _found = false;
+        {
+            private _classname = _x select 0;
+            private _varName   = _x select 1;
+            private _obj = (allMissionObjects _classname) param [0, objNull];
+            if (!isNull _obj) then {
+                missionNamespace setVariable [_varName, _obj];
+                _found = true;
+            };
+        } forEach (missionNamespace getVariable ["TCW_CrateRegistry", []]);
+        _found
     },
     // STATEMENT: fires when condition is true
     {
@@ -72,7 +73,7 @@ missionNamespace setVariable ["TCW_CrateRegistry", _crateRegistry];
                 private _classname = _x select 0;
                 if !(isNil _varName) then {
                     private _obj = missionNamespace getVariable [_varName, objNull];
-                    if (!isNull _obj && {typeOf _obj == _classname}) then {
+                    if (!isNull _obj && { typeOf _obj == _classname }) then {
                         _activeCrate = _obj;
                         _activeVar   = _varName;
                     };
@@ -88,16 +89,15 @@ missionNamespace setVariable ["TCW_CrateRegistry", _crateRegistry];
 
         WBK_GlobalKitBoxRn = _activeCrate;
 
-
-        // Call the correct loaders based on which crate is present
-       switch (_activeVar) do {
-        case "TCW_KitBox": {
-            [] spawn TCW_fnc_kit_loader;
+        // Call the correct loader based on which crate is present
+        switch (_activeVar) do {
+            case "TCW_KitBox": {
+                [] spawn TCW_fnc_kit_loader;
+            };
+            case "TCW_KitBoxCadet": {
+                [] spawn TCW_fnc_kit_loader_cadet;
+            };
         };
-        case "TCW_KitBoxCadet": {
-            [] spawn TCW_fnc_kit_loader_cadet;
-        };
-};
 
         [_activeCrate] exec "WBK_KitMenu\WBK_Kit_Camera.sqs";
 
