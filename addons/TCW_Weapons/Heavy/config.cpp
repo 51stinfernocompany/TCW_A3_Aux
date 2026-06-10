@@ -5,6 +5,9 @@ class CfgAmmo {
     class tcw_blasterbolt_z6 : IDA_Blasterbolt_Power1_Blue {
         hit = 6;
     };
+    class tcw_blasterbolt_z6_hp : IDA_Blasterbolt_Power1_Blue {
+        hit = 8;
+    };
     class IDA_Blasterbolt_Power2_Blue;
     class tcw_blasterbolt_dc15le : IDA_Blasterbolt_Power2_Blue {
         hit = 11;
@@ -34,6 +37,7 @@ class CfgPatches
         {
             "tcw_dc15le_mag",
             "tcw_z6_mag",
+            "tcw_z6_hp_mag",
             "tcw_dlt19_mag",
         };
         weapons[] =
@@ -54,6 +58,16 @@ class CfgMagazines {
         displayName = "[TCW] Z-6 Energy Cell";
         ammo = "tcw_blasterbolt_z6";
         count = 500;
+        scope = 2;
+    };
+    class tcw_z6_hp_mag : IDA_Blaster_Cell_Power1_300Rnd_Blue {
+        author = "TCW Team";
+        BaseWeapon = "tcw_z6_hp_mag";
+        displayName = "[TCW] Z-6 High Power Energy Cell";
+        displayNameShort = "Z-6 HP Cell";
+        descriptionShort = "200 round high-power cell.";
+        ammo = "tcw_blasterbolt_z6_hp";
+        count = 200;
         scope = 2;
     };
     class IDA_Blaster_Cell_Power2_20Rnd_Blue;
@@ -97,13 +111,12 @@ class CfgWeapons {
         author = "TCW Team";
         BaseWeapon = "tcw_z6";
         displayName = "[TCW] Z-6 Rotary Cannon";
-        magazines[] = {"tcw_z6_mag"};
+        magazines[] = {"tcw_z6_mag", "tcw_z6_hp_mag"};
         modes[] = {"Auto"};
         scope = 2;
         class Auto : Auto
         {
             reloadTime = 0.0798; // ~752 RPM
-            dispersion = 0.0075;
         };
     };
 

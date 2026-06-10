@@ -405,6 +405,9 @@ class CfgWeapons {
         magazines[] = {"tcw_westar_mag"};
         muzzles[] = {"this","Stun"};
         scope = 2;
+        class Single : Single {
+            reloadTime = 0.15; // 400 RPM
+        };
         class FullAuto : FullAuto {
             reloadTime = 0.15; // 400 RPM
             dispersion = 0.0015;
