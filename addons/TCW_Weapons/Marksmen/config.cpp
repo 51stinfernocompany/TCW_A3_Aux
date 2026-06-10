@@ -128,7 +128,7 @@ class CfgWeapons {
         */
         class Single : Single {
             dispersion = 0;
-            reloadTime = 1.5; // ~40 RPM — bolt-action pace
+            reloadTime = 0.6; // ~100 RPM
             recoilProne = "recoil_single_prone_ebr";
         };
     };

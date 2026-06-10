@@ -406,7 +406,7 @@ class CfgWeapons {
         muzzles[] = {"this","Stun"};
         scope = 2;
         class FullAuto : FullAuto {
-            dispersion = 0.004; // high spray at full auto — use Single/Burst for accuracy
+            dispersion = 0.0015;
         };
         class Stun : tcw_stun_muzzle{
             displayName="[TCW] Stun";
