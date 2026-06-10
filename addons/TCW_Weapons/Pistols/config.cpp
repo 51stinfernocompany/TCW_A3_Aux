@@ -48,7 +48,7 @@ class CfgAmmo {
     class IDA_Blasterbolt_Power4_Blue;
     class tcw_blasterbolt_dc17 : IDA_Blasterbolt_Power4_Blue {
         author = "TCW Team";
-        hit = 13;
+        hit = 11;
     };
 };
 

@@ -251,20 +251,20 @@ class CfgWeapons {
     class EGLM;
     // DC-15S UGL
     class IDA_DC15S_UGL;
-    class tcw_dc15s_ugl : IDA_DC15S_UGL 
+    class tcw_dc15s_ugl : IDA_DC15S_UGL
     {
         author = "TCW Team";
         BaseWeapon = "tcw_dc15s_ugl";
         displayName = "[TCW] DC-15S (UGL)";
         magazines[] = {"tcw_dc15s_mag"};
         muzzles[] = {"this","EGLM"};
-        
+
         scope = 2;
         class FullAuto : FullAuto {
-            reloadTime = 0.1999995;
+            reloadTime = 0.16; // 375 RPM
         };
         class Single : Single {
-            reloadTime = 0.102;
+            reloadTime = 0.16; // 375 RPM
         };
         class EGLM : EGLM {
             displayName="[TCW] UGL";
@@ -296,10 +296,10 @@ class CfgWeapons {
         muzzles[] = {"this","Stun"};
         scope = 2;
         class FullAuto : FullAuto {
-            reloadTime = 0.1999995;
+            reloadTime = 0.2;
         };
         class Single : Single {
-            reloadTime = 0.102;
+            reloadTime = 0.2;
         };
         class Stun : tcw_stun_muzzle {
             displayName = "[TCW] Stun";
@@ -317,10 +317,10 @@ class CfgWeapons {
         muzzles[] = {"this","EGLM"};
         scope = 2;
         class FullAuto : FullAuto {
-            reloadTime = 0.1999995;
+            reloadTime = 0.2;
         };
         class Single : Single {
-            reloadTime = 0.102;
+            reloadTime = 0.2;
         };
         class EGLM : EGLM {
             displayName="[TCW] UGL";
@@ -354,10 +354,10 @@ class CfgWeapons {
         JLTS_shieldedWeapon = "tcw_dc15s_shield";
         scope = 2;
         class Single : Single {
-            reloadTime = 0.102;
+            reloadTime = 0.16; // 375 RPM
         };
         class FullAuto : FullAuto {
-            reloadTime = 0.1999995;
+            reloadTime = 0.16; // 375 RPM
         };
     };
     class JLTS_DC15S_shield;
@@ -387,11 +387,11 @@ class CfgWeapons {
         modes[] = {"FullAuto","Single"};
         scope = 2;
         class FullAuto : FullAuto {
-            reloadTime = 0.1;
+            reloadTime = 0.2;
             dispersion = 0.003;
         };
         class Single : Single {
-            reloadTime = 0.1;
+            reloadTime = 0.2;
             dispersion = 0.003;
         };
     };
@@ -406,7 +406,11 @@ class CfgWeapons {
         muzzles[] = {"this","Stun"};
         scope = 2;
         class FullAuto : FullAuto {
+            reloadTime = 0.15; // 400 RPM
             dispersion = 0.0015;
+        };
+        class Burst : Burst {
+            reloadTime = 0.0667; // 900 RPM
         };
         class Stun : tcw_stun_muzzle{
             displayName="[TCW] Stun";
@@ -453,6 +457,7 @@ class CfgWeapons {
         class FullAuto : FullAuto // Automatic Fire (For standard mag, CQB)
         {
             textureType = "fastAuto";
+            reloadTime = 0.1;
             dispersion = 0.003;
         };
         class Burst : Single // Single fire, autofire. (For standard mag)

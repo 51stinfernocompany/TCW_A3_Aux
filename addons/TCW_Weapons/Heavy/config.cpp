@@ -3,7 +3,7 @@
 class CfgAmmo {
     class IDA_Blasterbolt_Power1_Blue;
     class tcw_blasterbolt_z6 : IDA_Blasterbolt_Power1_Blue {
-        hit = 8;
+        hit = 6;
     };
     class IDA_Blasterbolt_Power2_Blue;
     class tcw_blasterbolt_dc15le : IDA_Blasterbolt_Power2_Blue {
@@ -102,8 +102,8 @@ class CfgWeapons {
         scope = 2;
         class Auto : Auto
         {
-            reloadTime = 0.0399; // ~1504 RPM
-            dispersion = 0.02;
+            reloadTime = 0.0798; // ~752 RPM
+            dispersion = 0.0075;
         };
     };
 
@@ -122,7 +122,7 @@ class CfgWeapons {
         {
             autoFire = 1;
             dispersion = 0.00145;
-            reloadTime = 0.092; // ~650 RPM
+            reloadTime = 0.184; // ~326 RPM
         };
     };
 
@@ -137,7 +137,7 @@ class CfgWeapons {
         scope = 2;
         class FullAuto : FullAuto
         {
-            reloadTime = 0.065; // ~923 RPM
+            reloadTime = 0.130; // ~462 RPM
             dispersion = 0.0015;
         };
     };

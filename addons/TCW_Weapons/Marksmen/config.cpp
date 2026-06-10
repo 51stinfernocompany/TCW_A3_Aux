@@ -11,7 +11,8 @@ class CfgPatches
         {
             "IDA_Ammo",
             "IDA_Republic",
-            "IDA_Imperial"
+            "IDA_Imperial",
+            "3AS_Weapons_Republic_Valken38X"
         };
         units[]={};
         ammo[] =
@@ -25,7 +26,7 @@ class CfgPatches
             "tcw_dc15x_magazine",
             "tcw_dc15x_magazine_red",
             "tcw_773FP_magazine",
-            "tcw_valken38_magazine",
+            "tcw_valken38x_mag",
         };
         weapons[] =
         {
@@ -47,7 +48,7 @@ class CfgAmmo {
     };
 
     class tcw_blasterbolt_firepuncher : tcw_blasterbolt_dc15x {
-        hit = 50;
+        hit = 55;
         thrust = 600;
         thrustTime = 0.4;
     };
@@ -56,7 +57,7 @@ class CfgAmmo {
     class tcw_valken38_ammo : IDA_Blasterbolt_Power4_Blue {
         author = "TCW Team";
         JLTS_isEMPAmmo = 0;
-        hit = 15;
+        hit = 30;
     };
 };
 
@@ -80,11 +81,11 @@ class CfgMagazines {
     {
         author = "TCW Team";
         BaseWeapon = "tcw_dc15x_magazine";
-        descriptionShort = "15 round capacity.";
+        descriptionShort = "6 round capacity.";
         displayName = "[TCW] 773 FP Magazine";
         ammo = "tcw_blasterbolt_firepuncher";
         initSpeed=1500;
-        count = 10;
+        count = 6;
         mass = 12;
         scope = 2;
     };
@@ -96,10 +97,20 @@ class CfgMagazines {
         author = "TCW Team";
         BaseWeapon = "tcw_dc15x_magazine";
         displayName = "[TCW] DC15X Magazine";
-        descriptionShort = "20 round capacity.";
+        descriptionShort = "12 round capacity.";
         ammo = "tcw_blasterbolt_dc15x";
-        count = 20;
+        count = 12;
         scope = 2;
+    };
+};
+
+class CfgRecoils {
+    class recoil_default;
+    class tcw_recoil_dc15x : recoil_default {
+        muzzleOuter[] = {0, 6, 0.4, 0.4};
+        kickBack[] = {0.12, 0.12};
+        permanent = 0;
+        temporary = 0.01;
     };
 };
 
@@ -111,6 +122,7 @@ class CfgWeapons {
         author = "TCW Team";
         BaseWeapon = "tcw_dc15x";
         displayName = "[TCW] DC-15X";
+        recoil = "tcw_recoil_dc15x";
         dispersion = 0;
         minRange = 100;
         midRange = 500;
@@ -128,7 +140,7 @@ class CfgWeapons {
         */
         class Single : Single {
             dispersion = 0;
-            reloadTime = 0.6; // ~100 RPM
+            reloadTime = 1.0; // 60 RPM
             recoilProne = "recoil_single_prone_ebr";
         };
     };
@@ -158,7 +170,7 @@ class CfgWeapons {
         */
         class Single: Single {
             dispersion = 0;
-            reloadTime = 0.45; // ~133 RPM — precision semi-auto
+            reloadTime = 1.5; // 40 RPM
         };
     };
 
@@ -170,9 +182,20 @@ class CfgWeapons {
         displayName = "[TCW] Valken-38X";
         magazines[] = {"tcw_valken38x_mag"};
         magazineWell[] = {};
+        recoil = "IDA_recoil_TargetingBlaster";
+        maxRecoilSway = 0.003;
         scope = 2;
         class Single : Single {
-            reloadTime = 0.2; // ~300 RPM — fast recon semi-auto
+            reloadTime = 0.343; // ~175 RPM
+            dispersion = 0.00085;
+            sounds[] = {"StandardSound", "SilencedSound"};
+            class BaseSoundModeType;
+            class StandardSound: BaseSoundModeType {
+                soundSetShot[] = {"3AS_Sniper_SoundSet"};
+            };
+            class SilencedSound: BaseSoundModeType {
+                soundSetShot[] = {"3AS_Sniper_SoundSet"};
+            };
         };
     };
 };
