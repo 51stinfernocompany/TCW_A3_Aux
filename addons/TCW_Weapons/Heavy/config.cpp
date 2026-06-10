@@ -7,7 +7,7 @@ class CfgAmmo {
     };
     class IDA_Blasterbolt_Power2_Blue;
     class tcw_blasterbolt_dc15le : IDA_Blasterbolt_Power2_Blue {
-        hit = 13;
+        hit = 11;
     };
     class tcw_blasterbolt_dlt19 : IDA_Blasterbolt_Power2_Blue {
         hit = 8;
