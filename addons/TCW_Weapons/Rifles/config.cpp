@@ -353,6 +353,12 @@ class CfgWeapons {
         JLTS_canHaveShield = 1;
         JLTS_shieldedWeapon = "tcw_dc15s_shield";
         scope = 2;
+        class Single : Single {
+            reloadTime = 0.102;
+        };
+        class FullAuto : FullAuto {
+            reloadTime = 0.1999995;
+        };
     };
     class JLTS_DC15S_shield;
     class tcw_dc15s_shield: JLTS_DC15S_shield{
@@ -382,9 +388,11 @@ class CfgWeapons {
         scope = 2;
         class FullAuto : FullAuto {
             reloadTime = 0.1;
+            dispersion = 0.003;
         };
         class Single : Single {
             reloadTime = 0.1;
+            dispersion = 0.003;
         };
     };
 
@@ -397,6 +405,9 @@ class CfgWeapons {
         magazines[] = {"tcw_westar_mag"};
         muzzles[] = {"this","Stun"};
         scope = 2;
+        class FullAuto : FullAuto {
+            dispersion = 0.004; // high spray at full auto — use Single/Burst for accuracy
+        };
         class Stun : tcw_stun_muzzle{
             displayName="[TCW] Stun";
         };

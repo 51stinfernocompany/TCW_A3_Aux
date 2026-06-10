@@ -43,13 +43,11 @@ class CfgAmmo {
     class tcw_blasterbolt_dc15x : IDA_Blasterbolt_Power2_Blue {
         author = "TCW Team";
         JLTS_isEMPAmmo = 0;
-        //coefGravity = 0.000001;
-        //airFriction = -0.000001;
-        hit = 25;
+        hit = 40;
     };
 
     class tcw_blasterbolt_firepuncher : tcw_blasterbolt_dc15x {
-        hit = 69;
+        hit = 50;
         thrust = 600;
         thrustTime = 0.4;
     };
@@ -108,7 +106,7 @@ class CfgMagazines {
 class CfgWeapons {
     // DC-15x
     class IDA_dc15x;
-    class tcw_dc15x : IDA_dc15x 
+    class tcw_dc15x : IDA_dc15x
     {
         author = "TCW Team";
         BaseWeapon = "tcw_dc15x";
@@ -130,6 +128,7 @@ class CfgWeapons {
         */
         class Single : Single {
             dispersion = 0;
+            reloadTime = 1.5; // ~40 RPM — bolt-action pace
             recoilProne = "recoil_single_prone_ebr";
         };
     };
@@ -146,6 +145,8 @@ class CfgWeapons {
         minRange = 100;
         midRange = 800;
         maxRange = 2500;
+        magazines[] = {"tcw_773FP_magazine"};
+        scope = 2;
         /*
         class OpticsModes : OpticsModes {
             class IDA_773Firepuncher_Scope;
@@ -155,11 +156,9 @@ class CfgWeapons {
             };
         };
         */
-        magazines[] = {"tcw_773FP_magazine"};
-        
-        scope = 2;
         class Single: Single {
             dispersion = 0;
+            reloadTime = 0.45; // ~133 RPM — precision semi-auto
         };
     };
 
@@ -172,5 +171,8 @@ class CfgWeapons {
         magazines[] = {"tcw_valken38x_mag"};
         magazineWell[] = {};
         scope = 2;
+        class Single : Single {
+            reloadTime = 0.2; // ~300 RPM — fast recon semi-auto
+        };
     };
 };

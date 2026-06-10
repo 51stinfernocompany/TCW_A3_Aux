@@ -1,5 +1,19 @@
 #include "..\BaseControls.hpp"
 
+class CfgAmmo {
+    class IDA_Blasterbolt_Power1_Blue;
+    class tcw_blasterbolt_z6 : IDA_Blasterbolt_Power1_Blue {
+        hit = 8;
+    };
+    class IDA_Blasterbolt_Power2_Blue;
+    class tcw_blasterbolt_dc15le : IDA_Blasterbolt_Power2_Blue {
+        hit = 13;
+    };
+    class tcw_blasterbolt_dlt19 : IDA_Blasterbolt_Power2_Blue {
+        hit = 8;
+    };
+};
+
 class CfgPatches
 {
     class tcw_weapons_heavy
@@ -38,8 +52,9 @@ class CfgMagazines {
         author = "TCW Team";
         BaseWeapon = "tcw_z6_mag";
         displayName = "[TCW] Z-6 Energy Cell";
+        ammo = "tcw_blasterbolt_z6";
+        count = 500;
         scope = 2;
-        
     };
     class IDA_Blaster_Cell_Power2_20Rnd_Blue;
     class tcw_dc15le_mag : IDA_Blaster_Cell_Power2_20Rnd_Blue
@@ -48,6 +63,7 @@ class CfgMagazines {
         BaseWeapon = "tcw_dc15le_mag";
         displayName = "[TCW] DC-15LE Energy Cell (150)";
         displayNameShort = "DC-15LE Energy Cell (150)";
+        ammo = "tcw_blasterbolt_dc15le";
         count = 150;
         mass = 12;
         scope = 2;
@@ -59,6 +75,7 @@ class CfgMagazines {
         BaseWeapon = "tcw_dlt19_mag";
         displayName = "[TCW] DLT-19 Energy Cell (200)";
         displayNameShort = "DLT-19 Energy Cell (200)";
+        ammo = "tcw_blasterbolt_dlt19";
         count = 200;
         initSpeed = 417;
         mass = 16;
@@ -68,6 +85,7 @@ class CfgMagazines {
 
 class CfgWeapons {
     // Z-6
+    class Auto;
     class FullAuto;
     class WeaponSlotsInfo;
     class MuzzleSlot;
@@ -82,6 +100,11 @@ class CfgWeapons {
         magazines[] = {"tcw_z6_mag"};
         modes[] = {"Auto"};
         scope = 2;
+        class Auto : Auto
+        {
+            reloadTime = 0.0399; // ~1504 RPM
+            dispersion = 0.02;
+        };
     };
 
     //DC-15LE
@@ -99,7 +122,7 @@ class CfgWeapons {
         {
             autoFire = 1;
             dispersion = 0.00145;
-            reloadTime = 0.085; // This is rounds per minute
+            reloadTime = 0.092; // ~650 RPM
         };
     };
 
@@ -112,9 +135,10 @@ class CfgWeapons {
         magazines[] = {"tcw_dlt19_mag"};
         magazineWell[] = {};
         scope = 2;
-        class FullAuto : FullAuto 
+        class FullAuto : FullAuto
         {
-            reloadTime = 0.065; // This is rounds per minute
+            reloadTime = 0.065; // ~923 RPM
+            dispersion = 0.0015;
         };
     };
 };
