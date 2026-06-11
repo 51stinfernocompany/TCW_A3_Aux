@@ -13,6 +13,7 @@ class CfgPatches
 		{
 			"tcw_p1_helmet_327th_base",
 			"tcw_p1_helmet_327th_medic",
+			"tcw_p1_helmet_pilot_327th",
 			"tcw_uniform_327th_base",
 		};
 		requiredVersion = 2.20;
@@ -24,6 +25,7 @@ class CfgWeapons
 {
 //Helmet
 	class tcw_p1_helmet_base;
+	class tcw_p1_helmet_pilot_base;
 	class tcw_p1_helmet_327th_base : tcw_p1_helmet_base	
 	{
 		scope = 2;
@@ -47,6 +49,19 @@ class CfgWeapons
 		{
 			model = "tcw_unit_helmets_327th";
 			camo = "medic";
+		};
+	};
+
+	class tcw_p1_helmet_pilot_327th : tcw_p1_helmet_pilot_base
+	{
+		displayName = "[TCW] 327th P1 Pilot Helmet";
+		scope = 2;
+		hiddenSelections[] = {"Camo1","camo2","Visor"};
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\327th\Tex\p1_pilot_helmet_327th_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\327th\Tex\p1_pilot_helmet_327th_lifesupport_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\327th\Tex\p1_pilot_helmet_327th_co.paa"};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_helmets_327th";
+			camo = "pilot";
 		};
 	};
 
@@ -112,7 +127,7 @@ class xtdgearmodels
 			class camo
 			{
 				changeingame = 0;
-				values[] = {"ct","medic"};
+				values[] = {"ct","medic","pilot"};
 				class ct
 				{
 					label = "Standard";
@@ -121,7 +136,11 @@ class xtdgearmodels
 				{
 					label = "Medic";
 				};
-				
+				class pilot
+				{
+					label = "Pilot";
+				};
+
 			};
 		};
 

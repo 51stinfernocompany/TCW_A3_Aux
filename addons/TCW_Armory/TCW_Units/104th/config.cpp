@@ -19,6 +19,7 @@ class CfgPatches
             //"tcw_p1_helmet_104th_cpl",
             //"tcw_p1_helmet_104th_sgt",
             //"tcw_p1_helmet_104th_lt",
+			"tcw_p1_helmet_pilot_104th",
 			"tcw_uniform_104th_base",
             //"tcw_uniform_104th_cpl",
             //"tcw_uniform_104th_sgt",
@@ -33,6 +34,7 @@ class CfgWeapons
 {
 //Helmet
 	class tcw_p1_helmet_base;
+	class tcw_p1_helmet_pilot_base;
 	class tcw_p1_helmet_104th_base : tcw_p1_helmet_base	
 	{
 		scope = 2;
@@ -96,8 +98,22 @@ class CfgWeapons
 			model = "tcw_unit_helmets_104th";
 			camo = "lt";
 		};
+	};*/
+
+	class tcw_p1_helmet_pilot_104th : tcw_p1_helmet_pilot_base
+	{
+		displayName = "[TCW] 104th P1 Pilot Helmet";
+		scope = 2;
+		hiddenSelections[] = {"Camo1","camo2","Visor"};
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\p1_pilot_helmet_104th_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\p1_pilot_helmet_104th_lifesupport_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\p1_pilot_helmet_104th_co.paa"};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_helmets_104th";
+			camo = "pilot";
+		};
 	};
-*/
+
+
 //Uniform
 	class tcw_clone_uniform;
 	class ItemInfo;
@@ -246,7 +262,7 @@ class xtdgearmodels
             class camo
             {
                 changeingame = 0;
-                values[] = {"ct"/*,"medic","cpl","sgt","lt"*/};
+                values[] = {"ct"/*,"medic","cpl","sgt","lt"*/,"pilot"};
                 class ct
                 {
                     label = "Standard";
@@ -267,6 +283,10 @@ class xtdgearmodels
                 {
                     label = "Lieutenant";
                 };*/
+				class pilot
+				{
+					label = "Pilot";
+				};
             };
         };
 		class tcw_unit_uniforms_104th
