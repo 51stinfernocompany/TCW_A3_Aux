@@ -16,6 +16,7 @@ class CfgPatches
 			"tcw_p1_helmet_501st_medic",
 			"tcw_p1_helmet_501st_alt",
 			"tcw_p1_helmet_501st_alt_medic",
+			"tcw_p1_helmet_pilot_501st",
 			"tcw_uniform_501st_base",
 			"tcw_uniform_501st_alt"
 		};
@@ -28,6 +29,7 @@ class CfgWeapons
 {
 //Helmet
 	class tcw_p1_helmet_base;
+	class tcw_p1_helmet_pilot_base;
 	class tcw_p1_helmet_501st_base : tcw_p1_helmet_base	
 	{
 		scope = 2;
@@ -77,6 +79,19 @@ class CfgWeapons
 		{
 			model = "tcw_unit_helmets_501st";
 			camo = "alt_medic";
+		};
+	};
+
+	class tcw_p1_helmet_pilot_501st : tcw_p1_helmet_pilot_base
+	{
+		scope = 2;
+		displayName = "[TCW] 501st P1 Pilot Helmet";
+		hiddenSelections[] = {"Camo1","camo2","Visor"};
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\501st\Tex\p1_pilot_helmet_501st_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\501st\Tex\p1_pilot_helmet_501st_lifesupport_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\501st\Tex\p1_pilot_helmet_501st_co.paa"};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_helmets_501st";
+			camo = "pilot";
 		};
 	};
 
@@ -172,7 +187,7 @@ class xtdgearmodels
 			class camo
 			{
 				changeingame = 0;
-				values[] = {"ct","medic","alt","alt_medic"};
+				values[] = {"ct","medic","alt","alt_medic","pilot"};
 				class ct
 				{
 					label = "Standard";
@@ -188,6 +203,10 @@ class xtdgearmodels
 				class alt_medic
 				{
 					label = "Alt Medic";
+				};
+				class pilot
+				{
+					label = "Pilot";
 				};
 			};
 		};
