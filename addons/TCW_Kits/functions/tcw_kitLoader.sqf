@@ -130,7 +130,7 @@ if (!(_rank in _rankOrder)) then {
 };
 
 private _ldrRanks = ["CP","CS","CL","CPT","CC"];
-
+/*
 // Only dispatch a unit loader if the clanID matches a known unit
 if (_clanID in _validUnits) then {
     private _unitLoaders = [
@@ -156,7 +156,7 @@ if (_clanID in _validUnits) then {
 
 } else {
     diag_log format ["[TCW] '%1' has no unit loader, base kits only.", _clanID];
-};
+};*/
 
 
 // Trooper
