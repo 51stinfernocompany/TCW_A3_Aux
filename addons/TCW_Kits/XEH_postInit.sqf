@@ -46,6 +46,7 @@ missionNamespace setVariable ["TCW_CrateRegistry", _crateRegistry];
     // CONDITION: player ready + at least one registered crate object is valid on this client
     {
         if !(!isNull player && time > 0 && local player && !isNull (findDisplay 46)) exitWith { false };
+        if !(missionNamespace getVariable ["TCW_cutsceneDone", false]) exitWith { false };
         private _found = false;
         {
             private _classname = _x select 0;
