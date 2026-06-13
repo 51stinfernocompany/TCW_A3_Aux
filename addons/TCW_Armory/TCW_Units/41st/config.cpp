@@ -13,6 +13,7 @@ class CfgPatches
 		{
 			"tcw_p1_helmet_41st_base",
 			"tcw_p1_helmet_41st_medic",
+			"tcw_p1_helmet_pilot_41st",
 			"tcw_uniform_41st_base",
 		};
 		requiredVersion = 2.20;
@@ -24,6 +25,7 @@ class CfgWeapons
 {
 //Helmet
 	class tcw_p1_helmet_base;
+	class tcw_p1_helmet_pilot_base;
 	class tcw_p1_helmet_41st_base : tcw_p1_helmet_base	
 	{
 		scope = 2;
@@ -47,6 +49,19 @@ class CfgWeapons
 		{
 			model = "tcw_unit_helmets_41st";
 			camo = "medic";
+		};
+	};
+
+	class tcw_p1_helmet_pilot_41st : tcw_p1_helmet_pilot_base
+	{
+		displayName = "[TCW] 41st P1 Pilot Helmet";
+		scope = 2;
+		hiddenSelections[] = {"Camo1","camo2","Visor"};
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\p1_pilot_helmet_41st_co.paa","x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_pilot_helmet_lifesupport_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\p1_pilot_helmet_41st_co.paa"};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_helmets_41st";
+			camo = "pilot";
 		};
 	};
 
@@ -84,8 +99,7 @@ class CfgVehicles
 		uniformClass = "tcw_uniform_41st_base";
 		hiddenSelectionsTextures[] = 
 		{
-			"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\uniform_clone_upper_41st_base_co.paa",
-			"\Indecisive_Armoury_Units\REPUBLIC\Clone_Uniform\Lower\IDA_BodyLower_co.paa",
+			"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\uniform_clone_upper_41st_base_co.paa","\Indecisive_Armoury_Units\REPUBLIC\Clone_Uniform\Lower\IDA_BodyLower_co.paa",
 		};
 	};
 	class tcw_clone_backpack;
@@ -113,7 +127,7 @@ class xtdgearmodels
 			class camo
 			{
 				changeingame = 0;
-				values[] = {"ct","medic"};
+				values[] = {"ct","medic","pilot"};
 				class ct
 				{
 					label = "Standard";
@@ -121,6 +135,10 @@ class xtdgearmodels
 				class medic
 				{
 					label = "Medic";
+				};
+				class pilot
+				{
+					label = "Pilot";
 				};
 			};
 		};
