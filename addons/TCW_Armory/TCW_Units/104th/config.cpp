@@ -7,7 +7,7 @@ class CfgPatches
 		units[] = 
 		{
 			"tcw_unit_104th_base",
-            //"tcw_unit_104th_cpl",
+            "tcw_unit_104th_cpl",
             //"tcw_unit_104th_sgt",
             //"tcw_unit_104th_lt",
 			//"tcw_backpack_104th"
@@ -15,13 +15,13 @@ class CfgPatches
 		weapons[] = 
 		{
 			"tcw_p1_helmet_104th_base",
-			//"tcw_p1_helmet_104th_medic",
-            //"tcw_p1_helmet_104th_cpl",
+			"tcw_p1_helmet_104th_medic",
+            "tcw_p1_helmet_104th_cpl",
             //"tcw_p1_helmet_104th_sgt",
             //"tcw_p1_helmet_104th_lt",
 			"tcw_p1_helmet_pilot_104th",
 			"tcw_uniform_104th_base",
-            //"tcw_uniform_104th_cpl",
+            "tcw_uniform_104th_cpl",
             //"tcw_uniform_104th_sgt",
             //"tcw_uniform_104th_lt"
 		};
@@ -47,7 +47,7 @@ class CfgWeapons
 			camo = "ct";
 		};
 	};
-/*
+
     class tcw_p1_helmet_104th_medic : tcw_p1_helmet_base	
 	{
 		scope = 2;
@@ -73,7 +73,7 @@ class CfgWeapons
 			camo = "cpl";
 		};
 	};
-
+/*
     class tcw_p1_helmet_104th_sgt : tcw_p1_helmet_base	
 	{
 		scope = 2;
@@ -137,7 +137,7 @@ class CfgWeapons
 			camo = "ct";
 		};
 	};
-/*
+
     class tcw_uniform_104th_cpl : tcw_clone_uniform
 	{
 		scope = 2;
@@ -157,7 +157,7 @@ class CfgWeapons
 			camo = "cpl";
 		};
 	};
-
+/*
     class tcw_uniform_104th_sgt : tcw_clone_uniform
 	{
 		scope = 2;
@@ -211,7 +211,7 @@ class CfgVehicles
 			"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_upper_104th_base_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_lower_104th_base_co.paa",
 		};
 	};
-/*
+
     class tcw_unit_104th_cpl : tcw_clone_unit
 	{
 		uniformClass = "tcw_uniform_104th_cpl";
@@ -220,7 +220,7 @@ class CfgVehicles
 			"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_upper_104th_cpl_co.paa",
 		};
 	};
-
+/*
     class tcw_unit_104th_sgt : tcw_clone_unit
 	{
 		uniformClass = "tcw_uniform_104th_cpl";
@@ -262,19 +262,19 @@ class xtdgearmodels
             class camo
             {
                 changeingame = 0;
-                values[] = {"ct"/*,"medic","cpl","sgt","lt"*/,"pilot"};
+                values[] = {"ct","medic","cpl"/*,"sgt","lt"*/,"pilot"};
                 class ct
                 {
                     label = "Standard";
                 };
-                /*class medic
+                class medic
                 {
                     label = "Medic";
                 };
                 class cpl
                 {
                     label = "Corporal";
-                };
+                };/*
                 class sgt
                 {
                     label = "Sergeant";
@@ -297,16 +297,16 @@ class xtdgearmodels
             class camo
             {
                 changeingame = 0;
-                values[] = {"ct"/*,"cpl","sgt","lt"*/};
+                values[] = {"ct","cpl",/*"sgt","lt"*/};
                 class ct
                 {
                     label = "Standard";
                 };
-                /*class cpl
+                class cpl
                 {
                     label = "Corporal";
                 };
-                class sgt
+                /*class sgt
                 {
                     label = "Sergeant";
                 };
