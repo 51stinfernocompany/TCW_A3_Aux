@@ -16,6 +16,7 @@ class CfgPatches
 		{
 			"tcw_p1_helmet_212th_base",
 			"tcw_p1_helmet_212th_medic",
+			"tcw_p1_helmet_pilot_212th",
 			"tcw_p1_helmet_212th_cpl",
 			"tcw_p1_helmet_212th_sgt",
 			"tcw_p1_helmet_212th_grif",
@@ -33,6 +34,7 @@ class CfgWeapons
 {
 //Helmet
 	class tcw_p1_helmet_base;
+	class tcw_p1_helmet_pilot_base;
 	class tcw_p1_helmet_212th_base : tcw_p1_helmet_base	
 	{
 		scope = 2;
@@ -95,6 +97,19 @@ class CfgWeapons
 		{
 			model = "tcw_unit_helmets_212th";
 			camo = "grif";
+		};
+	};
+
+	class tcw_p1_helmet_pilot_212th : tcw_p1_helmet_pilot_base
+	{
+		displayName = "[TCW] 212th P1 Pilot Helmet";
+		scope = 2;
+		hiddenSelections[] = {"Camo1","camo2","Visor"};
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\212th\Tex\p1_pilot_helmet_212th_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\212th\Tex\p1_pilot_helmet_212th_lifesupport_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\212th\Tex\p1_pilot_helmet_212th_co.paa"};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_helmets_212th";
+			camo = "pilot";
 		};
 	};
 
@@ -248,7 +263,7 @@ class xtdgearmodels
 			class camo
 			{
 				changeingame = 0;
-				values[] = {"ct","medic","cpl","sgt","grif"};
+				values[] = {"ct","medic","cpl","sgt","pilot","grif"};
 				class ct
 				{
 					label = "Standard";
@@ -265,9 +280,13 @@ class xtdgearmodels
 				{
 					label = "Sergeant";
 				};
+				class pilot
+				{
+					label = "Pilot";
+				};
 				class grif
 				{
-					label = "Grif";
+					label = "'Grif'";
 				};
 			};
 		};
