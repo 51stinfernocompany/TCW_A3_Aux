@@ -46,6 +46,7 @@ missionNamespace setVariable ["TCW_CrateRegistry", _crateRegistry];
     // CONDITION: player ready + at least one registered crate object is valid on this client
     {
         if !(!isNull player && time > 0 && local player && !isNull (findDisplay 46)) exitWith { false };
+        //diag_log format ["[TCW] Cutscene signal variable status: %1", missionNamespace getVariable ["TCW_cutsceneDone", false]];
         if !(missionNamespace getVariable ["TCW_cutsceneDone", false]) exitWith { false };
         private _found = false;
         {
@@ -94,6 +95,7 @@ missionNamespace setVariable ["TCW_CrateRegistry", _crateRegistry];
         switch (_activeVar) do {
             case "TCW_KitBox": {
                 [] spawn TCW_fnc_kit_loader;
+                diag_log "[TCW] TCW_fnc_kit_loader: ran";
             };
             case "TCW_KitBoxCadet": {
                 [] spawn TCW_fnc_kit_loader_cadet;
@@ -113,7 +115,7 @@ missionNamespace setVariable ["TCW_CrateRegistry", _crateRegistry];
         diag_log "[TCW] Kit system execution triggered successfully.";
     },
     [],
-    60,
+    //95, //Turned off as Kits can fail to load for a client if for some reason the opening mission cutscune takes too long relative to when the timer starts running
     {
         diag_log "[TCW] CRITICAL TIMEOUT ERROR: Player environment or kit crate missing from map.";
     }
