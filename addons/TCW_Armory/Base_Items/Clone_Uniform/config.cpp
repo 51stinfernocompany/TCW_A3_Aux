@@ -11,6 +11,7 @@ class CfgPatches
 			"tcw_clone_unit_lieutenant", 
 			"tcw_clone_unit_captain", 
 			"tcw_clone_unit_commander",
+			"tcw_clone_unit_pilot"
 		};
 		weapons[] =
 		{
@@ -323,9 +324,16 @@ class CfgVehicles
 		impactDamageMultiplier = 0.5;
 	};
 
+	class tcw_clone_unit_pilot : tcw_clone_unit
+	{
+		displayName = "[TCW] Clone Pilot";
+		linkedItems[] = {"tcw_p1_helmet_pilot_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
+		respawnLinkedItems[] = {"tcw_p1_helmet_pilot_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
+	};
+
 	class tcw_clone_unit_sergeant : tcw_clone_unit
 	{
-		displayName = "[TCW] Clone Sergeant (DC15A)";
+		displayName = "[TCW] Clone Sergeant";
 		uniformClass = "tcw_clone_uniform_sergeant";
 		hiddenSelections[] = {"Camo1","Camo2"};
 		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\Base_Items\Clone_Uniform\textures\uniform_clone_upper_sgt_co.paa","\Indecisive_Armoury_Units\REPUBLIC\Clone_Uniform\Lower\IDA_BodyLower_co.paa"};
@@ -336,7 +344,7 @@ class CfgVehicles
 
 	class tcw_clone_unit_lieutenant : tcw_clone_unit
 	{
-		displayName = "[TCW] Clone Lieutenant (DC15A)";
+		displayName = "[TCW] Clone Lieutenant";
 		uniformClass = "tcw_clone_uniform_lieutenant";
 		hiddenSelections[] = {"Camo1","Camo2"};
 		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\Base_Items\Clone_Uniform\textures\uniform_clone_upper_lt_co.paa","\Indecisive_Armoury_Units\REPUBLIC\Clone_Uniform\Lower\IDA_BodyLower_co.paa"};
@@ -347,7 +355,7 @@ class CfgVehicles
 
 	class tcw_clone_unit_captain : tcw_clone_unit
 	{
-		displayName = "[TCW] Clone Captain (DC15A)";
+		displayName = "[TCW] Clone Captain";
 		uniformClass = "tcw_clone_uniform_captain";
 		hiddenSelections[] = {"Camo1","Camo2"};
 		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\Base_Items\Clone_Uniform\textures\uniform_clone_upper_cpt_co.paa","\Indecisive_Armoury_Units\REPUBLIC\Clone_Uniform\Lower\IDA_BodyLower_co.paa"};
@@ -358,7 +366,7 @@ class CfgVehicles
 
 	class tcw_clone_unit_commander : tcw_clone_unit
 	{
-		displayName = "[TCW] Clone Commander (DC15A)";
+		displayName = "[TCW] Clone Commander";
 		uniformClass = "tcw_clone_uniform_commander";
 		hiddenSelections[] = {"Camo1","Camo2"};
 		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\Base_Items\Clone_Uniform\textures\uniform_clone_upper_cmdr_co.paa","\Indecisive_Armoury_Units\REPUBLIC\Clone_Uniform\Lower\IDA_BodyLower_co.paa"};
@@ -372,9 +380,13 @@ class CfgVehicles
 /* <----------- Category Settings -----------> */
 class CfgEditorSubcategories
 {
-	class tcw_Clone_Subfaction
+	class tcw_clones
 	{
 		displayName = "Clone Troopers";
+	};
+	class tcw_clones_units
+	{
+		displayName = "Clone Troopers (Legions)";
 	};
 };
 

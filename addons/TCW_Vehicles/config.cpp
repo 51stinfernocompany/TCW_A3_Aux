@@ -38,4 +38,8 @@ class CfgEditorSubcategories
     {
         displayName="Ground Logistics";
     };
+    class tcw_ground_turrets
+    {
+        displayName="Turrets";
+    };
 };

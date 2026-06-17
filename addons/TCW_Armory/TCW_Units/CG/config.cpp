@@ -97,12 +97,17 @@ class CfgVehicles
 	class tcw_clone_unit;
 	class tcw_unit_CG_base : tcw_clone_unit
 	{
+		scope = 2;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] Coruscant Guard Trooper";
 		uniformClass = "tcw_uniform_CG_base";
 		hiddenSelectionsTextures[] = 
 		{
 			"x\tcw\addons\TCW_Armory\TCW_Units\CG\Tex\uniform_clone_upper_CG_base_co.paa",
 			"x\tcw\addons\TCW_Armory\TCW_Units\CG\Tex\uniform_clone_lower_CG_base_co.paa",
 		};
+		linkedItems[] = {"tcw_p1_helmet_CG_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
+		respawnLinkedItems[] = {"tcw_p1_helmet_CG_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
 	};
 	
 	class tcw_clone_backpack;

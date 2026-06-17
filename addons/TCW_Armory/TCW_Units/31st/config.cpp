@@ -205,11 +205,16 @@ class CfgVehicles
 	class tcw_clone_unit;
 	class tcw_unit_31st_base : tcw_clone_unit
 	{
+		scope = 2;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 31st Trooper";
 		uniformClass = "tcw_uniform_31st_base";
 		hiddenSelectionsTextures[] = 
 		{
 			"x\tcw\addons\TCW_Armory\TCW_Units\31st\Tex\uniform_clone_upper_31st_base_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\31st\Tex\uniform_clone_lower_31st_base_co.paa",
 		};
+		linkedItems[] = {"tcw_p1_helmet_31st_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
+		respawnLinkedItems[] = {"tcw_p1_helmet_31st_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
 	};
 /*
     class tcw_unit_31st_cpl : tcw_clone_unit
@@ -223,7 +228,10 @@ class CfgVehicles
 */
     class tcw_unit_31st_sgt : tcw_clone_unit
 	{
-		uniformClass = "tcw_uniform_31st_cpl";
+		scope = 1;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 31st Sergeant";
+		uniformClass = "tcw_uniform_31st_sgt";
 		hiddenSelectionsTextures[] = 
 		{
 			"x\tcw\addons\TCW_Armory\TCW_Units\31st\Tex\uniform_clone_upper_31st_sgt_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\31st\Tex\uniform_clone_lower_31st_base_co.paa"

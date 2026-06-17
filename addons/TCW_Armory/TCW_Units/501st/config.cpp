@@ -146,15 +146,23 @@ class CfgVehicles
 	class tcw_clone_unit;
 	class tcw_unit_501st_base : tcw_clone_unit
 	{
+		scope = 2;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 501st Trooper";
 		uniformClass = "tcw_uniform_501st_base";
 		hiddenSelectionsTextures[] = 
 		{
 			"x\tcw\addons\TCW_Armory\TCW_Units\501st\Tex\uniform_clone_upper_501st_base_co.paa",
 			"x\tcw\addons\TCW_Armory\TCW_Units\501st\Tex\uniform_clone_lower_501st_base_co.paa",
 		};
+		linkedItems[] = {"tcw_p1_helmet_501st_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
+		respawnLinkedItems[] = {"tcw_p1_helmet_501st_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
 	};
 	class tcw_unit_501st_alt : tcw_clone_unit
 	{
+		scope = 1;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 501st Alt Trooper";
 		uniformClass = "tcw_uniform_501st_alt";
 		hiddenSelectionsTextures[] = 
 		{

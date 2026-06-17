@@ -189,15 +189,23 @@ class CfgVehicles
 	class tcw_clone_unit;
 	class tcw_unit_115th_base : tcw_clone_unit
 	{
+		scope = 2;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 115th Trooper";
 		uniformClass = "tcw_uniform_115th_base";
 		hiddenSelectionsTextures[] = 
 		{
 			"x\tcw\addons\TCW_Armory\TCW_Units\115th\Tex\uniform_clone_upper_115th_base_co.paa",
 		};
+		linkedItems[] = {"tcw_p1_helmet_115th_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
+		respawnLinkedItems[] = {"tcw_p1_helmet_115th_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
 	};
 
     class tcw_unit_115th_cpl : tcw_clone_unit
 	{
+		scope = 1;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 115th Corporal";
 		uniformClass = "tcw_uniform_115th_cpl";
 		hiddenSelectionsTextures[] = 
 		{
@@ -207,6 +215,9 @@ class CfgVehicles
 
     class tcw_unit_115th_sgt : tcw_clone_unit
 	{
+		scope = 1;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 115th Sergeant";
 		uniformClass = "tcw_uniform_115th_cpl";
 		hiddenSelectionsTextures[] = 
 		{
@@ -216,6 +227,9 @@ class CfgVehicles
 
     class tcw_unit_115th_lt : tcw_clone_unit
 	{
+		scope = 1;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 115th Lieutenant";
 		uniformClass = "tcw_uniform_115th_lt";
 		hiddenSelectionsTextures[] = 
 		{

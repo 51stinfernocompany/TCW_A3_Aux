@@ -205,15 +205,23 @@ class CfgVehicles
 	class tcw_clone_unit;
 	class tcw_unit_212th_base : tcw_clone_unit
 	{
+		scope = 2;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 212th Trooper";
 		uniformClass = "tcw_uniform_212th_base";
 		hiddenSelectionsTextures[] = 
 		{
 			"x\tcw\addons\TCW_Armory\TCW_Units\212th\Tex\uniform_clone_upper_212th_base_co.paa",
 			"\Indecisive_Armoury_Units\REPUBLIC\Clone_Uniform\Lower\IDA_BodyLower_co.paa",
 		};
+		linkedItems[] = {"tcw_p1_helmet_212th_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
+		respawnLinkedItems[] = {"tcw_p1_helmet_212th_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
 	};
 	class tcw_unit_212th_cpl : tcw_clone_unit
 	{
+		scope = 1;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 212th Corporal";
 		uniformClass = "tcw_uniform_212th_cpl";
 		hiddenSelectionsTextures[] = 
 		{
@@ -223,6 +231,9 @@ class CfgVehicles
 	};
 	class tcw_unit_212th_sgt : tcw_clone_unit
 	{
+		scope = 1;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 212th Sergeant";
 		uniformClass = "tcw_uniform_212th_sgt";
 		hiddenSelectionsTextures[] = 
 		{
@@ -232,6 +243,9 @@ class CfgVehicles
 	};
 	class tcw_unit_212th_grif : tcw_clone_unit
 	{
+		scope = 1;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 212th Commander 'Grif'";
 		uniformClass = "tcw_uniform_212th_grif";
 		hiddenSelectionsTextures[] = 
 		{

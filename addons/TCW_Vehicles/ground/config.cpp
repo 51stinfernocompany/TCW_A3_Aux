@@ -43,7 +43,13 @@ class CfgPatches
             "tcw_rho_crate",
             "tcw_rho_crate_barracks",
             "tcw_rx",
-            "tcw_itt_logi"
+            "tcw_itt_logi",
+            // Hacket's Door
+            "land_tcw_orto_hangarDoor_noActions",
+            //Turrets
+            "tcw_mortar",
+            "tcw_heavyrepeater",
+            "tcw_heavyrepeater_armored"
         };
         magazines[] = {};
         weapons[] = {};
@@ -60,16 +66,6 @@ class CfgVehicles {
         editorSubcategory = "tcw_ground_assault";
         crew = "tcw_clone_unit";
         author = "TCW Team";
-        class VehicleTransport
-        {
-            class Cargo
-            {
-                parachuteClass            = "B_Parachute_02_F";
-                parachuteHeightLimit    = 40;                
-                canBeTransported        = 1;                
-                dimensions[]            = { "ftr_muzzle", "btl_muzzle" };
-            };
-        };
     };
 
 // TX-130
@@ -125,16 +121,6 @@ class CfgVehicles {
         editorSubcategory = "tcw_ground_assault";
         crew = "tcw_clone_unit";
         author = "TCW Team";
-        class VehicleTransport
-        {
-            class Cargo
-            {
-                parachuteClass            = "B_Parachute_02_F";
-                parachuteHeightLimit    = 40;                
-                canBeTransported        = 1;                
-                dimensions[]            = { "wheel_1_2_axis", "wheel_2_7_bound" };
-            };
-        };
     };
 
     // ITT
@@ -190,16 +176,6 @@ class CfgVehicles {
         editorSubcategory = "tcw_ground_logistics";
         crew = "tcw_clone_unit";
         author = "TCW Team";
-        class VehicleTransport
-        {
-            class Cargo
-            {
-                parachuteClass            = "B_Parachute_02_F";
-                parachuteHeightLimit    = 40;                
-                canBeTransported        = 1;                
-                dimensions[]            = { "doplnovani", "action" };
-            };
-        };
     };
 
     // AV-7
@@ -253,5 +229,47 @@ class CfgVehicles {
         editorSubcategory = "tcw_ground_logistics";
         crew = "tcw_clone_unit";
         author = "TCW Team";
+    };
+
+    //Hacket's Door
+    class land_3as_Orto_Hangar_Door;
+    class land_tcw_orto_hangarDoor_noActions: land_3as_Orto_Hangar_Door 
+    {
+        displayName = "Hangar Door (No Actions)";
+        class UserActions {};
+    };
+
+    //Turret
+    class 3AS_Republic_Mortar;
+    class tcw_mortar : 3AS_Republic_Mortar
+    {
+        author = "TCW Team";
+        displayName = "[TCW] Republic Mortar";
+        scope = 2;
+        faction = "tcw_blufor";
+        editorSubcategory = "tcw_ground_turrets";
+        crew = "tcw_clone_unit";
+    };
+
+    class 3AS_HeavyRepeater_Unarmoured;
+    class tcw_heavyrepeater : 3AS_HeavyRepeater_Unarmoured
+    {
+        author = "TCW Team";
+        displayName = "[TCW] Heavy Repeater";
+        scope = 2;
+        faction = "tcw_blufor";
+        editorSubcategory = "tcw_ground_turrets";
+        crew = "tcw_clone_unit";
+    };
+
+    class 3AS_HeavyRepeater_Armoured;
+    class tcw_heavyrepeater_armored : 3AS_HeavyRepeater_Armoured
+    {
+        author = "TCW Team";
+        displayName = "[TCW] Heavy Repeater (Armored)";
+        scope = 2;
+        faction = "tcw_blufor";
+        editorSubcategory = "tcw_ground_turrets";
+        crew = "tcw_clone_unit";
     };
 };
