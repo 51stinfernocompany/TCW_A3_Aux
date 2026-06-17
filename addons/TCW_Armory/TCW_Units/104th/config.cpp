@@ -10,7 +10,7 @@ class CfgPatches
             "tcw_unit_104th_cpl",
             //"tcw_unit_104th_sgt",
             //"tcw_unit_104th_lt",
-			//"tcw_backpack_104th"
+			"tcw_backpack_104th"
 		};
 		weapons[] = 
 		{
@@ -205,25 +205,33 @@ class CfgVehicles
 	class tcw_clone_unit;
 	class tcw_unit_104th_base : tcw_clone_unit
 	{
+		scope = 2;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 104th Trooper";
 		uniformClass = "tcw_uniform_104th_base";
 		hiddenSelectionsTextures[] = 
 		{
 			"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_upper_104th_base_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_lower_104th_base_co.paa",
 		};
+		linkedItems[] = {"tcw_p1_helmet_104th_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
+		respawnLinkedItems[] = {"tcw_p1_helmet_104th_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
 	};
 
     class tcw_unit_104th_cpl : tcw_clone_unit
 	{
+		scope = 1;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 104th Corporal";
 		uniformClass = "tcw_uniform_104th_cpl";
 		hiddenSelectionsTextures[] = 
 		{
-			"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_upper_104th_cpl_co.paa",
+			"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_upper_104th_cpl_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_lower_104th_cpl_co.paa"
 		};
 	};
 /*
     class tcw_unit_104th_sgt : tcw_clone_unit
 	{
-		uniformClass = "tcw_uniform_104th_cpl";
+		uniformClass = "tcw_uniform_104th_sgt";
 		hiddenSelectionsTextures[] = 
 		{
 			"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_upper_104th_sgt_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_lower_104th_sgt_co.paa"
@@ -237,7 +245,7 @@ class CfgVehicles
 		{
 			"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_upper_104th_lt_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_lower_104th_lt_co.paa"
 		};
-	};
+	}; */
 
 	class tcw_clone_backpack;
 	class tcw_backpack_104th : tcw_clone_backpack
@@ -247,7 +255,7 @@ class CfgVehicles
 		author = "TCW Team";
 		hiddenSelections[] = {"Rucksack","Grenade","Cloth"};
 		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\backpack_104th_co.paa","\Indecisive_Armoury_Units\REPUBLIC\Backpacks\IDA_Clone_Rucksack\IDA_Clone_Rucksack_Grenade_co.paa","\Indecisive_Armoury_Units\REPUBLIC\Backpacks\IDA_Clone_Rucksack\IDA_Clone_Rucksack_Cloth_co.paa"};
-    };*/
+    };
 };
 
 class xtdgearmodels

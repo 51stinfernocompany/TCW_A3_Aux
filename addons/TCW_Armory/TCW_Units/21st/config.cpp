@@ -82,12 +82,17 @@ class CfgVehicles
 	class tcw_clone_unit;
 	class tcw_unit_21st_base : tcw_clone_unit
 	{
+		scope = 2;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 21st Trooper";
 		uniformClass = "tcw_uniform_21st_base";
 		hiddenSelectionsTextures[] = 
 		{
 			"x\tcw\addons\TCW_Armory\TCW_Units\21st\Tex\uniform_clone_upper_21st_base_co.paa",
 			"x\tcw\addons\TCW_Armory\TCW_Units\21st\Tex\uniform_clone_lower_21st_base_co.paa",
 		};
+		linkedItems[] = {"tcw_p1_helmet_21st_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
+		respawnLinkedItems[] = {"tcw_p1_helmet_21st_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
 	};
 	class tcw_clone_backpack;
 	class tcw_backpack_21st : tcw_clone_backpack

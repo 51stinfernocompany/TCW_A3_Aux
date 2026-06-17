@@ -91,6 +91,14 @@ class CfgMagazines {
         ammo = "tcw_blasterbolt_scatterbolt_pellet";
         scope = 2;
     };
+    
+    class tcw_opfor_scattergun_pellet : 3AS_8Rnd_EY30_Pellets
+    {
+        author = "TCW Aux Team";
+        BaseWeapon = "tcw_scattergun_pellet";
+        displayName = "[TCW] OPFOR Shotgun Pellets";
+        scope = 2;
+    };
 
     class 3AS_1Rnd_EC80_Flechette;
     class tcw_scattergun_flechette : 3AS_1Rnd_EC80_Flechette
@@ -102,6 +110,7 @@ class CfgMagazines {
         count = 1;
         mass = 25;
     };
+
 };
 
 class CfgWeapons {
@@ -136,7 +145,7 @@ class CfgWeapons {
         author = "TCW Aux Team";
         BaseWeapon = "tcw_scattergun";
         displayName = "[TCW] Scattergun";
-        magazines[] = {"tcw_scattergun_slug","tcw_scattergun_pellet"};
+        magazines[] = {"tcw_scattergun_slug","tcw_scattergun_pellet","tcw_opfor_scattergun_pellet"};
         magazineWell[] = {};
     };
 };

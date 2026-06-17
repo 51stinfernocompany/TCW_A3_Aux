@@ -96,11 +96,16 @@ class CfgVehicles
 	class tcw_clone_unit;
 	class tcw_unit_41st_base : tcw_clone_unit
 	{
+		scope = 2;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 41st Trooper";
 		uniformClass = "tcw_uniform_41st_base";
 		hiddenSelectionsTextures[] = 
 		{
 			"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\uniform_clone_upper_41st_base_co.paa","\Indecisive_Armoury_Units\REPUBLIC\Clone_Uniform\Lower\IDA_BodyLower_co.paa",
 		};
+		linkedItems[] = {"tcw_p1_helmet_41st_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
+		respawnLinkedItems[] = {"tcw_p1_helmet_41st_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
 	};
 	class tcw_clone_backpack;
 	class tcw_backpack_41st : tcw_clone_backpack

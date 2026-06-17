@@ -7,7 +7,7 @@ class CfgPatches
 		units[] = 
 		{
 			"tcw_unit_91st_base",
-			"tcw_unit_91st_medic",
+			//"tcw_unit_91st_medic",
 			"tcw_unit_91st_cpl",
 			"tcw_unit_91st_sgt",
 			"tcw_unit_91st_blackout",
@@ -21,7 +21,7 @@ class CfgPatches
 			"tcw_p1_helmet_91st_sgt",
 			"tcw_p1_helmet_91st_blackout",
 			"tcw_uniform_91st_base",
-			"tcw_uniform_91st_medic",
+			//"tcw_uniform_91st_medic",
 			"tcw_uniform_91st_cpl",
 			"tcw_uniform_91st_sgt",
 			"tcw_uniform_91st_blackout"
@@ -125,7 +125,7 @@ class CfgWeapons
 		};
 	};
 
-	class tcw_uniform_91st_medic : tcw_clone_uniform
+	/*class tcw_uniform_91st_medic : tcw_clone_uniform
 	{
 		scope = 2;
 		displayName = "[TCW] 91st Medic Uniform";
@@ -143,7 +143,7 @@ class CfgWeapons
 			model = "tcw_unit_uniforms_91st";
 			camo = "medic";
 		};
-	};
+	};*/
 
 	class tcw_uniform_91st_cpl : tcw_clone_uniform
 	{
@@ -211,14 +211,19 @@ class CfgVehicles
 	class tcw_clone_unit;
 	class tcw_unit_91st_base : tcw_clone_unit
 	{
+		scope = 2;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 91st Trooper";
 		uniformClass = "tcw_uniform_91st_base";
 		hiddenSelectionsTextures[] = 
 		{
 			"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\uniform_clone_upper_91st_base_co.paa",
 			"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\uniform_clone_lower_91st_base_co.paa",
 		};
+		linkedItems[] = {"tcw_p1_helmet_91st_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
+		respawnLinkedItems[] = {"tcw_p1_helmet_91st_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
 	};
-	class tcw_unit_91st_medic : tcw_clone_unit
+	/*class tcw_unit_91st_medic : tcw_clone_unit
 	{
 		uniformClass = "tcw_uniform_91st_medic";
 		hiddenSelectionsTextures[] = 
@@ -226,9 +231,12 @@ class CfgVehicles
 			"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\uniform_clone_upper_91st_medic_co.paa",
 			"x\tcw\addons\TCW_Armory\TCW_Units\91st\Tex\uniform_clone_lower_91st_medic_co.paa",
 		};
-	};
+	};*/
 	class tcw_unit_91st_cpl : tcw_clone_unit
 	{
+		scope = 1;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 91st Corporal";
 		uniformClass = "tcw_uniform_91st_cpl";
 		hiddenSelectionsTextures[] = 
 		{
@@ -238,6 +246,9 @@ class CfgVehicles
 	};
 	class tcw_unit_91st_sgt : tcw_clone_unit
 	{
+		scope = 1;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 91st Sergeant";
 		uniformClass = "tcw_uniform_91st_sgt";
 		hiddenSelectionsTextures[] = 
 		{
@@ -247,6 +258,9 @@ class CfgVehicles
 	};
 	class tcw_unit_91st_blackout : tcw_clone_unit
 	{
+		scope = 1;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 91st Commander 'Blackout'";
 		uniformClass = "tcw_uniform_91st_blackout";
 		hiddenSelectionsTextures[] = 
 		{
@@ -311,14 +325,10 @@ class xtdgearmodels
 			class camo
 			{
 				changeingame = 0;
-				values[] = {"ct","medic","cpl","sgt","blackout"};
+				values[] = {"ct","cpl","sgt","blackout"};
 				class ct
 				{
 					label = "Standard";
-				};
-				class medic
-				{
-					label = "Medic";
 				};
 				class cpl
 				{

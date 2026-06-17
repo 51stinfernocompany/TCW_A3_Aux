@@ -57,8 +57,8 @@ class CfgVehicles {
         displayName="[TCW] ARC-170";
         faction = "tcw_blufor";
         editorSubcategory = "tcw_air_assault";
-        crew = "tcw_clone_unit";
-        author = "TCW Aux Team";
+        crew = "tcw_clone_unit_pilot";
+        author = "TCW Team";
     };
 
     // Delta 7
@@ -68,9 +68,69 @@ class CfgVehicles {
         displayName="[TCW] Delta-7";
         faction = "tcw_blufor";
         editorSubcategory = "tcw_air_assault";
-        crew = "tcw_clone_unit";
-        author = "TCW Aux Team";
-        textureList[] = {"Base",1,"Plo Koon",0,"Anakin",0,"Ashoka",0,"Blue",0,"Orange",0,"Green",0,"Purple",0};
+        crew = "tcw_clone_unit_pilot";
+        author = "TCW Team";
+        scope = 2;
+        textureList[] = {"Base",1,"PloKoon",0,"Ani",0,"Tano",0,"Blue",0,"Orange",0,"Green",0,"Purple",0};
+        class TextureSources: TextureSources
+        {
+            class Base
+            {
+                author = "3rd Army Studios";
+                displayName = "Base";
+                factions[] = {"tcw_blufor"};
+                textures[] = {"3AS\3AS_Delta7\data\Delta7_Hull_co.paa","3AS\3AS_Delta7\data\Delta7_Landing_Gear_co.paa","3AS\3AS_Delta7\data\Delta7_Cockpit_co.paa","3as\3as_delta7\data\delta7_interfaces_ca.paa"};
+            };
+            class PloKoon
+            {
+                author = "3rd Army Studios";
+                displayName = "Plo Koon";
+                factions[] = {"tcw_blufor"};
+                textures[] = {"3AS\3AS_Delta7\data\Textures\Delta7_Hull_PK_co.paa","3AS\3AS_Delta7\data\Delta7_Landing_Gear_co.paa","3AS\3AS_Delta7\data\Delta7_Cockpit_co.paa","3as\3as_delta7\data\delta7_interfaces_ca.paa"};
+            };
+            class Ani
+            {
+                author = "3rd Army Studios";
+                displayName = "Anakin";
+                factions[] = {"tcw_blufor"};
+                textures[] = {"3AS\3AS_Delta7\data\Textures\Delta7_Hull_Anakin_co.paa","3AS\3AS_Delta7\data\Delta7_Landing_Gear_co.paa","3AS\3AS_Delta7\data\Delta7_Cockpit_co.paa","3as\3as_delta7\data\delta7_interfaces_ca.paa"};
+            };
+            class Blue
+            {
+                author = "3rd Army Studios";
+                displayName = "Blue";
+                factions[] = {"tcw_blufor"};
+                textures[] = {"3AS\3AS_Delta7\data\Textures\Delta7_Hull_Blue_co.paa","3AS\3AS_Delta7\data\Delta7_Landing_Gear_co.paa","3AS\3AS_Delta7\data\Delta7_Cockpit_co.paa","3as\3as_delta7\data\delta7_interfaces_ca.paa"};
+            };
+            class Green
+            {
+                author = "3rd Army Studios";
+                displayName = "Green";
+                factions[] = {"tcw_blufor"};
+                textures[] = {"3AS\3AS_Delta7\data\Textures\Delta7_Hull_Green_co.paa","3AS\3AS_Delta7\data\Delta7_Landing_Gear_co.paa","3AS\3AS_Delta7\data\Delta7_Cockpit_co.paa","3as\3as_delta7\data\delta7_interfaces_ca.paa"};
+            };
+            class Orange
+            {
+                author = "3rd Army Studios";
+                displayName = "Orange";
+                factions[] = {"tcw_blufor"};
+                textures[] = {"3AS\3AS_Delta7\data\Textures\Delta7_Hull_Orange_co.paa","3AS\3AS_Delta7\data\Delta7_Landing_Gear_co.paa","3AS\3AS_Delta7\data\Delta7_Cockpit_co.paa","3as\3as_delta7\data\delta7_interfaces_ca.paa"};
+            };
+            class Purple
+            {
+                author = "3rd Army Studios";
+                displayName = "Purple";
+                factions[] = {"tcw_blufor"};
+                textures[] = {"3AS\3AS_Delta7\data\Textures\Delta7_Hull_Purple_co.paa","3AS\3AS_Delta7\data\Delta7_Landing_Gear_co.paa","3AS\3AS_Delta7\data\Delta7_Cockpit_co.paa","3as\3as_delta7\data\delta7_interfaces_ca.paa"};
+            };
+            class Tano
+            {
+                author = "3rd Army Studios";
+                displayName = "Purple";
+                factions[] = {"tcw_blufor"};
+                textures[] = {"3AS\3AS_Delta7\data\Textures\Delta7_Hull_Ahsoka_co.paa","3AS\3AS_Delta7\data\Delta7_Landing_Gear_co.paa","3AS\3AS_Delta7\data\Delta7_Cockpit_co.paa","3as\3as_delta7\data\delta7_interfaces_ca.paa"};
+            };
+        };
     };
 
     // V-19
@@ -80,8 +140,8 @@ class CfgVehicles {
         displayName="[TCW] V-19 Torrent";
         faction = "tcw_blufor";
         editorSubcategory = "tcw_air_assault";
-        crew = "tcw_clone_unit";
-        author = "TCW Aux Team";
+        crew = "tcw_clone_unit_pilot";
+        author = "TCW Team";
     };
 
     // Y-Wing
@@ -91,8 +151,8 @@ class CfgVehicles {
         displayName="[TCW] BTL-Y Wing";
         faction = "tcw_blufor";
         editorSubcategory = "tcw_air_assault";
-        crew = "tcw_clone_unit";
-        author = "TCW Aux Team";
+        crew = "tcw_clone_unit_pilot";
+        author = "TCW Team";
         weapons[] = {"tcw_ywing_cannon","CMFlareLauncher","Laserdesignator_pilotCamera"};
     };
 
@@ -101,10 +161,10 @@ class CfgVehicles {
     class tcw_vwing: 3as_Vwing_base
     {
         displayName="[TCW] V-Wing (3AS)";
-        faction = "tcw_faction_inferno";
+        faction = "tcw_blufor";
         editorSubcategory = "tcw_air_assault";
-        crew = "tcw_clone_unit_pilot_combat";
-        author = "TCW Aux Team";
+        crew = "tcw_clone_unit_pilot";
+        author = "TCW Team";
         fuelCapacity=3700;
         fuelConsumptionRate=0.1;
         weapons[] = {"tcw_vwing_medium_cannon","3AS_ARC_Missile_AA","weapon_AMRAAMLauncher","CMFlareLauncher"};
@@ -117,8 +177,8 @@ class CfgVehicles {
         displayName="[TCW] Z-95";
         faction = "tcw_blufor";
         editorSubcategory = "tcw_air_assault";
-        crew = "tcw_clone_unit";
-        author = "TCW Aux Team";
+        crew = "tcw_clone_unit_pilot";
+        author = "TCW Team";
     };
     
     // 3AS LAAT
@@ -128,10 +188,64 @@ class CfgVehicles {
         displayName="[TCW] LAAT/i Gunship (3AS)";
         faction = "tcw_blufor";
         editorSubcategory = "tcw_air_transport";
-        crew = "tcw_clone_unit";
-        author = "TCW Aux Team";
+        crew = "tcw_clone_unit_pilot";
+        author = "TCW Team";
         fuelCapacity=3700;
         fuelConsumptionRate=0.1;
+        hiddenSelectionsMaterials[] = {
+            "x\tcw\addons\TCW_Vehicles\air\data\laat\materials\hull.rvmat",
+            "x\tcw\addons\TCW_Vehicles\air\data\laat\materials\wings.rvmat",
+            "x\tcw\addons\TCW_Vehicles\air\data\laat\materials\weapons.rvmat",
+            "x\tcw\addons\TCW_Vehicles\air\data\laat\materials\weapon_details.rvmat",
+            "x\tcw\addons\TCW_Vehicles\air\data\laat\materials\interior.rvmat"
+        };
+        hiddenSelectionsTextures[] = {
+            "x\tcw\addons\TCW_Vehicles\air\data\laat\gar\GAR_Hull_CO.paa",
+            "x\tcw\addons\TCW_Vehicles\air\data\laat\gar\GAR_Wings_CO.paa",
+            "x\tcw\addons\TCW_Vehicles\air\data\laat\base\Weapons_CO.paa",
+            "x\tcw\addons\TCW_Vehicles\air\data\laat\base\Weapon_Details_CO.paa",
+            "x\tcw\addons\TCW_Vehicles\air\data\laat\base\Interior_CO.paa"
+        };
+        textureList[] = {"Republic",1,"Base",0,"CSA",0};
+        class TextureSources: TextureSources
+        {
+            class Republic
+            {
+                displayName = "Republic";
+                author = "TCW Team";
+                textures[] = {
+                    "x\tcw\addons\TCW_Vehicles\air\data\laat\gar\GAR_Hull_CO.paa",
+                    "x\tcw\addons\TCW_Vehicles\air\data\laat\gar\GAR_Wings_CO.paa",
+                    "x\tcw\addons\TCW_Vehicles\air\data\laat\base\Weapons_CO.paa",
+                    "x\tcw\addons\TCW_Vehicles\air\data\laat\base\Weapon_Details_CO.paa",
+                    "x\tcw\addons\TCW_Vehicles\air\data\laat\base\Interior_CO.paa"
+                };
+            };
+            class Base
+            {
+                displayName = "Base";
+                author = "TCW Team";
+                textures[] = {
+                    "x\tcw\addons\TCW_Vehicles\air\data\laat\base\Hull_CO.paa",
+                    "x\tcw\addons\TCW_Vehicles\air\data\laat\base\Wings_CO.paa",
+                    "x\tcw\addons\TCW_Vehicles\air\data\laat\base\Weapons_CO.paa",
+                    "x\tcw\addons\TCW_Vehicles\air\data\laat\base\Weapon_Details_CO.paa",
+                    "x\tcw\addons\TCW_Vehicles\air\data\laat\base\Interior_CO.paa"
+                };
+            };
+            class CSA
+            {
+                displayName = "CSA";
+                author = "TCW Team";
+                textures[] = {
+                    "x\tcw\addons\TCW_Vehicles\air\data\laat\csa\CSA_Hull_CO.paa",
+                    "x\tcw\addons\TCW_Vehicles\air\data\laat\csa\CSA_Wings_CO.paa",
+                    "x\tcw\addons\TCW_Vehicles\air\data\laat\base\Weapons_CO.paa",
+                    "x\tcw\addons\TCW_Vehicles\air\data\laat\base\Weapon_Details_CO.paa",
+                    "x\tcw\addons\TCW_Vehicles\air\data\laat\base\Interior_CO.paa"
+                };
+            };
+        };
     };
 
     // Rho Ho Transport
@@ -141,8 +255,8 @@ class CfgVehicles {
         displayName="[TCW] Rho Ho";
         faction = "tcw_blufor";
         editorSubcategory = "tcw_air_transport";
-        crew = "tcw_clone_unit";
-        author = "TCW Aux Team";
+        crew = "tcw_clone_unit_pilot";
+        author = "TCW Team";
     };
 
     // LAAT LE
@@ -152,8 +266,8 @@ class CfgVehicles {
         displayName="[TCW] LAAT-LE";
         faction = "tcw_blufor";
         editorSubcategory = "tcw_air_transport";
-        crew = "tcw_clone_unit";
-        author = "TCW Aux Team";
+        crew = "tcw_clone_unit_pilot";
+        author = "TCW Team";
         scope = 2;
         fuelCapacity=1000;
         fuelConsumptionRate=0.2;
@@ -166,8 +280,8 @@ class CfgVehicles {
         displayName="[TCW] NullClass Transport";
         faction = "tcw_blufor";
         editorSubcategory = "tcw_air_logistics";
-        crew = "tcw_clone_unit";
-        author = "TCW Aux Team";
+        crew = "tcw_clone_unit_pilot";
+        author = "TCW Team";
     };
 
     // Gozanti
@@ -177,8 +291,8 @@ class CfgVehicles {
         displayName="[TCW] Gozanti Cruiser";
         faction = "tcw_blufor";
         editorSubcategory = "tcw_air_logistics";
-        crew = "tcw_clone_unit";
-        author = "TCW Aux Team";
+        crew = "tcw_clone_unit_pilot";
+        author = "TCW Team";
     };
     
     //3AS LAAT C
@@ -188,8 +302,8 @@ class CfgVehicles {
         scope = 2;
         faction = "tcw_blufor";
         editorSubcategory = "tcw_air_logistics";
-        crew = "tcw_clone_unit";
-        author = "TCW Aux Team";
+        crew = "tcw_clone_unit_pilot";
+        author = "TCW Team";
         displayName = "[TCW] LAAT/C Gunship (3AS)";
         fuelConsumptionRate=0.1;
     };
@@ -201,8 +315,8 @@ class CfgVehicles {
         displayName="[TCW] Republic Transport";
         faction = "tcw_blufor";
         editorSubcategory = "tcw_air_logistics";
-        crew = "tcw_clone_unit";
-        author = "TCW Aux Team";
+        crew = "tcw_clone_unit_pilot";
+        author = "TCW Team";
     };
 };
 class lowROF;

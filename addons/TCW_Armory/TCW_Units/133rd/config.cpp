@@ -96,12 +96,17 @@ class CfgVehicles
 	class tcw_clone_unit;
 	class tcw_unit_133rd_base : tcw_clone_unit
 	{
+		scope = 2;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 133rd Trooper";
 		uniformClass = "tcw_uniform_133rd_base";
 		hiddenSelectionsTextures[] = 
 		{
 			"x\tcw\addons\TCW_Armory\TCW_Units\133rd\Tex\uniform_clone_upper_133rd_base_co.paa",
 			"x\tcw\addons\TCW_Armory\TCW_Units\133rd\Tex\uniform_clone_lower_133rd_base_co.paa",
 		};
+		linkedItems[] = {"tcw_p1_helmet_133rd_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
+		respawnLinkedItems[] = {"tcw_p1_helmet_133rd_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
 	};
 	
 	/*class tcw_clone_backpack;

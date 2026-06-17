@@ -147,6 +147,27 @@ class CfgWeapons
 		hiddenSelectionsMaterials[] = {"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Materials\p1_pilot_helmet_base.rvmat","x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Materials\p1_pilot_helmet_lifesupport.rvmat","a3\weapons_f_beta\launchers\titan\data\mirror.rvmat"};
 		ace_hearing_protection = 1;
 		ace_hearing_lowervolume = 0;
+		class ItemInfo: ItemInfo
+		{
+			mass = 10;
+			class HitpointsProtectionInfo
+			{
+				class head
+				{
+					hitpointname = "hithead";
+					armor = 10;
+					visual = "injury_head";
+					passthrough = 0.08975;
+				};
+				class face
+				{
+					hitpointname = "hitface";
+					armor = 10;
+					visual = "injury_head";
+					passthrough = 0.08975;
+				};
+			};
+		};
 		class xtdgearinfo
 		{
 			model = "tcw_phase1_helmets_rank";
