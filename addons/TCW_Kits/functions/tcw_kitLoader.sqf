@@ -125,7 +125,18 @@ if (!(_rank in _rankOrder)) then {
     } forEach _rankGearMap;
     {
         private _kit = _x;
-        { _kit pushBackUnique _x; } forEach _allRankGear;
+        {
+            private _gearItem = _x;
+            _kit pushBackUnique _gearItem;
+        } forEach _allRankGear;
+    } forEach _allAltGear;
+} else {
+    {
+        private _kit = _x;
+        {
+            private _gearItem = _x;
+            _kit pushBackUnique _gearItem;
+        } forEach _rankGear;
     } forEach _allAltGear;
 };
 
