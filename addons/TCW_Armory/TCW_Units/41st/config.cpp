@@ -7,14 +7,20 @@ class CfgPatches
 		units[] = 
 		{
 			"tcw_unit_41st_base",
+			"tcw_unit_41st_camo",
+			"tcw_unit_41st_camo_marked",
 			"tcw_backpack_41st"
 		};
 		weapons[] = 
 		{
 			"tcw_p1_helmet_41st_base",
+			"tcw_p1_helmet_41st_camo",
+			"tcw_p1_helmet_41st_camo_marked",
 			"tcw_p1_helmet_41st_medic",
 			"tcw_p1_helmet_pilot_41st",
 			"tcw_uniform_41st_base",
+			"tcw_uniform_41st_camo",
+			"tcw_uniform_41st_camo_marked",
 		};
 		requiredVersion = 2.20;
 		requiredAddons[] = {};
@@ -31,7 +37,10 @@ class CfgWeapons
 		scope = 2;
 		displayName = "[TCW] 41st P1 Helmet";
 		author = "TCW Team";
-		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\p1_helmet_41st_base_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\p1_helmet_41st_base_co.paa"};
+		hiddenSelectionsTextures[] = {
+		"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\p1_helmet_41st_base_co.paa",
+		"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\p1_helmet_41st_base_co.paa"
+		};
 		class xtdgearinfo
 		{
 			model = "tcw_unit_helmets_41st";
@@ -44,11 +53,43 @@ class CfgWeapons
 		scope = 2;
 		displayName = "[TCW] 41st Medic P1 Helmet";
 		author = "TCW Team";
-		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\p1_helmet_41st_medic_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\p1_helmet_41st_medic_co.paa"};
+		hiddenSelectionsTextures[] = {
+		"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\p1_helmet_41st_medic_co.paa",
+		"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\p1_helmet_41st_medic_co.paa"};
 		class xtdgearinfo
 		{
 			model = "tcw_unit_helmets_41st";
 			camo = "medic";
+		};
+	};
+
+	class tcw_p1_helmet_41st_camo : tcw_p1_helmet_base	
+	{
+		scope = 2;
+		displayName = "[TCW] 41st Camo P1 Helmet";
+		author = "TCW Team";
+		hiddenSelectionsTextures[] = {
+		"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\p1_helmet_41st_camo_co.paa",
+		"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\p1_helmet_41st_camo_co.paa"};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_helmets_41st";
+			camo = "ctc";
+		};
+	};
+
+	class tcw_p1_helmet_41st_camo_marked : tcw_p1_helmet_base	
+	{
+		scope = 2;
+		displayName = "[TCW] 41st Marked Camo P1 Helmet";
+		author = "TCW Team";
+		hiddenSelectionsTextures[] = {
+		"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\p1_helmet_41st_camo_mark_co.paa",
+		"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\p1_helmet_41st_camo_mark_co.paa"};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_helmets_41st";
+			camo = "ctcm";
 		};
 	};
 
@@ -57,7 +98,11 @@ class CfgWeapons
 		displayName = "[TCW] 41st P1 Pilot Helmet";
 		scope = 2;
 		hiddenSelections[] = {"Camo1","camo2","Visor"};
-		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\p1_pilot_helmet_41st_co.paa","x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_pilot_helmet_lifesupport_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\p1_pilot_helmet_41st_co.paa"};
+		hiddenSelectionsTextures[] = {
+		"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\p1_pilot_helmet_41st_co.paa",
+		"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_pilot_helmet_lifesupport_co.paa",
+		"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\p1_pilot_helmet_41st_co.paa"
+		};
 		class xtdgearinfo
 		{
 			model = "tcw_unit_helmets_41st";
@@ -89,6 +134,46 @@ class CfgWeapons
 			camo = "ct";
 		};
 	};
+
+	class tcw_uniform_41st_camo : tcw_clone_uniform
+	{
+		scope = 2;
+		displayName = "[TCW] 41st Camo Uniform";
+		author = "TCW Team";
+		class ItemInfo: UniformItem 
+		{
+			uniformModel="\Indecisive_Armoury_units\REPUBLIC\Clone_Uniform\IDA_Clone_Uniform.p3d";
+			uniformClass="tcw_unit_41st_camo";
+			uniformType="Neopren";
+			containerClass="Supply50";
+			mass=15;
+		};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_uniforms_41st";
+			camo = "ctc";
+		};
+	};
+
+	class tcw_uniform_41st_camo_marked : tcw_clone_uniform
+	{
+		scope = 2;
+		displayName = "[TCW] 41st Camo Marked Uniform";
+		author = "TCW Team";
+		class ItemInfo: UniformItem 
+		{
+			uniformModel="\Indecisive_Armoury_units\REPUBLIC\Clone_Uniform\IDA_Clone_Uniform.p3d";
+			uniformClass="tcw_unit_41st_camo_marked";
+			uniformType="Neopren";
+			containerClass="Supply50";
+			mass=15;
+		};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_uniforms_41st";
+			camo = "ctcm";
+		};
+	};
 };
 
 class CfgVehicles
@@ -102,11 +187,43 @@ class CfgVehicles
 		uniformClass = "tcw_uniform_41st_base";
 		hiddenSelectionsTextures[] = 
 		{
-			"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\uniform_clone_upper_41st_base_co.paa","\Indecisive_Armoury_Units\REPUBLIC\Clone_Uniform\Lower\IDA_BodyLower_co.paa",
+			"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\uniform_clone_upper_41st_base_co.paa",
+			"\Indecisive_Armoury_Units\REPUBLIC\Clone_Uniform\Lower\IDA_BodyLower_co.paa",
 		};
 		linkedItems[] = {"tcw_p1_helmet_41st_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
 		respawnLinkedItems[] = {"tcw_p1_helmet_41st_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
 	};
+
+	class tcw_unit_41st_camo : tcw_clone_unit
+	{
+		scope = 1;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 41st Camo Trooper";
+		uniformClass = "tcw_uniform_41st_camo";
+		hiddenSelectionsTextures[] = 
+		{
+			"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\uniform_clone_upper_41st_camo_co.paa",
+			"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\uniform_clone_lower_41st_camo_co.paa"
+		};
+		linkedItems[] = {"tcw_p1_helmet_41st_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
+		respawnLinkedItems[] = {"tcw_p1_helmet_41st_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
+	};
+
+	class tcw_unit_41st_camo_marked : tcw_clone_unit
+	{
+		scope = 1;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 41st Marked Camo Trooper";
+		uniformClass = "tcw_uniform_41st_camo_marked";
+		hiddenSelectionsTextures[] = 
+		{
+			"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\uniform_clone_upper_41st_camo_mark_co.paa",
+			"x\tcw\addons\TCW_Armory\TCW_Units\41st\Tex\uniform_clone_lower_41st_camo_mark_co.paa"
+		};
+		linkedItems[] = {"tcw_p1_helmet_41st_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
+		respawnLinkedItems[] = {"tcw_p1_helmet_41st_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
+	};
+
 	class tcw_clone_backpack;
 	class tcw_backpack_41st : tcw_clone_backpack
 	{
@@ -132,10 +249,18 @@ class xtdgearmodels
 			class camo
 			{
 				changeingame = 0;
-				values[] = {"ct","medic","pilot"};
+				values[] = {"ct","ctc","ctcm","medic","pilot"};
 				class ct
 				{
 					label = "Standard";
+				};
+				class ctc
+				{
+					label = "Camo";
+				};
+				class ctcm
+				{
+					label = "Marked Camo";
 				};
 				class medic
 				{
@@ -156,10 +281,18 @@ class xtdgearmodels
 			class camo
 			{
 				changeingame = 0;
-				values[] = {"ct"};
+				values[] = {"ct","ctc","ctcm"};
 				class ct
 				{
 					label = "Standard";
+				};
+				class ctc
+				{
+					label = "Camo";
+				};
+				class ctcm
+				{
+					label = "Marked Camo";
 				};
 			};
 		};
