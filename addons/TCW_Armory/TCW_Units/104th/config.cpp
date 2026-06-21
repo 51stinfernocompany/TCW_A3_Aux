@@ -7,23 +7,26 @@ class CfgPatches
 		units[] = 
 		{
 			"tcw_unit_104th_base",
-            "tcw_unit_104th_cpl",
-            //"tcw_unit_104th_sgt",
-            //"tcw_unit_104th_lt",
+			"tcw_unit_44th_base",
+            "tcw_unit_104th_tl",
+            "tcw_unit_104th_sl",
+            //"tcw_unit_104th_pl",
 			"tcw_backpack_104th"
 		};
 		weapons[] = 
 		{
 			"tcw_p1_helmet_104th_base",
+			"tcw_p1_helmet_44th_base",
 			"tcw_p1_helmet_104th_medic",
-            "tcw_p1_helmet_104th_cpl",
-            //"tcw_p1_helmet_104th_sgt",
-            //"tcw_p1_helmet_104th_lt",
+            "tcw_p1_helmet_104th_tl",
+            "tcw_p1_helmet_104th_sl",
+            //"tcw_p1_helmet_104th_pl",
 			"tcw_p1_helmet_pilot_104th",
 			"tcw_uniform_104th_base",
-            "tcw_uniform_104th_cpl",
-            //"tcw_uniform_104th_sgt",
-            //"tcw_uniform_104th_lt"
+			"tcw_uniform_44th_base",
+            "tcw_uniform_104th_tl",
+            "tcw_uniform_104th_sl",
+            //"tcw_uniform_104th_pl"
 		};
 		requiredVersion = 2.20;
 		requiredAddons[] = {};
@@ -48,6 +51,19 @@ class CfgWeapons
 		};
 	};
 
+	class tcw_p1_helmet_44th_base : tcw_p1_helmet_base	
+	{
+		scope = 2;
+		displayName = "[TCW] 44th Devil Dogs P1 Helmet";
+		author = "TCW Team";
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\p1_helmet_44th_base_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\p1_helmet_44th_base_co.paa"};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_helmets_104th";
+			camo = "ctdd";
+		};
+	};
+
     class tcw_p1_helmet_104th_medic : tcw_p1_helmet_base	
 	{
 		scope = 2;
@@ -61,42 +77,42 @@ class CfgWeapons
 		};
 	};
     
-    class tcw_p1_helmet_104th_cpl : tcw_p1_helmet_base	
+    class tcw_p1_helmet_104th_tl : tcw_p1_helmet_base	
 	{
 		scope = 2;
-		displayName = "[TCW] 104th Corporal P1 Helmet";
+		displayName = "[TCW] 104th Team Lead P1 Helmet";
 		author = "TCW Team";
-		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\p1_helmet_104th_cpl_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\p1_helmet_104th_cpl_co.paa"};
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\p1_helmet_104th_tl_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\p1_helmet_104th_tl_co.paa"};
 		class xtdgearinfo
 		{
 			model = "tcw_unit_helmets_104th";
-			camo = "cpl";
+			camo = "tl";
 		};
 	};
-/*
-    class tcw_p1_helmet_104th_sgt : tcw_p1_helmet_base	
+
+    class tcw_p1_helmet_104th_sl : tcw_p1_helmet_base	
 	{
 		scope = 2;
-		displayName = "[TCW] 104th Sergeant P1 Helmet";
+		displayName = "[TCW] 104th Squad Lead P1 Helmet";
 		author = "TCW Team";
-		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\p1_helmet_104th_sgt_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\p1_helmet_104th_sgt_co.paa"};
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\p1_helmet_104th_sl_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\p1_helmet_104th_sl_co.paa"};
 		class xtdgearinfo
 		{
 			model = "tcw_unit_helmets_104th";
-			camo = "sgt";
+			camo = "sl";
 		};
 	};
-    
-    class tcw_p1_helmet_104th_lt : tcw_p1_helmet_base	
+  /*  
+    class tcw_p1_helmet_104th_pl : tcw_p1_helmet_base	
 	{
 		scope = 2;
-		displayName = "[TCW] 104th Lieutenant P1 Helmet";
+		displayName = "[TCW] 104th Platoon Lead P1 Helmet";
 		author = "TCW Team";
-		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\p1_helmet_104th_lt_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\p1_helmet_104th_lt_co.paa"};
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\p1_helmet_104th_pl_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\p1_helmet_104th_pl_co.paa"};
 		class xtdgearinfo
 		{
 			model = "tcw_unit_helmets_104th";
-			camo = "lt";
+			camo = "pl";
 		};
 	};*/
 
@@ -138,15 +154,15 @@ class CfgWeapons
 		};
 	};
 
-    class tcw_uniform_104th_cpl : tcw_clone_uniform
+	class tcw_uniform_44th_base : tcw_clone_uniform
 	{
 		scope = 2;
-		displayName = "[TCW] 104th Corporal Uniform";
+		displayName = "[TCW] 44th Devil Dogs Uniform";
 		author = "TCW Team";
 		class ItemInfo: UniformItem 
 		{
 			uniformModel="\Indecisive_Armoury_units\REPUBLIC\Clone_Uniform\IDA_Clone_Uniform.p3d";
-			uniformClass="tcw_unit_104th_cpl";
+			uniformClass="tcw_unit_44th_base";
 			uniformType="Neopren";
 			containerClass="Supply50";
 			mass=15;
@@ -154,39 +170,19 @@ class CfgWeapons
 		class xtdgearinfo
 		{
 			model = "tcw_unit_uniforms_104th";
-			camo = "cpl";
-		};
-	};
-/*
-    class tcw_uniform_104th_sgt : tcw_clone_uniform
-	{
-		scope = 2;
-		displayName = "[TCW] 104th Sergeant Uniform";
-		author = "TCW Team";
-		class ItemInfo: UniformItem 
-		{
-			uniformModel="\Indecisive_Armoury_units\REPUBLIC\Clone_Uniform\IDA_Clone_Uniform.p3d";
-			uniformClass="tcw_unit_104th_sgt";
-			uniformType="Neopren";
-			containerClass="Supply50";
-			mass=15;
-		};
-		class xtdgearinfo
-		{
-			model = "tcw_unit_uniforms_104th";
-			camo = "sgt";
+			camo = "ctdd";
 		};
 	};
 
-    class tcw_uniform_104th_lt : tcw_clone_uniform
+    class tcw_uniform_104th_tl : tcw_clone_uniform
 	{
 		scope = 2;
-		displayName = "[TCW] 104th Lieutenant Uniform";
+		displayName = "[TCW] 104th Team Lead Uniform";
 		author = "TCW Team";
 		class ItemInfo: UniformItem 
 		{
 			uniformModel="\Indecisive_Armoury_units\REPUBLIC\Clone_Uniform\IDA_Clone_Uniform.p3d";
-			uniformClass="tcw_unit_104th_lt";
+			uniformClass="tcw_unit_104th_tl";
 			uniformType="Neopren";
 			containerClass="Supply50";
 			mass=15;
@@ -194,7 +190,48 @@ class CfgWeapons
 		class xtdgearinfo
 		{
 			model = "tcw_unit_uniforms_104th";
-			camo = "lt";
+			camo = "tl";
+		};
+	};
+
+
+    class tcw_uniform_104th_sl : tcw_clone_uniform
+	{
+		scope = 2;
+		displayName = "[TCW] 104th Squad Lead Uniform";
+		author = "TCW Team";
+		class ItemInfo: UniformItem 
+		{
+			uniformModel="\Indecisive_Armoury_units\REPUBLIC\Clone_Uniform\IDA_Clone_Uniform.p3d";
+			uniformClass="tcw_unit_104th_sl";
+			uniformType="Neopren";
+			containerClass="Supply50";
+			mass=15;
+		};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_uniforms_104th";
+			camo = "sl";
+		};
+	};
+/*
+    class tcw_uniform_104th_pl : tcw_clone_uniform
+	{
+		scope = 2;
+		displayName = "[TCW] 104th Platoon Lead Uniform";
+		author = "TCW Team";
+		class ItemInfo: UniformItem 
+		{
+			uniformModel="\Indecisive_Armoury_units\REPUBLIC\Clone_Uniform\IDA_Clone_Uniform.p3d";
+			uniformClass="tcw_unit_104th_pl";
+			uniformType="Neopren";
+			containerClass="Supply50";
+			mass=15;
+		};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_uniforms_104th";
+			camo = "pl";
 		};
 	};
     */
@@ -217,33 +254,54 @@ class CfgVehicles
 		respawnLinkedItems[] = {"tcw_p1_helmet_104th_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
 	};
 
-    class tcw_unit_104th_cpl : tcw_clone_unit
+    class tcw_unit_104th_tl : tcw_clone_unit
 	{
 		scope = 1;
 		editorSubcategory = "tcw_clones_units";
-		displayName = "[TCW] 104th Corporal";
-		uniformClass = "tcw_uniform_104th_cpl";
+		displayName = "[TCW] 104th Team Lead";
+		uniformClass = "tcw_uniform_104th_tl";
 		hiddenSelectionsTextures[] = 
 		{
-			"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_upper_104th_cpl_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_lower_104th_cpl_co.paa"
-		};
-	};
-/*
-    class tcw_unit_104th_sgt : tcw_clone_unit
-	{
-		uniformClass = "tcw_uniform_104th_sgt";
-		hiddenSelectionsTextures[] = 
-		{
-			"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_upper_104th_sgt_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_lower_104th_sgt_co.paa"
+			"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_upper_104th_tl_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_lower_104th_tl_co.paa"
 		};
 	};
 
-    class tcw_unit_104th_lt : tcw_clone_unit
+	class tcw_unit_44th_base : tcw_clone_unit
 	{
-		uniformClass = "tcw_uniform_104th_lt";
+		scope = 1;
+		editorSubcategory = "tcw_clones_units";
+		displayName = "[TCW] 44th Devil Dogs Trooper";
+		uniformClass = "tcw_uniform_44th_base";
 		hiddenSelectionsTextures[] = 
 		{
-			"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_upper_104th_lt_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_lower_104th_lt_co.paa"
+			"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_upper_44th_base_co.paa",
+			"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_lower_44th_base_co.paa",
+		};
+		linkedItems[] = {"tcw_p1_helmet_44th_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
+		respawnLinkedItems[] = {"tcw_p1_helmet_44th_base","tcw_vest_plate_base","ItemMap","ItemGPS","ItemCompass","ItemWatch","ItemRadio"};
+	};
+
+    class tcw_unit_104th_sl : tcw_clone_unit
+	{
+		scope = 1;
+		displayName = "[TCW] 104th Squad Lead";
+		uniformClass = "tcw_uniform_104th_sl";
+		editorSubcategory = "tcw_clones_units";
+		hiddenSelectionsTextures[] = 
+		{
+			"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_upper_104th_sl_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_lower_104th_sl_co.paa"
+		};
+	};
+/*
+    class tcw_unit_104th_pl : tcw_clone_unit
+	{
+		scope = 1;
+		displayName = "[TCW] 104th Platoon Lead";
+		uniformClass = "tcw_uniform_104th_pl";
+		editorSubcategory = "tcw_clones_units";
+		hiddenSelectionsTextures[] = 
+		{
+			"x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_upper_104th_pl_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\104th\Tex\uniform_clone_lower_104th_pl_co.paa"
 		};
 	}; */
 
@@ -270,26 +328,30 @@ class xtdgearmodels
             class camo
             {
                 changeingame = 0;
-                values[] = {"ct","medic","cpl"/*,"sgt","lt"*/,"pilot"};
+                values[] = {"ct","ctdd","medic","tl","sl","pl","pilot"};
                 class ct
                 {
                     label = "Standard";
+                };
+				class ctdd
+                {
+                    label = "Devil Dogs";
                 };
                 class medic
                 {
                     label = "Medic";
                 };
-                class cpl
+                class tl
                 {
-                    label = "Corporal";
-                };/*
-                class sgt
-                {
-                    label = "Sergeant";
+                    label = "Team Lead";
                 };
-                class lt
+                class sl
                 {
-                    label = "Lieutenant";
+                    label = "Squad Lead";
+                };/*
+                class pl
+                {
+                    label = "Platoon Lead";
                 };*/
 				class pilot
 				{
@@ -305,22 +367,26 @@ class xtdgearmodels
             class camo
             {
                 changeingame = 0;
-                values[] = {"ct","cpl",/*"sgt","lt"*/};
+                values[] = {"ct","ctdd","tl","sl","pl"};
                 class ct
                 {
                     label = "Standard";
                 };
-                class cpl
+				class ctdd
                 {
-                    label = "Corporal";
+                    label = "Devil Dogs";
                 };
-                /*class sgt
+                class tl
                 {
-                    label = "Sergeant";
+                    label = "Team Lead";
                 };
-                class lt
+                class sl
                 {
-                    label = "Lieutenant";
+                    label = "Squad Lead";
+                };/*
+                class pl
+                {
+                    label = "Platoon Lead";
                 };*/
             };
         };
