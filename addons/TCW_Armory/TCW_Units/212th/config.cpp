@@ -9,6 +9,7 @@ class CfgPatches
 			"tcw_unit_212th_base",
 			"tcw_unit_212th_cpl",
 			"tcw_unit_212th_sgt",
+			"tcw_unit_212th_grif",
 			"tcw_backpack_212th"
 		};
 		weapons[] = 
@@ -17,9 +18,11 @@ class CfgPatches
 			"tcw_p1_helmet_212th_medic",
 			"tcw_p1_helmet_212th_cpl",
 			"tcw_p1_helmet_212th_sgt",
+			"tcw_p1_helmet_212th_grif",
 			"tcw_uniform_212th_base",
 			"tcw_uniform_212th_cpl",
-			"tcw_uniform_212th_sgt"
+			"tcw_uniform_212th_sgt",
+			"tcw_uniform_212th_grif"
 		};
 		requiredVersion = 2.20;
 		requiredAddons[] = {};
@@ -79,6 +82,19 @@ class CfgWeapons
 		{
 			model = "tcw_unit_helmets_212th";
 			camo = "sgt";
+		};
+	};
+
+	class tcw_p1_helmet_212th_grif : tcw_p1_helmet_base	
+	{
+		scope = 2;
+		displayName = "[TCW] 212th Grif P1 Helmet";
+		author = "TCW Team";
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\212th\Tex\p1_helmet_212th_grif_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\212th\Tex\p1_helmet_212th_grif_co.paa"};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_helmets_212th";
+			camo = "grif";
 		};
 	};
 
@@ -147,6 +163,26 @@ class CfgWeapons
 		};
 	};
 
+	class tcw_uniform_212th_grif : tcw_clone_uniform
+	{
+		scope = 2;
+		displayName = "[TCW] 212th Grif Uniform";
+		author = "TCW Team";
+		class ItemInfo: UniformItem 
+		{
+			uniformModel="\Indecisive_Armoury_units\REPUBLIC\Clone_Uniform\IDA_Clone_Uniform.p3d";
+			uniformClass="tcw_unit_212th_grif";
+			uniformType="Neopren";
+			containerClass="Supply50";
+			mass=15;
+		};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_uniforms_212th";
+			camo = "grif";
+		};
+	};
+
 };
 
 class CfgVehicles
@@ -179,6 +215,15 @@ class CfgVehicles
 			"x\tcw\addons\TCW_Armory\TCW_Units\212th\Tex\uniform_clone_lower_212th_sgt_co.paa",
 		};
 	};
+	class tcw_unit_212th_grif : tcw_clone_unit
+	{
+		uniformClass = "tcw_uniform_212th_grif";
+		hiddenSelectionsTextures[] = 
+		{
+			"x\tcw\addons\TCW_Armory\TCW_Units\212th\Tex\uniform_clone_upper_212th_grif_co.paa",
+			"x\tcw\addons\TCW_Armory\TCW_Units\212th\Tex\uniform_clone_lower_212th_grif_co.paa",
+		};
+	};
 	class tcw_clone_backpack;
 	class tcw_backpack_212th : tcw_clone_backpack
 	{
@@ -203,7 +248,7 @@ class xtdgearmodels
 			class camo
 			{
 				changeingame = 0;
-				values[] = {"ct","medic","cpl","sgt"};
+				values[] = {"ct","medic","cpl","sgt","grif"};
 				class ct
 				{
 					label = "Standard";
@@ -220,6 +265,10 @@ class xtdgearmodels
 				{
 					label = "Sergeant";
 				};
+				class grif
+				{
+					label = "Grif";
+				};
 			};
 		};
 
@@ -231,7 +280,7 @@ class xtdgearmodels
 			class camo
 			{
 				changeingame = 0;
-				values[] = {"ct","cpl","sgt"};
+				values[] = {"ct","cpl","sgt","grif"};
 				class ct
 				{
 					label = "Standard";
@@ -243,6 +292,10 @@ class xtdgearmodels
 				class sgt
 				{
 					label = "Sergeant";
+				};
+				class grif
+				{
+					label = "Grif";
 				};
 			};
 		};

@@ -14,9 +14,10 @@ class CfgPatches
 		weapons[] = 
 		{
 			"tcw_p1_helmet_125th_base",
-			//"tcw_p1_helmet_125th_medic",
+			"tcw_p1_helmet_125th_medic",
 			"tcw_p1_helmet_125th_co",
             "tcw_p1_helmet_125th_eod",
+			"tcw_p1_helmet_pilot_125th",
 			"tcw_uniform_125th_base",
 			"tcw_uniform_125th_co",
             "tcw_uniform_125th_eod",
@@ -30,6 +31,7 @@ class CfgWeapons
 {
 //Helmet
 	class tcw_p1_helmet_base;
+	class tcw_p1_helmet_pilot_base;
 	class tcw_p1_helmet_125th_base : tcw_p1_helmet_base	
 	{
 		scope = 2;
@@ -43,7 +45,7 @@ class CfgWeapons
 		};
 	};
 
-	/*class tcw_p1_helmet_125th_medic : tcw_p1_helmet_base	
+	class tcw_p1_helmet_125th_medic : tcw_p1_helmet_base	
 	{
 		scope = 2;
 		displayName = "[TCW] 125th Medic P1 Helmet";
@@ -54,7 +56,7 @@ class CfgWeapons
 			model = "tcw_unit_helmets_125th";
 			camo = "medic";
 		};
-	};*/
+	};
 
 	class tcw_p1_helmet_125th_co : tcw_p1_helmet_base	
 	{
@@ -79,6 +81,19 @@ class CfgWeapons
 		{
 			model = "tcw_unit_helmets_125th";
 			camo = "eod";
+		};
+	};
+
+	class tcw_p1_helmet_pilot_125th : tcw_p1_helmet_pilot_base
+	{
+		displayName = "[TCW] 125th P1 Pilot Helmet";
+		scope = 2;
+		hiddenSelections[] = {"Camo1","camo2","Visor"};
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\125th\Tex\p1_pilot_helmet_125th_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\125th\Tex\p1_pilot_helmet_125th_lifesupport_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\125th\Tex\p1_pilot_helmet_125th_co.paa"};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_helmets_125th";
+			camo = "pilot";
 		};
 	};
 
@@ -203,15 +218,15 @@ class xtdgearmodels
 			class camo
 			{
 				changeingame = 0;
-				values[] = {"ct"/*"medic"*/,"co","eod"};
+				values[] = {"ct","medic","co","eod","pilot"};
 				class ct
 				{
 					label = "Standard";
 				};
-				/*class medic
+				class medic
 				{
 					label = "Medic";
-				};*/
+				};
 				class co
 				{
 					label = "CO";
@@ -219,6 +234,10 @@ class xtdgearmodels
 				class eod
 				{
 					label = "AT/EOD";
+				};
+				class pilot
+				{
+					label = "Pilot";
 				};
 			};
 		};

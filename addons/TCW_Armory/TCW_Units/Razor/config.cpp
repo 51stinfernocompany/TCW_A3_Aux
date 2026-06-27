@@ -12,7 +12,8 @@ class CfgPatches
 		weapons[] = 
 		{
 			"tcw_p1_helmet_razor_base",
-			//"tcw_p1_helmet_razor_medic",
+			"tcw_p1_helmet_razor_medic",
+			"tcw_p1_helmet_pilot_razor",
 			"tcw_uniform_razor_base",
 		};
 		requiredVersion = 2.20;
@@ -24,6 +25,7 @@ class CfgWeapons
 {
 //Helmet
 	class tcw_p1_helmet_base;
+	class tcw_p1_helmet_pilot_base;
 	class tcw_p1_helmet_razor_base : tcw_p1_helmet_base	
 	{
 		scope = 2;
@@ -37,7 +39,7 @@ class CfgWeapons
 		};
 	};
 
-	/*class tcw_p1_helmet_razor_medic : tcw_p1_helmet_base	
+	class tcw_p1_helmet_razor_medic : tcw_p1_helmet_base	
 	{
 		scope = 2;
 		displayName = "[TCW] Razor Squadron Medic P1 Helmet";
@@ -48,7 +50,20 @@ class CfgWeapons
 			model = "tcw_unit_helmets_razor";
 			camo = "medic";
 		};
-	};*/
+	};
+
+	class tcw_p1_helmet_pilot_razor : tcw_p1_helmet_pilot_base
+	{
+		displayName = "[TCW] Razor Squadron P1 Pilot Helmet";
+		scope = 2;
+		hiddenSelections[] = {"Camo1","camo2","Visor"};
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\Razor\Tex\p1_pilot_helmet_razor_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\Razor\Tex\p1_pilot_helmet_razor_lifesupport_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\Razor\Tex\p1_pilot_helmet_razor_co.paa"};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_helmets_razor";
+			camo = "pilot";
+		};
+	};
 
 //Uniform
 	class tcw_clone_uniform;
@@ -114,15 +129,19 @@ class xtdgearmodels
 			class camo
 			{
 				changeingame = 0;
-				values[] = {"ct",/*"medic"*/};
+				values[] = {"ct","medic","pilot"};
 				class ct
 				{
 					label = "Standard";
 				};
-				/*class medic
+				class medic
 				{
 					label = "Medic";
-				};*/
+				};
+				class pilot
+				{
+					label = "Pilot";
+				};
 			};
 		};
 

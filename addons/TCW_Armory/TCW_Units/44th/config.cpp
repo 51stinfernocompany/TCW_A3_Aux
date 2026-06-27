@@ -13,8 +13,9 @@ class CfgPatches
 		weapons[] = 
 		{
 			"tcw_p1_helmet_44th_base",
-			//"tcw_p1_helmet_44th_medic",
+			"tcw_p1_helmet_44th_medic",
 			"tcw_p1_helmet_44th_sharp",
+			"tcw_p1_helmet_pilot_44th",
 			"tcw_uniform_44th_base",
 			"tcw_uniform_44th_sharp"
 		};
@@ -27,6 +28,7 @@ class CfgWeapons
 {
 //Helmet
 	class tcw_p1_helmet_base;
+	class tcw_p1_helmet_pilot_base;
 	class tcw_p1_helmet_44th_base : tcw_p1_helmet_base	
 	{
 		scope = 2;
@@ -40,7 +42,7 @@ class CfgWeapons
 		};
 	};
 
-	/*class tcw_p1_helmet_44th_medic : tcw_p1_helmet_base	
+	class tcw_p1_helmet_44th_medic : tcw_p1_helmet_base	
 	{
 		scope = 2;
 		displayName = "[TCW] 44th Medic P1 Helmet";
@@ -51,7 +53,7 @@ class CfgWeapons
 			model = "tcw_unit_helmets_44th";
 			camo = "medic";
 		};
-	};*/
+	};
 
 	class tcw_p1_helmet_44th_sharp : tcw_p1_helmet_base	
 	{
@@ -63,6 +65,19 @@ class CfgWeapons
 		{
 			model = "tcw_unit_helmets_44th";
 			camo = "sharp";
+		};
+	};
+
+	class tcw_p1_helmet_pilot_44th : tcw_p1_helmet_pilot_base
+	{
+		displayName = "[TCW] 44th P1 Pilot Helmet";
+		scope = 2;
+		hiddenSelections[] = {"Camo1","camo2","Visor"};
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\TCW_Units\44th\Tex\p1_pilot_helmet_44th_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\44th\Tex\p1_pilot_helmet_44th_lifesupport_co.paa","x\tcw\addons\TCW_Armory\TCW_Units\44th\Tex\p1_pilot_helmet_44th_co.paa"};
+		class xtdgearinfo
+		{
+			model = "tcw_unit_helmets_44th";
+			camo = "pilot";
 		};
 	};
 
@@ -157,15 +172,23 @@ class xtdgearmodels
             class camo
             {
                 changeingame = 0;
-                values[] = {"ct","sharp"};
+                values[] = {"ct","medic","sharp","pilot"};
                 class ct
                 {
                     label = "Standard";
+                };
+				class medic
+                {
+                    label = "Medic";
                 };
                 class sharp
                 {
                     label = "'Sharp'";
                 };
+				class pilot
+				{
+					label = "Pilot";
+				};
             };
         };
 		class tcw_unit_uniforms_44th

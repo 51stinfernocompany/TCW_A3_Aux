@@ -18,6 +18,7 @@ class CfgPatches
 			"tcw_p1_helmet_lieutenant", 
 			"tcw_p1_helmet_captain", 
 			"tcw_p1_helmet_commander",
+			"tcw_p1_helmet_pilot_base"
 		};
 
 	};
@@ -131,6 +132,27 @@ class CfgWeapons
 			camo = "cmdr";
 		};
 	};
+
+	//pilot
+	class LSEA_Helmet_Pilot_P1_Base;
+	class tcw_p1_helmet_pilot_base : LSEA_Helmet_Pilot_P1_Base
+	{
+		scope = 2;
+		author = "TCW Team";
+		model = "JLTS_AE\LS_Helmet_Pilot_P1.p3d";
+		displayName = "[TCW] Phase 1 Pilot Helmet";
+		picture = "\Indecisive_Armoury_units\REPUBLIC\Clone_P1_Helmet\P1_Helmet_UI.paa";
+		hiddenSelections[] = {"Camo1","camo2","Visor"};
+		hiddenSelectionsTextures[] = {"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_pilot_helmet_base_co.paa","x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_pilot_helmet_lifesupport_co.paa","x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Textures\p1_pilot_helmet_base_co.paa"};
+		hiddenSelectionsMaterials[] = {"x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Materials\p1_pilot_helmet_base.rvmat","x\tcw\addons\TCW_Armory\Base_Items\Clone_Helm\Materials\p1_pilot_helmet_lifesupport.rvmat","a3\weapons_f_beta\launchers\titan\data\mirror.rvmat"};
+		ace_hearing_protection = 1;
+		ace_hearing_lowervolume = 0;
+		class xtdgearinfo
+		{
+			model = "tcw_phase1_helmets_rank";
+			camo = "pilot";
+		};
+	};
 };
 
 
@@ -146,7 +168,7 @@ class xtdgearmodels
 			class camo
 			{
 				changeingame = 0;
-				values[] = {"ct","sgt","lt","cpt","cmdr"};
+				values[] = {"ct","sgt","lt","cpt","cmdr","pilot"};
 				class ct
 				{
 					label = "Trooper";
@@ -166,6 +188,10 @@ class xtdgearmodels
 				class cmdr
 				{
 					label = "Commander";
+				};
+				class pilot
+				{
+					label = "Pilot";
 				};
 			};
 		};

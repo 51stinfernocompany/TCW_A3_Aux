@@ -51,8 +51,8 @@ class CfgPatches
 class CfgVehicles {
     class TextureSources;
     // ARC-170
-    class 3AS_ARC_170_Orange;
-    class tcw_arc170: 3AS_ARC_170_Orange
+    class 3AS_ARC_170_Republic;
+    class tcw_arc170: 3AS_ARC_170_Republic
     {
         displayName="[TCW] ARC-170";
         faction = "tcw_blufor";
@@ -70,6 +70,7 @@ class CfgVehicles {
         editorSubcategory = "tcw_air_assault";
         crew = "tcw_clone_unit";
         author = "TCW Aux Team";
+        textureList[] = {"Base",1,"Plo Koon",0,"Anakin",0,"Ashoka",0,"Blue",0,"Orange",0,"Green",0,"Purple",0};
     };
 
     // V-19
