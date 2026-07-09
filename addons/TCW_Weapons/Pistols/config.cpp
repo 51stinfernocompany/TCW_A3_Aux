@@ -28,16 +28,27 @@ class CfgPatches
 };
 
 class CfgAmmo {
+    class IDA_Blasterbolt_Power2_Blue;
+    class tcw_dc15sa_ammo : IDA_Blasterbolt_Power2_Blue {
+        author = "TCW Team";
+        hit = 10;
+    };
     class IDA_Blasterbolt_Power3_Blue;
     class tcw_dc15sa_stealth_ammo : IDA_Blasterbolt_Power3_Blue {
         author = "TCW Team";
-        hit = 28;
+        hit = 10;
+        caliber = 0.8; // half the IDA base (1.6) — reduced penetration for subsonic rounds
         audibleFire = 2.5;
         thrust = 290;
         thrustTime = 1.2;
         timetolive = 5;
         brightness = 100;
         flaresize = 3;
+    };
+    class IDA_Blasterbolt_Power4_Blue;
+    class tcw_blasterbolt_dc17 : IDA_Blasterbolt_Power4_Blue {
+        author = "TCW Team";
+        hit = 11;
     };
 };
 
@@ -49,6 +60,7 @@ class CfgMagazines {
         BaseWeapon = "tcw_dc15sa_mag";
         displayName = "[TCW] DC-15SA Energy Cell";
         displayNameShort = "DC-15SA Energy Cell";
+        ammo = "tcw_dc15sa_ammo";
         count = 200;
         scope = 2;
     };
@@ -57,9 +69,9 @@ class CfgMagazines {
         BaseWeapon = "tcw_dc15sa_mag";
         displayName = "[TCW] DC-15SA Stealth Energy Cell";
         displayNameShort = "DC-15SA Energy Cell";
-        descriptionShort = "Low on Ammo, but silent and deadly.";
+        descriptionShort = "Silent running — suppressed fire.";
         initSpeed = 340;
-        count = 42;
+        count = 200;
         ammo = "tcw_dc15sa_stealth_ammo";
         scope = 2;
     };
@@ -70,6 +82,7 @@ class CfgMagazines {
         author = "TCW Team";
         BaseWeapon = "tcw_dc17_mag";
         displayName = "[TCW] DC-17 Mag";
+        ammo = "tcw_blasterbolt_dc17";
         count = 50;
         scope = 2;
     };
@@ -102,6 +115,9 @@ class CfgWeapons {
             "OPTRE_signalSmokeP",
             };
         scope = 2;
+        class Single : Single {
+            dispersion = 0.007;
+        };
     };
 
     // Vibroblade
